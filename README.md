@@ -1,3 +1,3 @@
-#Spongey's Arch Config Dotfiles Backup
+#archconfig
 
 This is a simple repository to backup Arch Linux Dotfiles
