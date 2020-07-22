@@ -1,0 +1,12 @@
+[INF][7/22/2020, 4:32:41 AM] Hooking dom-ready
+[INF][7/22/2020, 4:32:41 AM] Hooked dom-ready
+[INF][7/22/2020, 4:32:41 AM] Getting updater
+[INF][7/22/2020, 4:32:41 AM] Getting hash from: https://api.github.com/repos/rauenzi/BetterDiscordApp/commits/injector
+[INF][7/22/2020, 4:32:41 AM] Getting version from: https://cdn.statically.io/gh/rauenzi/BetterDiscordApp/3dd44e7c2d71ed479534463ed4a44add9ba1ab94/betterdiscord/config.json
+[INF][7/22/2020, 4:32:42 AM] Latest Version: 0.5.1
+[INF][7/22/2020, 4:32:42 AM] Getting commit hash
+[INF][7/22/2020, 4:32:42 AM] Getting hash from: https://api.github.com/repos/rauenzi/BetterDiscordApp/commits/master
+[INF][7/22/2020, 4:32:42 AM] 9d31dfe221288da96bf91993699ebd3f10872633
+[INF][7/22/2020, 4:32:42 AM] Using hash: 9d31dfe221288da96bf91993699ebd3f10872633
+[INF][7/22/2020, 4:32:42 AM] Loading
+[INF][7/22/2020, 4:32:42 AM] Loading Resource (//cdn.staticaly.com/gh/rauenzi/BetterDiscordApp/9d31dfe221288da96bf91993699ebd3f10872633/dist/index.min.js)
