@@ -1,29 +1,30 @@
-[KPropertiesDialog]
-DP-2 HDMI-0 DP-1 Height 1440=451
-DP-2 HDMI-0 DP-1 Width 2560=410
-
-[PlasmaRunnerManager]
-LaunchCounts=1 services_applications:teamspeak3.desktop,1 shell_fsearch,1 services_applications:org.kde.latte-dock.desktop,1 services_applications:kcm_kscreen.desktop,1 services_applications:google-chrome.desktop,1 services_applications:org.kde.dolphin.desktop,1 services_applications:systemsettings.desktop
-
 [PlasmaTransientsConfig]
 PreloadWeight=0
 
-[PlasmaViews][Panel 26][Defaults]
-thickness=36
-
-[PlasmaViews][Panel 26][Horizontal2560]
-thickness=36
-
-[PlasmaViews][Panel 4][Defaults]
+[PlasmaViews][Panel 116][Defaults]
 thickness=28
 
-[PlasmaViews][Panel 4][Horizontal2560]
+[PlasmaViews][Panel 116][Horizontal1920]
 thickness=28
 
-[ScreenConnectors]
-0=DP-2
-1=HDMI-0
-2=DP-1
+[PlasmaViews][Panel 116][Horizontal2560]
+thickness=36
 
-[Updates]
-performed=/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/move_desktop_layout_config.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/obsolete_kickoffrc.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/unlock_widgets.js
+[PlasmaViews][Panel 139][Defaults]
+maxLength=1280
+minLength=1280
+thickness=28
+
+[PlasmaViews][Panel 139][Horizontal1280]
+maxLength=1280
+minLength=1280
+thickness=28
+
+[PlasmaViews][Panel 139][Horizontal2560]
+thickness=36
+
+[PlasmaViews][Panel 93][Defaults]
+thickness=28
+
+[PlasmaViews][Panel 93][Horizontal2560]
+thickness=28
