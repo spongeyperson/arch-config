@@ -84,6 +84,12 @@ thickness=30
 [PlasmaViews][Panel 4][Horizontal2560]
 thickness=30
 
+[PlasmaViews][Panel 47][Defaults]
+thickness=36
+
+[PlasmaViews][Panel 47][Horizontal2560]
+thickness=36
+
 [PlasmaViews][Panel 54][Defaults]
 thickness=36
 
