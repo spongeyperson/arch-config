@@ -1,119 +1,29 @@
-[DownloadDialog Settings]
-Height 1440=494
-Width 2560=700
-
-[FileDialogSize]
-Height 1440=600
-Width 2560=884
-
-[KFileDialog Settings]
-Recent Files[$e]=4K 5min\\, Galaxy Animation\\, Nebula Video Background\\,Milky Way\\, Free Video Background..mp4,file:///run/media/tyler/0E9630EA9630D445/Program Files (x86)/Steam/steamapps/workshop/content/431960/1358287491/amnesiac-all_i_need-wallpaper.mp4,file:///run/media/tyler/0E9630EA9630D445/Program Files (x86)/Steam/steamapps/workshop/content/431960/878654942/4K 5min\\, Galaxy Animation\\, Nebula Video Background\\,Milky Way\\, Free Video Background..mp4
-Recent URLs[$e]=file:///run/media/tyler/0E9630EA9630D445/Program Files (x86)/Steam/steamapps/workshop/content/431960/1358287491/,file:///run/media/tyler/0E9630EA9630D445/Program Files (x86)/Steam/steamapps/workshop/content/431960/878654942/
-detailViewIconSize=0
-
 [KPropertiesDialog]
-Height 1440=442
-Width 2560=381
+DP-2 HDMI-0 DP-1 Height 1440=451
+DP-2 HDMI-0 DP-1 Width 2560=410
 
 [PlasmaRunnerManager]
-LaunchCounts=1 services_applications:caffeine.desktop,4 services_applications:timeshift-gtk.desktop,1 services_applications:caffeine-indicator.desktop
+LaunchCounts=1 services_applications:teamspeak3.desktop,1 shell_fsearch,1 services_applications:org.kde.latte-dock.desktop,1 services_applications:kcm_kscreen.desktop,1 services_applications:google-chrome.desktop,1 services_applications:org.kde.dolphin.desktop,1 services_applications:systemsettings.desktop
 
 [PlasmaTransientsConfig]
 PreloadWeight=0
 
-[PlasmaViews][Panel 104][Defaults]
+[PlasmaViews][Panel 26][Defaults]
 thickness=36
 
-[PlasmaViews][Panel 104][Horizontal2560]
-thickness=36
-
-[PlasmaViews][Panel 128][Defaults]
-thickness=30
-
-[PlasmaViews][Panel 128][Horizontal1920]
-thickness=30
-
-[PlasmaViews][Panel 128][Horizontal2560]
-thickness=36
-
-[PlasmaViews][Panel 152][Defaults]
-thickness=30
-
-[PlasmaViews][Panel 152][Horizontal1920]
-thickness=30
-
-[PlasmaViews][Panel 152][Horizontal2560]
-thickness=36
-
-[PlasmaViews][Panel 176][Defaults]
-thickness=30
-
-[PlasmaViews][Panel 176][Horizontal1920]
-thickness=30
-
-[PlasmaViews][Panel 176][Horizontal2560]
-thickness=36
-
-[PlasmaViews][Panel 206][Defaults]
-thickness=30
-
-[PlasmaViews][Panel 206][Horizontal2560]
-thickness=30
-
-[PlasmaViews][Panel 230][Defaults]
-thickness=30
-
-[PlasmaViews][Panel 230][Horizontal2560]
-thickness=30
-
-[PlasmaViews][Panel 254][Defaults]
-thickness=36
-
-[PlasmaViews][Panel 254][Horizontal2560]
-thickness=36
-
-[PlasmaViews][Panel 31][Defaults]
-thickness=36
-
-[PlasmaViews][Panel 31][Horizontal2560]
+[PlasmaViews][Panel 26][Horizontal2560]
 thickness=36
 
 [PlasmaViews][Panel 4][Defaults]
-thickness=30
+thickness=28
 
 [PlasmaViews][Panel 4][Horizontal2560]
-thickness=30
-
-[PlasmaViews][Panel 47][Defaults]
-thickness=36
-
-[PlasmaViews][Panel 47][Horizontal2560]
-thickness=36
-
-[PlasmaViews][Panel 54][Defaults]
-thickness=36
-
-[PlasmaViews][Panel 54][Horizontal2560]
-thickness=36
-
-[PlasmaViews][Panel 78][Defaults]
-thickness=30
-
-[PlasmaViews][Panel 78][Horizontal1280]
-thickness=30
-
-[PlasmaViews][Panel 78][Horizontal2560]
-thickness=36
+thickness=28
 
 [ScreenConnectors]
-0=HDMI-A-0
-1=DisplayPort-1
-2=DisplayPort-0
-3=DP-2
-4=DP-1
-5=DisplayPort-4
-6=DisplayPort-3
-7=HDMI-1-1
+0=DP-2
+1=HDMI-0
+2=DP-1
 
 [Updates]
 performed=/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/move_desktop_layout_config.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/obsolete_kickoffrc.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/unlock_widgets.js
