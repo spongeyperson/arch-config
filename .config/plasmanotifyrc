@@ -1,8 +1,15 @@
+[Applications][brave-browser]
+Seen=true
+ShowPopups=false
+
+[Applications][com.uploadedlobster.peek]
+Seen=true
+
 [Applications][discord]
 Seen=true
 
-[Applications][google-chrome]
+[Applications][mailspring]
 Seen=true
 
-[Applications][mailspring]
+[Applications][telegramdesktop]
 Seen=true

@@ -1,13 +1,6 @@
 [Appearance]
-ColorScheme=Breeze
-Font=Cascadia Code,10,-1,5,50,0,0,0,0,0
-
-[Cursor Options]
-CursorShape=1
+Font=Cascadia Mono PL,10,-1,5,63,0,0,0,0,0,SemiBold
 
 [General]
 Name=Profile 1
 Parent=FALLBACK/
-
-[Terminal Features]
-BlinkingCursorEnabled=true
