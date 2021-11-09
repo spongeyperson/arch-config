@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# This script is for compositor suspending in Steam on a Per App basis.
 qdbus org.kde.KWin /Compositor suspend
 
 $*
