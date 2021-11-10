@@ -11,8 +11,12 @@ alias mv="mv -v"
 alias cp="cp -v"
 alias ..="cd .."
 alias ...="cd -"
+
+#Manipulate KDE
 alias lockwidgets="qdbus org.kde.plasmashell /PlasmaShell evaluateScript 'lockCorona(true)'"
 alias unlockwidgets="qdbus org.kde.plasmashell /PlasmaShell evaluateScript 'lockCorona(false)'"
+alias restartkwin="killall kwin_x11 ; kstart5 kwin_x11 --replace &"
+alias restartplasma="killall plasmashell ; kstart5 plasmashell &"
 
 #Dotfiles Sync
 alias config="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
