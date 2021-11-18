@@ -20,5 +20,6 @@ VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=ac
 ```bash
 VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/amd_icd64.json suspend_compositing gamemoderun mangohud %command%
 ```
+**Please note:** `suspend_compositing` script sometimes prevents certain games with Anticheat or launchers from starting. If your game instantly closes, try removing that and suspending compositing with `Alt`+`Shift`+`F12` instead.
 
 <sub>"[mangohud](https://github.com/spongeyperson/arch-config/blob/master/home/tyler/.config/MangoHud/MangoHud.conf)" and "[suspend_compositing](https://github.com/spongeyperson/arch-config/blob/master/usr/local/bin/suspend_compositing)" commands refer to the following config files required to make them work.</sub>
