@@ -11,5 +11,8 @@ Seen=true
 [Applications][mailspring]
 Seen=true
 
+[Applications][org.qbittorrent.qbittorrent]
+Seen=true
+
 [Applications][telegramdesktop]
 Seen=true

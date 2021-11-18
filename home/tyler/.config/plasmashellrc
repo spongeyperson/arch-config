@@ -1,13 +1,22 @@
 [KPropertiesDialog]
 DisplayPort-1 DisplayPort-0 HDMI-A-0 Height 2560x1440=454
-DisplayPort-1 DisplayPort-0 HDMI-A-0 Width 2560x1440=410
+DisplayPort-1 DisplayPort-0 HDMI-A-0 Width 2560x1440=538
 DisplayPort-1 HDMI-A-0 DisplayPort-0 Height 2560x1440=454
 DisplayPort-1 HDMI-A-0 DisplayPort-0 Width 2560x1440=410
 
-[PlasmaTransientsConfig]
-PreloadWeight=0
+[PlasmaViews][Panel 132][Defaults]
+thickness=34
+
+[PlasmaViews][Panel 132][Horizontal1920]
+thickness=34
+
+[PlasmaViews][Panel 132][Horizontal3840]
+thickness=44
 
 [PlasmaViews][Panel 2][Defaults]
+thickness=34
+
+[PlasmaViews][Panel 2][Horizontal1024]
 thickness=34
 
 [PlasmaViews][Panel 2][Horizontal1280]
@@ -17,6 +26,9 @@ thickness=44
 thickness=34
 
 [PlasmaViews][Panel 2][Horizontal2560]
+thickness=34
+
+[PlasmaViews][Panel 2][Horizontal3840]
 thickness=34
 
 [PlasmaViews][Panel 20][Defaults]
@@ -31,17 +43,26 @@ thickness=34
 [PlasmaViews][Panel 38][Horizontal1920]
 thickness=34
 
+[PlasmaViews][Panel 38][Horizontal2560]
+thickness=34
+
 [PlasmaViews][Panel 86][Defaults]
 thickness=34
 
 [PlasmaViews][Panel 86][Horizontal1920]
 thickness=34
 
+[PlasmaViews][Panel 86][Horizontal2560]
+thickness=34
+
 [ScreenConnectors]
 0=DisplayPort-1
-1=:0.0
-2=DisplayPort-0
-3=HDMI-A-0
+1=DisplayPort-0
+2=HDMI-A-0
+3=DisplayPort-2
+4=:0.0
+5=DP-2
+6=DP-1
 
 [Updates]
 performed=/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/maintain_existing_desktop_icon_sizes.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/digitalclock_rename_timezonedisplay_key.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/systemloadviewer_systemmonitor.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/klipper_clear_config.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/move_desktop_layout_config.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/unlock_widgets.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/obsolete_kickoffrc.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/containmentactions_middlebutton.js
