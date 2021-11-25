@@ -1,6 +1,6 @@
 [KPropertiesDialog]
-DisplayPort-1 DisplayPort-0 HDMI-A-0 Height 2560x1440=454
-DisplayPort-1 DisplayPort-0 HDMI-A-0 Width 2560x1440=538
+DisplayPort-1 DisplayPort-0 HDMI-A-0 Height 2560x1440=458
+DisplayPort-1 DisplayPort-0 HDMI-A-0 Width 2560x1440=426
 DisplayPort-1 HDMI-A-0 DisplayPort-0 Height 2560x1440=454
 DisplayPort-1 HDMI-A-0 DisplayPort-0 Width 2560x1440=410
 
@@ -57,10 +57,9 @@ thickness=34
 
 [ScreenConnectors]
 0=DisplayPort-1
-1=DisplayPort-0
-2=HDMI-A-0
-3=DisplayPort-2
-4=:0.0
+1=HDMI-A-0
+3=:0.0
+4=DisplayPort-0
 5=DP-2
 6=DP-1
 

@@ -1,3 +1,6 @@
+[Applications][balena-etcher-electron]
+Seen=true
+
 [Applications][brave-browser]
 Seen=true
 ShowPopups=false
@@ -14,5 +17,12 @@ Seen=true
 [Applications][org.qbittorrent.qbittorrent]
 Seen=true
 
+[Applications][solaar]
+Seen=true
+
 [Applications][telegramdesktop]
 Seen=true
+
+[Services][lattedock]
+ShowInHistory=false
+ShowPopups=false
