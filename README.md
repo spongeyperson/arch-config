@@ -1,6 +1,10 @@
-# Spongey's Arch Linux KDE dotfiles
-###### A Simple Git Repository to store various Arch Linux User Configs (Dotfiles).
-- ###### Host Config: [spongeyperson/proxmox-config](https://github.com/spongeyperson/proxmox-config/)
+# <p align=center>- Spongey's Arch Linux KDE Dotfiles -
+###### <p align=center> A Simple Git Repository to store various Arch Linux User Configs (Dotfiles).
+
+
+#### <p align=center> Links:
+  - Host Config: [spongeyperson/proxmox-config](https://github.com/spongeyperson/proxmox-config/)
+  - Unused Files Directory: [spongeyperson/proxmox-config](https://github.com/spongeyperson/proxmox-config/)
 
 ![I run Arch BTW](https://user-images.githubusercontent.com/28176188/140734509-d661b98b-b5bd-4ffc-9f59-69d9bed8f1c9.png)
 
@@ -31,4 +35,5 @@ VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/amd_icd64.json suspend_compositing game
 
 - Work In Progress
 
+[^Note]: Unused Directory 
 [^1]: "[mangohud](https://github.com/spongeyperson/arch-config/blob/master/home/tyler/.config/MangoHud/MangoHud.conf)" and "[suspend_compositing](https://github.com/spongeyperson/arch-config/blob/master/usr/local/bin/suspend_compositing)" commands refer to the following config files required to make them work.
