@@ -24,6 +24,9 @@ AnimationDuration=320
 [Effect-PresentWindows]
 BorderActivateAll=9
 
+[Effect-ShowFps]
+TextPosition=4
+
 [MouseBindings]
 CommandAllKey=Alt
 
