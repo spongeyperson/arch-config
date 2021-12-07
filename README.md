@@ -4,7 +4,7 @@
 
 #### <p align=center> Links:
   - Host Config: [spongeyperson/proxmox-config](https://github.com/spongeyperson/proxmox-config/)
-  - Unused Files Directory: [spongeyperson/proxmox-config](https://github.com/spongeyperson/proxmox-config/)
+  - Unused Files Directory: [proxmox-config/home/tyler/arch-dotfiles/unused](https://github.com/spongeyperson/arch-dotfiles/tree/master/home/tyler/arch-dotfiles/unused)
 
 ![I run Arch BTW](https://user-images.githubusercontent.com/28176188/140734509-d661b98b-b5bd-4ffc-9f59-69d9bed8f1c9.png)
 
