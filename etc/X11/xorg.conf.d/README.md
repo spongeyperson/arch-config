@@ -1,5 +1,5 @@
-# <center>Xorg Configuration Files</center>
-##### <center>/etc/X11/xorg.conf.d</center> 
+# <p align=center>Xorg Configuration Files</p>
+##### <p align=center>/etc/X11/xorg.conf.d</p> 
 
 
 - [20-amdgpu.conf](https://github.com/spongeyperson/arch-dotfiles/blob/master/etc/X11/xorg.conf.d/20-amdgpu.conf)
