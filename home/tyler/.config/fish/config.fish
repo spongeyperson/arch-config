@@ -9,6 +9,7 @@ alias aliases="vim /home/tyler/.config/fish/config.fish"
 alias fishconfig="vim /home/tyler/.config/fish/config.fish"
 alias vi="vim"
 alias phone="scrcpy -t --bit-rate 15M --max-fps 60 --window-title 'Samsung Galaxy S9+'"
+alias grep="grep --color=always"
 
 # File Management Tweaks
 alias mv="mv -v"
@@ -17,6 +18,8 @@ alias ls="ls -Ch --color=always"
 alias l="ls -alh --color=always"
 alias ..="cd .."
 alias ...="cd -"
+alias chmod="chmod -v"
+alias chown="chown -v"
 
 # SSH
 alias sshkeys="echo -e '\033[0;32mAuthorized SSH Devices:\033[0m' && ls /home/tyler/.ssh/ssh-identities/ -1I '*.pub'"
