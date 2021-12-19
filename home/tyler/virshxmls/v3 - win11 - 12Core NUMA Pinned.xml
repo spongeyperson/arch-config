@@ -9,7 +9,7 @@
   </metadata>
   <memory unit="KiB">8388608</memory>
   <currentMemory unit="KiB">8388608</currentMemory>
-  <vcpu placement="static" cpuset="8-29">12</vcpu>
+  <vcpu placement="static" cpuset="16-27">12</vcpu>
   <iothreads>1</iothreads>
   <cputune>
     <vcpupin vcpu="0" cpuset="8"/>
@@ -24,7 +24,7 @@
     <vcpupin vcpu="9" cpuset="28"/>
     <vcpupin vcpu="10" cpuset="13"/>
     <vcpupin vcpu="11" cpuset="29"/>
-    <emulatorpin cpuset="8-13,24-29"/>
+    <emulatorpin cpuset="16-27"/>
     <iothreadpin iothread="1" cpuset="31"/>
   </cputune>
   <numatune>
