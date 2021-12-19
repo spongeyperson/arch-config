@@ -2,11 +2,17 @@
 ###### <p align=center> A Simple Git Repository to store various Arch Linux User Configs (Dotfiles).
 
 
-#### <p align=center> Links:
-  - Host Config: [spongeyperson/proxmox-config](https://github.com/spongeyperson/proxmox-config/)
-  - Unused Files Directory: [proxmox-config/home/tyler/arch-dotfiles/unused](https://github.com/spongeyperson/arch-dotfiles/tree/master/home/tyler/arch-dotfiles/unused)
+#### <p align=center> Index:
+  - **This Repo**:
+    - Documentation:
+      - [Custom KDE Panels](https://github.com/spongeyperson/arch-dotfiles/tree/master/home/tyler/.local/share/plasma/layout-templates)
+      - [Xorg Configuration](https://github.com/spongeyperson/arch-dotfiles/tree/master/etc/X11/xorg.conf.d)
+      - [Unused Directory](https://github.com/spongeyperson/arch-dotfiles/tree/master/home/tyler/arch-dotfiles/unused)
+  - Other Dotfiles:
+    - **Proxmox**: [spongeyperson/proxmox-config](https://github.com/spongeyperson/proxmox-config/)
+    - **Fedora**: [spongeyperson/fedora-dotfiles](https://github.com/spongeyperson/fedora-dotfiles/)
 
-![I run Arch BTW](https://user-images.githubusercontent.com/28176188/140734509-d661b98b-b5bd-4ffc-9f59-69d9bed8f1c9.png)
+![I run Arch BTW](https://user-images.githubusercontent.com/28176188/146662437-bbd5fc0d-ae98-4f28-a2df-12b89f819534.png)
 
 # Gaming Tweaks:
 
@@ -36,4 +42,4 @@ VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/amd_icd64.json suspend_compositing game
 - Work In Progress
 
 [^Note]: Unused Directory 
-[^1]: "[mangohud](https://github.com/spongeyperson/arch-config/blob/master/home/tyler/.config/MangoHud/MangoHud.conf)" and "[suspend_compositing](https://github.com/spongeyperson/arch-config/blob/master/usr/local/bin/suspend_compositing)" commands refer to the following config files required to make them work.
+[^1]: "[mangohud](https://github.com/spongeyperson/arch-dotfiles/blob/master/home/tyler/.config/MangoHud/MangoHud.conf)" and "[suspend_compositing](https://github.com/spongeyperson/arch-dotfiles/blob/master/usr/local/bin/suspend_compositing)" commands refer to the following config files required to make them work.
