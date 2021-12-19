@@ -5,6 +5,7 @@
 # General Aliases
 alias tb="nc termbin.com 9999"
 alias termbin="nc termbin.com 9999"
+alias clbin="curl -F 'clbin=<-' https://clbin.com"
 alias aliases="vim /home/tyler/.config/fish/config.fish"
 alias fishconfig="vim /home/tyler/.config/fish/config.fish"
 alias vi="vim"
