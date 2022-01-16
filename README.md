@@ -5,6 +5,7 @@
 #### <p align=center> Index:
   - **This Repo**:
     - Documentation:
+      - [docs/Game-Settings](docs/Game-Settings.md)
       - [Custom KDE Panels](https://github.com/spongeyperson/arch-dotfiles/tree/master/home/tyler/.local/share/plasma/layout-templates)
       - [Xorg Configuration](https://github.com/spongeyperson/arch-dotfiles/tree/master/etc/X11/xorg.conf.d)
       - [Unused Directory](https://github.com/spongeyperson/arch-dotfiles/tree/master/home/tyler/arch-dotfiles/unused)
