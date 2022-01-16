@@ -8,7 +8,7 @@
     - [Farming Simulator 22](#farming-simulator-22)
     - [Spyro Reignited Trilogy](#spyro-reignited-trilogy)
     - [Sleeping Dogs: Definitive Edition](#sleeping-dogs-definitive-edition)
-      - Virtual Desktop & Multi-Monitor Fix
+      - [Virtual Desktop & Multi-Monitor Fix](#how-to-fix-virtual-desktop--multi-mon-issues)
 
 ## Red Dead Redemption 2
 #### Proton-7.0rc3-GE-1
