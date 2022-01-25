@@ -49,8 +49,3 @@ unset TERMCAP
 # Man is much better than us at figuring this out
 unset MANPATH
 
-# Disable QT Logging for Plasmashell Thermal Monitor Extension: "qml: temp unit: 0" bug
-# https://github.com/kotelnik/plasma-applet-thermal-monitor/issues/41#issuecomment-609809739
-
-QT_LOGGING_RULES='*.debug=false'
-export QT_LOGGING_RULES
