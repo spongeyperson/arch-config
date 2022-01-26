@@ -1,4 +1,3 @@
-//Define Panel Variables
 var panel = new Panel
 var panelScreen = panel.screen
 var freeEdges = {"bottom": true, "top": true, "left": true, "right": true}
@@ -13,7 +12,6 @@ for (i = 0; i < panelIds.length; ++i) {
     }
 }
 
-// If Top Edge is Free, Place Panel on Top. If not; Place on any free location
 if (freeEdges["top"] == true) {
     panel.location = "top";
 } else if (freeEdges["bottom"] == true) {
@@ -27,10 +25,8 @@ if (freeEdges["top"] == true) {
     panel.location = "top";
 }
 
-//Panel Height Variable
 panel.height = gridUnit * 2
 
-//Create Initial Widgets
 var kickoff = panel.addWidget("org.kde.plasma.kickoff")
 kickoff.currentConfigGroup = ["Shortcuts"]
 kickoff.writeConfig("global", "Alt+F1")
