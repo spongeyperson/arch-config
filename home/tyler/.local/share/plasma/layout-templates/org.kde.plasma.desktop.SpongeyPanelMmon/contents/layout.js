@@ -43,7 +43,7 @@ apptitle.writeConfig("noWindowType", "text")
 apptitle.writeConfig("noWindowText", "Plasma Desktop")
 apptitle.writeConfig("textType", "1")
 
-panel.addWidget("org.kde.windowappmenu")
+panel.addWidget("org.kde.plasma.appmenu")
 panel.addWidget("org.kde.plasma.panelspacer")
 
 /* Next up is determining whether to add the Input Method Panel
