@@ -1,0 +1,13 @@
+# EFI System Partition
+UUID=BF05-B3B3      	/boot/efi 	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
+
+# ROOTFS 
+UUID=4a4ef5a9-6a05-4d3f-b9be-12031ee1a6ea	/         	btrfs     	rw,relatime,ssd,space_cache,subvol=/@		0 0
+UUID=4a4ef5a9-6a05-4d3f-b9be-12031ee1a6ea	/home     	btrfs     	rw,relatime,ssd,space_cache,subvol=/@home	0 0
+UUID=4a4ef5a9-6a05-4d3f-b9be-12031ee1a6ea	/root     	btrfs     	rw,relatime,ssd,space_cache,subvol=/@root	0 0
+UUID=4a4ef5a9-6a05-4d3f-b9be-12031ee1a6ea	/var/log  	btrfs     	rw,relatime,ssd,space_cache,subvol=/@log	0 0
+UUID=4a4ef5a9-6a05-4d3f-b9be-12031ee1a6ea	/var/cache	btrfs     	rw,relatime,ssd,space_cache,subvol=/@cache	0 0
+UUID=4a4ef5a9-6a05-4d3f-b9be-12031ee1a6ea	/var/tmp  	btrfs     	rw,relatime,ssd,space_cache,subvol=/@tmp	0 0
+
+#SMB
+//192.168.0.99/8TB /mnt/8TB-Samba cifs _netdev,nofail,noauto,rw,users,uid=tyler,iocharset=utf8,file_mode=0777,dir_mode=0777,credentials=/home/tyler/.smbpasswd 	0 0

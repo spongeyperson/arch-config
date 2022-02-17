@@ -5,8 +5,10 @@
 # Table of Contents:
   - **Games**:
     - [Red Dead Redemption 2](#red-dead-redemption-2)
+    - [Grand Theft Auto IV: The Complete Edition](#grand-theft-auto-iv-the-complete-edition)
     - [Farming Simulator 22](#farming-simulator-22)
     - [Spyro Reignited Trilogy](#spyro-reignited-trilogy)
+    - [Ghostrunner](#ghostrunner)
     - [Sleeping Dogs: Definitive Edition](#sleeping-dogs-definitive-edition)
       - [Virtual Desktop & Multi-Monitor Fix](#how-to-fix-virtual-desktop--multi-mon-issues)
 
@@ -21,6 +23,13 @@ VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=ac
     - `-ignorepipelinecache`: Use this flag for performance reasons.
     - `-vulkan`: is required to get the game to display 
     - **Notice**: **Proton-7.0rc2-GE-1** has issues starting RGSC Launcher and will cause the game to never launch. Use **Standard Valve Proton** or **Proton-7.0rc3-GE-1** or newer. 
+
+## Grand Theft Auto IV: The Complete Edition
+#### Proton-6.21-GE-2
+- **Steam Launch Arguments**:
+```
+WINE_FULLSCREEN_FSR=1 DXVK_HUD=compile gamemoderun mangohud %command%
+```
 
 ## Farming Simulator 22
 #### Proton v6.3.8
@@ -40,6 +49,13 @@ VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=ac
 - **Notes**: 
     - This game uses standard RADV ICD + ACO Recompiler, Gamemode Run, and Mangohud
     - Without `-nohmd` and `-DX11` flags, this game will either crash at random intervals, or instantly crash without any warning before the game launches.
+
+## Ghostrunner
+#### Proton-7.0rc6-GE-1
+- **Steam Launch Arguments**:
+```
+VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=aco gamemoderun mangohud %command%
+```
 
 ## Sleeping Dogs: Definitive Edition
 #### Proton 6.3-8
