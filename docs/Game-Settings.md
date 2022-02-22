@@ -23,7 +23,7 @@
 - ### DXVK HUD
   - Show DXVK Shader Compilation using DXVK HUD
     - `DXVK_HUD=compile`
-- ### Valve GAMESCOPE (Formerly steamcompmgr)
+- ### [Valve GAMESCOPE (Formerly steamcompmgr)](https://github.com/Plagman/gamescope)
   ```sh
   # Upscale a 720p game to 1440p with integer scaling
   gamescope -h 720 -H 1440 -n -- %command%
