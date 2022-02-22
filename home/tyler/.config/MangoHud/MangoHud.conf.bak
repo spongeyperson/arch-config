@@ -3,11 +3,8 @@
 ### Use some_parameter=0 to disable a parameter (only works with on/off parameters)
 ### Everything below can be used / overridden with the environment variable MANGOHUD_CONFIG instead
 
-### Specify gpu with pci bus id for amdgpu and NVML stats.
-### Set to 'domain:bus:slot.function'
-
-
 ################ PERFORMANCE #################
+
 ### Limit the application FPS. Comma-separated list of one or more FPS values (e.g. 0,30,60). 0 means unlimited (unless VSynced).
 # fps_limit=
 
@@ -16,22 +13,114 @@
 
 ### OpenGL VSync [0-N] 0 = off; >=1 = wait for N v-blanks, N > 1 acts as a FPS limiter (FPS = display refresh rate / N)
 # gl_vsync=
-################### CONFIG ###################
-### GPU Device ID
-pci_dev = 00:44:00.0
 
-### GPU Device ID Blacklist
-# blacklist =
+################### VISUAL ###################
+
+### Custom text centered useful for a header
+# custom_text_center =
+
+### Legacy layout
+# legacy_layout = false
+
+### Display the current CPU information
+cpu_stats
+# cpu_temp
+# cpu_power
+# cpu_text = "CPU"
+# cpu_mhz
+# cpu_load_change
+# cpu_load_value
+# cpu_load_color
+
+### Display the current GPU information
+gpu_stats
+gpu_temp
+# gpu_core_clock
+# gpu_mem_clock
+gpu_name
+gpu_power
+# gpu_text = "GPU"
+vulkan_driver
+gpu_load_change
+# gpu_load_value
+# gpu_load_color
+
+### Display FPS and frametime
+fps
+# fps_sampling_period=
+frametime
+
+### Display loaded MangoHud architecture
+# arch
+
+### Display the frametime line graph
+frame_timing
+# histogram
+
+### Display the current system time
+# time
+
+### Display the current resolution
+# resolution
+
+### Show current fps limit
+#  show_fps_limit
+
+### Display custom text
+# custom_text
+
+### Time formatting examples
+# time_format = %H:%M
+# time_format = [ %T %F ]
+# time_format = %X # locally formatted time, because of limited glyph range, missing characters may show as '?' (e.g. Japanese)
+
+### Change the hud font size (default is 24)
+font_size=24
+font_scale=0.9
+# font_size_text=24
+# font_scale_media_player = 0.55
+# no_small_font
+
+### Change default font (set location to .TTF/.OTF file )
+## Set font for the whole hud
+font_file=/usr/share/fonts/TTF/CascadiaCodePL.ttf
+
+## Set font only for text like media player metadata
+# font_file_text=/usr/share/fonts/TTF/CascadiaCodePL.ttf
+
+## Set font glyph ranges. Defaults to latin-only. Don't forget to set font_file/text_font_file to font that supports these.
+## Probably don't enable all at once because of memory usage and hardware limits concerns.
+## If you experience crashes or text is just squares, reduce glyph range or reduce font size.
+# font_glyph_ranges=korean, chinese, chinese_simplified, japanese, cyrillic, thai, vietnamese, latin_ext_a, latin_ext_b
 
 ### Change the hud position (default is top-left)
 position=top-right
+
+### Display the current CPU load & frequency for each core
+# core_load
+# core_load_change
+
+### IO read and write for the app (not system)
+io_read
+io_write
+# io_stats
+
+### Display system ram / swap space / vram usage
+ram
+# swap
+vram
+
+### Display MangoHud, engine or Wine version
+# version
+engine_version
+wine
 
 ### Disable / hide the hud by default
 # no_display
 
 ### Hud position offset
 # offset_x=
-#offset_y=180
+# offset_y=
 
 ### Hud dimensions
 # width=
@@ -61,115 +150,12 @@ background_alpha=0.5
 # media_player_name = spotify
 # media_player_order = title,artist,album
 
-################# FONT CONFIG ################
-### Custom text centered useful for a header
-# custom_text_center =
+### Specify gpu with pci bus id for amdgpu and NVML stats.
+### Set to 'domain:bus:slot.function'
+pci_dev = 00:01:00.0
 
-### Change the hud font size (default is 24)
-font_size=24
-font_scale=0.9
-# font_size_text=24
-# font_scale_media_player = 0.55
-# no_small_font
-
-### Change default font (set location to .TTF/.OTF file )
-## Set font for the whole hud
-font_file=/usr/share/fonts/TTF/CascadiaCodePL.ttf
-
-## Set font only for text like media player metadata
-#font_file_text=/usr/share/fonts/TTF/CascadiaCodePL.ttf
-
-## Set font glyph ranges. Defaults to latin-only. Don't forget to set font_file/text_font_file to font that supports these.
-## Probably don't enable all at once because of memory usage and hardware limits concerns.
-## If you experience crashes or text is just squares, reduce glyph range or reduce font size.
-# font_glyph_ranges=korean, chinese, chinese_simplified, japanese, cyrillic, thai, vietnamese, latin_ext_a, latin_ext_b
-
-
-################# SMALL TEXT #################
-
-### Display the current system time
-#time
-
-### Show current fps limit
-# show_fps_limit
-
-### Display custom text
-# custom_text
-
-### Time formatting examples
-# time_format = %H:%M
-# time_format = [ %T %F ]
-# time_format = %X # locally formatted time, because of limited glyph range, missing characters may show as '?' (e.g. Japanese)
-
-#Vulkan Driver Version
-gpu_name
-#vulkan_driver
-#Engine Driver Version
-engine_version
-#Wine Version
-wine
-### Display loaded MangoHud architecture
-arch
-#Game Resolution
-resolution
-#Display Feral Gamemode Status
-gamemode
-
-##################### CPU ####################
-### Display MangoHud, engine or Wine version
-# version
-
-### Legacy layout
-legacy_layout = false
-
-### Display the current CPU information
-cpu_text = TR 2950x
-cpu_stats
-cpu_temp
-# cpu_power
-cpu_mhz
-### Display the current CPU load & frequency for each core
-# core_load
-# cpu_load_change
-# cpu_load_value
-# cpu_load_color
-
-##################### GPU ####################
-### Display the current GPU information
-gpu_text = RX 6800XT
-gpu_stats
-gpu_temp
-gpu_core_clock
-gpu_mem_clock
-gpu_power
-# gpu_load_change
-gpu_load_value
-gpu_load_color
-
-#################### VRAM ####################
-vram 
-
-
-##################### RAM ####################
-ram
-### Display system ram / swap space / vram usage
-# swap
-
-##################### IO #####################
-### IO read and write for the app (not system)
-io_stats
-io_read
-io_write
-
-
-##################### FPS ####################
-### Display FPS and frametime
-fps
-# fps_sampling_period=
-frametime
-frame_timing
-### Display the frametime line graph
-#histogram
+### Blacklist
+# blacklist =
 
 ################## WORKAROUNDS #################
 ### Options starting with "gl_*" are for OpenGL.
