@@ -4,6 +4,7 @@
 
 # Table of Contents:
   - **Games**:
+    - [Commonly Used Steam Launch Arguments](#commonly-used-steam-launch-arguments)
     - [Red Dead Redemption 2](#red-dead-redemption-2)
     - [Grand Theft Auto IV: The Complete Edition](#grand-theft-auto-iv-the-complete-edition)
     - [Farming Simulator 22](#farming-simulator-22)
@@ -11,6 +12,41 @@
     - [Ghostrunner](#ghostrunner)
     - [Sleeping Dogs: Definitive Edition](#sleeping-dogs-definitive-edition)
       - [Virtual Desktop & Multi-Monitor Fix](#how-to-fix-virtual-desktop--multi-mon-issues)
+
+## Commonly Used Steam Launch Arguments:
+- ### Wine Specific
+  - Enable Wine-Specific FSR (AMD Fidelity FX Super Resolution)
+    - `WINE_FULLSCREEN_FSR=1`
+- ### AMD Specific
+  - Enable AMD ACO Recompiler:
+    - `VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=aco`
+- ### DXVK HUD
+  - Show DXVK Shader Compilation using DXVK HUD
+    - `DXVK_HUD=compile`
+- ### Valve GAMESCOPE (Formerly steamcompmgr)
+  ```sh
+  # Upscale a 720p game to 1440p with integer scaling
+  gamescope -h 720 -H 1440 -n -- %command%
+
+  # Limit a vsynced game to 30 FPS
+  gamescope -r 30 -- %command%
+
+  # Run the game at 1080p, but scale output to a fullscreen 3440×1440 pillarboxed ultrawide window
+  gamescope -w 1920 -h 1080 -W 3440 -H 1440 -b -- %command%
+  ```
+  ### Options:
+
+  See `gamescope --help` for a full list of options.
+
+  * `-W`, `-H`: set the resolution used by gamescope. Resizing the gamescope window will update these settings. Ignored in embedded mode. If `-H` is specified but `-W` isn't, a 16:9 aspect ratio is assumed. Defaults to 1280×720.
+  * `-w`, `-h`: set the resolution used by the game. If `-h` is specified but `-w` isn't, a 16:9 aspect ratio is assumed. Defaults to the values specified in `-W` and `-H`.
+  * `-r`: set a frame-rate limit for the game. Specified in frames per second. Defaults to unlimited.
+  * `-o`: set a frame-rate limit for the game when unfocused. Specified in frames per second. Defaults to unlimited.
+  * `-U`: use AMD FidelityFX™ Super Resolution 1.0 for upscaling 
+  * `-n`: use integer scaling.
+  * `-b`: create a border-less window.
+  * `-f`: create a full-screen window.
+
 
 ## Red Dead Redemption 2
 #### Proton-7.0rc3-GE-1
