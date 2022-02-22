@@ -64,7 +64,7 @@ VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=ac
 #### Proton-6.21-GE-2
 - **Steam Launch Arguments**:
 ```
-WINE_FULLSCREEN_FSR=1 DXVK_HUD=compile gamemoderun mangohud %command%
+DXVK_HUD=compile gamemoderun mangohud %command%
 ```
 
 ## Farming Simulator 22
