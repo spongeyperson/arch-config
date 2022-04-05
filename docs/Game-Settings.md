@@ -1,4 +1,4 @@
-# Spongey's Personal Settings for Steam:
+# <center>Spongey's Personal Settings for Steam: </center>
 
 #### A compiled list of games that run under Linux with no issues, but may need minor tweaks.
 
@@ -49,7 +49,10 @@
 
 
 ## Red Dead Redemption 2
-#### Proton-7.0rc3-GE-1
+- #### Wine / Proton Info:
+  - Initial Test Version: `Proton-7.0rc3-GE-1`
+  - Last Known Working: `GE-Proton7-10`
+
 - **Steam Launch Arguments**:
 ```
 VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=aco gamemoderun mangohud %command% -vulkan -ignorepipelinecache
@@ -61,14 +64,20 @@ VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=ac
     - **Notice**: **Proton-7.0rc2-GE-1** has issues starting RGSC Launcher and will cause the game to never launch. Use **Standard Valve Proton** or **Proton-7.0rc3-GE-1** or newer. 
 
 ## Grand Theft Auto IV: The Complete Edition
-#### Proton-6.21-GE-2
+- #### Wine / Proton Info:
+  - Inital Test Version: `Proton-6.21-GE-2`
+  - Last Known Working: `Proton-6.21-GE-2`
+  
 - **Steam Launch Arguments**:
 ```
 DXVK_HUD=compile gamemoderun mangohud %command%
 ```
 
 ## Farming Simulator 22
-#### Proton v6.3.8
+- #### Wine / Proton Info:
+  - Initial Test Version: `Proton-6.38`
+  - Last Known Working: `Proton-6.38`
+
 - **Steam Launch Arguments**:
 ```
 VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=aco gamemoderun mangohud %command%
@@ -77,7 +86,10 @@ VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=ac
     - This game uses standard RADV ICD + ACO Recompiler, Gamemode Run, and Mangohud
 
 ## Spyro Reignited Trilogy
-#### Proton-7.0rc2-GE-1
+- #### Wine / Proton Info:
+  - Initial Test Version: `Proton-7.0rc2-GE-1`
+  - Last Known Working: `Proton-7.0rc2-GE-1`
+
 - **Steam Launch Arguments**:
 ```
 VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=aco gamemoderun mangohud %command% -nohmd -DX11
@@ -87,14 +99,20 @@ VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=ac
     - Without `-nohmd` and `-DX11` flags, this game will either crash at random intervals, or instantly crash without any warning before the game launches.
 
 ## Ghostrunner
-#### Proton-7.0rc6-GE-1
+- #### Wine / Proton Info:
+  - Initial Test Version: `Proton-7.0rc6-GE-1`
+  - Last Known Working: `Proton-7.0rc6-GE-1`
+
 - **Steam Launch Arguments**:
 ```
 VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=aco gamemoderun mangohud %command%
 ```
 
 ## Sleeping Dogs: Definitive Edition
-#### Proton 6.3-8
+- #### Wine / Proton Info:
+  - Initial Test Version: `Proton 6.3-8`
+  - Last Known Working: `Proton 6.3-8`
+
 - **Dependancies:**
     - `gamescope-git`<sup>[aur](https://aur.archlinux.org/packages/gamescope-git)</sup>
       - Required due to [Sleeping Dogs White Screen issue](https://github.com/ValveSoftware/Proton/issues/872#issuecomment-468116035). Default Proton Fix includes using a Virtual Desktop, however, the gamescope approach works nicer with Multi-Mon Setups.
