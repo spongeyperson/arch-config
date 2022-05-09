@@ -10,6 +10,7 @@
     - [Farming Simulator 22](#farming-simulator-22)
     - [Spyro Reignited Trilogy](#spyro-reignited-trilogy)
     - [Ghostrunner](#ghostrunner)
+    - [Satisfactory](#satisfactory)
     - [Sleeping Dogs: Definitive Edition](#sleeping-dogs-definitive-edition)
       - [Virtual Desktop & Multi-Monitor Fix](#how-to-fix-virtual-desktop--multi-mon-issues)
 
@@ -65,7 +66,6 @@ VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=ac
 
 ## Grand Theft Auto IV: The Complete Edition
 - #### Wine / Proton Info:
-  - Inital Test Version: `Proton-6.21-GE-2`
   - Last Known Working: `Proton-6.21-GE-2`
   
 - **Steam Launch Arguments**:
@@ -75,7 +75,6 @@ DXVK_HUD=compile gamemoderun mangohud %command%
 
 ## Farming Simulator 22
 - #### Wine / Proton Info:
-  - Initial Test Version: `Proton-6.38`
   - Last Known Working: `Proton-6.38`
 
 - **Steam Launch Arguments**:
@@ -87,7 +86,6 @@ VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=ac
 
 ## Spyro Reignited Trilogy
 - #### Wine / Proton Info:
-  - Initial Test Version: `Proton-7.0rc2-GE-1`
   - Last Known Working: `Proton-7.0rc2-GE-1`
 
 - **Steam Launch Arguments**:
@@ -100,12 +98,28 @@ VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=ac
 
 ## Ghostrunner
 - #### Wine / Proton Info:
-  - Initial Test Version: `Proton-7.0rc6-GE-1`
   - Last Known Working: `Proton-7.0rc6-GE-1`
 
 - **Steam Launch Arguments**:
 ```
 VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=aco gamemoderun mangohud %command%
+```
+
+## Satisfactory
+- #### Wine / Proton Info:
+  - Last Known Working: `GE-Proton7-10`
+
+- **Steam Launch Arguments**:
+```
+MESA_GL_VERSION_OVERRIDE=4.4COMPAT __GL_SHADER_DISK_CACHE=1 VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=aco gamemoderun mangohud %command% -opengl -SkipBuildPatchPrereq
+```
+
+## Assassins Creed Origins
+- #### Wine / Proton Info:
+  - Last Known Working: `GE-Proton7-9`
+- **Steam Launch Arguments:**
+```
+DXVK_LOG_LEVEL=none PROTON_USE_D9VK=1 %command%
 ```
 
 ## Sleeping Dogs: Definitive Edition
