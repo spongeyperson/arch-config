@@ -1,13 +1,31 @@
 # EFI System Partition
-UUID=BF05-B3B3      	/boot/efi 	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
+UUID=1E3B-DC2A      	/boot/efi 	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
 
 # ROOTFS 
-UUID=4a4ef5a9-6a05-4d3f-b9be-12031ee1a6ea	/         	btrfs     	rw,relatime,ssd,space_cache,subvol=/@		0 0
-UUID=4a4ef5a9-6a05-4d3f-b9be-12031ee1a6ea	/home     	btrfs     	rw,relatime,ssd,space_cache,subvol=/@home	0 0
-UUID=4a4ef5a9-6a05-4d3f-b9be-12031ee1a6ea	/root     	btrfs     	rw,relatime,ssd,space_cache,subvol=/@root	0 0
-UUID=4a4ef5a9-6a05-4d3f-b9be-12031ee1a6ea	/var/log  	btrfs     	rw,relatime,ssd,space_cache,subvol=/@log	0 0
-UUID=4a4ef5a9-6a05-4d3f-b9be-12031ee1a6ea	/var/cache	btrfs     	rw,relatime,ssd,space_cache,subvol=/@cache	0 0
-UUID=4a4ef5a9-6a05-4d3f-b9be-12031ee1a6ea	/var/tmp  	btrfs     	rw,relatime,ssd,space_cache,subvol=/@tmp	0 0
+UUID=4a4ef5a9-6a05-4d3f-b9be-12031ee1a6ea	/         	btrfs     	rw,relatime,ssd,space_cache,subvol=/@,compress=zstd:1		0 0
+UUID=4a4ef5a9-6a05-4d3f-b9be-12031ee1a6ea	/home     	btrfs     	rw,relatime,ssd,space_cache,subvol=/@home,compress=zstd:1	0 0
+UUID=4a4ef5a9-6a05-4d3f-b9be-12031ee1a6ea	/root     	btrfs     	rw,relatime,ssd,space_cache,subvol=/@root,compress=zstd:1	0 0
+UUID=4a4ef5a9-6a05-4d3f-b9be-12031ee1a6ea	/var/log  	btrfs     	rw,relatime,ssd,space_cache,subvol=/@log,compress=zstd:1	0 0
+UUID=4a4ef5a9-6a05-4d3f-b9be-12031ee1a6ea	/var/cache	btrfs     	rw,relatime,ssd,space_cache,subvol=/@cache,compress=zstd:1	0 0
+UUID=4a4ef5a9-6a05-4d3f-b9be-12031ee1a6ea	/var/tmp  	btrfs     	rw,relatime,ssd,space_cache,subvol=/@tmp,compress=zstd:1	0 0
 
-#SMB
+# SMB
 //192.168.0.99/8TB /mnt/8TB-Samba cifs _netdev,nofail,noauto,rw,users,uid=tyler,iocharset=utf8,file_mode=0777,dir_mode=0777,credentials=/home/tyler/.smbpasswd 	0 0
+//192.168.0.54/C /mnt/laptop cifs _netdev,nofail,noauto,rw,users,uid=tyler,iocharset=utf8,file_mode=0777,dir_mode=0777,credentials=/home/tyler/.smbpasswd 	0 0
+
+# Windows
+UUID=A28A27DA8A27AA2D /mnt/Windows ntfs uid=1000,gid=1000,rw,user,exec,umask=000,nosuid,nodev,nofail,x-gvfs-show 0 0
+
+##= LVM =##
+
+# Crucial MX500 SATA SSD
+UUID=26d73364-dd42-4d10-b7c2-0d7c5d125bb3 /mnt/MX500-SSD/ auto nosuid,nodev,nofail,x-gvfs-show,x-gvfs-name=Crucial%20MX500%20SSD,x-gvfs-icon=Crucial%20MX500%20SSD,x-gvfs-symbolic-icon=Crucial%20MX500%20SSD 0 0
+
+# WD 1TB HDD
+UUID=3f372d32-96b8-4569-894b-b54177cbbf3b /mnt/1TB-HDD auto nosuid,nodev,nofail,x-gvfs-show 0 0
+
+##! LVM !##
+
+#BinderFS for Anbox
+none                         /dev/binderfs binder   nofail  0      0
+

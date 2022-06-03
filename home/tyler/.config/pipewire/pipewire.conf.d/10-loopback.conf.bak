@@ -1,0 +1,32 @@
+ # Pipewire Loopback Sink
+ # 05/18/2022 - spongeyperson
+ 
+ context.modules = [
+    {   name = libpipewire-module-loopback
+        args = {
+            audio.position = [ FL FR ]
+            capture.props = {
+                #media.class = Audio/Sink
+                media.class = Audio/Source
+                node.name = Linein_Loopback
+                node.description = "Line-in Loopback"
+                #node.latency = 1024/48000
+                #audio.rate = 44100
+                #audio.channels = 2
+                #audio.position = [ FL FR ]
+                #node.target = "my-default-sink"
+            }
+            playback.props = {
+                media.class = Audio/Sink
+                node.name = Linein_Playback
+                node.description = "Line-in Playback"
+                #node.latency = 1024/48000
+                #audio.rate = 44100
+                #audio.channels = 2
+                #audio.position = [ FL FR ]
+                node.target = "alsa_card.pci-0000_0c_00.3"
+                node.passive = true
+            }
+        }
+    }
+]

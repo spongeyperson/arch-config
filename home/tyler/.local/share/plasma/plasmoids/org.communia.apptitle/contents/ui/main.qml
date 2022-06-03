@@ -132,14 +132,15 @@ Item {
               appLabel.text = activityInfo.activityName(activityInfo.currentActivity)
               iconItem.source ="preferences-activities"
             } else if (plasmoid.configuration.noWindowType === 1){
-              appLabel.text = "<b>Finder</b> &#009; &#009; &#009; &#009; &#009; &#009; File &#009; &#009; &#009; &#009; Edit &#009; &#009; &#009; &#009; View &#009; &#009; &#009; &#009; Go &#009; &#009; &#009; &#009; Tools &#009; &#009; &#009; &#009; Settings &#009; &#009; &#009; &#009; Help"
+              appLabel.text = virtualDesktopInfo.desktopNames[virtualDesktopInfo.currentDesktop-1]
               iconItem.source ="desktop"
             } else if ( plasmoid.configuration.noWindowType === 2){
               appLabel.text = plasmoid.configuration.noWindowText
               iconItem.source = ""
             }
         } else {
-            appLabel.text = qsTr("<b>") + actTask.AppName + qsTr("</b>") 
+            appLabel.text = textType === 1 ? actTask.AppName : replaceTitle(actTask.display)
+            iconItem.source = actTask.decoration
         }
         if (use_fixed_width) {
             main.width = plasmoid.configuration.fixedWidth

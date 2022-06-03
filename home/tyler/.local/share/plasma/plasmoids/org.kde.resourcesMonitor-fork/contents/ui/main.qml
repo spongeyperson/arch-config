@@ -14,16 +14,16 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http: //www.gnu.org/licenses/>.
  */
-import QtQuick 2.2
+import QtQuick 2.7
 import QtQuick.Layouts 1.1
-import QtGraphicalEffects 1.0
 import org.kde.plasma.plasmoid 2.0
 import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.kio 1.0 as Kio
+import org.kde.kcoreaddons 1.0 as KCoreAddons
 
-import "./components"
-import "./components/functions.js" as Functions
+import org.kde.ksysguard.sensors 1.0 as Sensors
+
+import "./components" as RMComponents
 
 Item {
     id: main
@@ -31,45 +31,39 @@ Item {
     property bool vertical: (plasmoid.formFactor == PlasmaCore.Types.Vertical)
     property color primaryColor: theme.highlightColor
     property color negativeColor: theme.negativeTextColor
-    property color neutralColor: theme.neutralTextColor
-    property color positiveColor: theme.positiveTextColor
 
     // Settings properties
     property bool verticalLayout: plasmoid.configuration.verticalLayout
+    property string actionService: plasmoid.configuration.actionService
 
     property bool showCpuMonitor: plasmoid.configuration.showCpuMonitor
     property bool showClock: plasmoid.configuration.showClock
     property bool showRamMonitor: plasmoid.configuration.showRamMonitor
-    property bool memoryInPercent: plasmoid.configuration.memoryInPercent
-    property bool showMemoryInPercent: memoryInPercent
-    property bool memoryUseAllocated: plasmoid.configuration.memoryUseAllocated
+    property bool showMemoryInPercent: plasmoid.configuration.memoryInPercent
+    property bool showSwapGraph: plasmoid.configuration.memorySwapGraph
     property bool showNetMonitor: plasmoid.configuration.showNetMonitor
     property double fontScale: (plasmoid.configuration.fontScale / 100)
-    property int downloadMaxKBs: plasmoid.configuration.downloadMaxKBs
-    property int uploadMaxKBs: plasmoid.configuration.uploadMaxKBs
 
     // Colors settings properties
     property color cpuColor: plasmoid.configuration.customCpuColor ? plasmoid.configuration.cpuColor : primaryColor
     property color ramColor: plasmoid.configuration.customRamColor ? plasmoid.configuration.ramColor : primaryColor
     property color swapColor: plasmoid.configuration.customSwapColor ? plasmoid.configuration.swapColor : negativeColor
     property color netDownColor: plasmoid.configuration.customNetDownColor ? plasmoid.configuration.netDownColor : primaryColor
-    property color netUpColor: plasmoid.configuration.customNetUpColor ? plasmoid.configuration.netUpColor : positiveColor
-    property color warningColor: plasmoid.configuration.customWarningColor ? plasmoid.configuration.warningColor : neutralColor
-
-    property int graphGranularity: 20
+    property color netUpColor: plasmoid.configuration.customNetUpColor ? plasmoid.configuration.netUpColor : negativeColor
 
     // Component properties
     property int containerCount: (showCpuMonitor?1:0) + (showRamMonitor?1:0) + (showNetMonitor?1:0)
-    property int itemMargin: 10
+    property int itemMargin: plasmoid.configuration.graphMargin
     property double parentWidth: parent === null ? 0 : parent.width
     property double parentHeight: parent === null ? 0 : parent.height
-    property double itemWidth:  vertical ? ( verticalLayout ? parentWidth : (parentWidth - itemMargin) / 2 ) : ( verticalLayout ? (parentHeight - itemMargin) / 2 : parentHeight )
-    property double itemHeight: itemWidth
-    property double fontPixelSize: itemHeight * fontScale
+    property double initWidth:  vertical ? (verticalLayout ? parentWidth : (parentWidth - itemMargin) / 2) : (verticalLayout ? (parentHeight - itemMargin) / 2 : parentHeight)
+    property double itemWidth: plasmoid.configuration.customGraphWidth ? plasmoid.configuration.graphWidth : (initWidth * (verticalLayout ? 1 : 1.5))
+    property double itemHeight: plasmoid.configuration.customGraphHeight ? plasmoid.configuration.graphHeight : initWidth
+    property double fontPixelSize: verticalLayout ? (itemHeight / 1.4 * fontScale) : (itemHeight * fontScale)
     property double widgetWidth: !verticalLayout ? (itemWidth*containerCount + itemMargin*containerCount) : itemWidth
-    property double widgetHeight: verticalLayout ? (itemWidth*containerCount + itemMargin*containerCount) : itemWidth
+    property double widgetHeight: verticalLayout ? (itemHeight*containerCount + itemMargin*containerCount) : itemHeight
 
-    Layout.preferredWidth:  widgetWidth
+    Layout.preferredWidth: widgetWidth
     Layout.maximumWidth: widgetWidth
     Layout.preferredHeight: widgetHeight
     Layout.maximumHeight: widgetHeight
@@ -82,195 +76,96 @@ Item {
         id: kRun
     }
 
+    // Bind settigns change
     onFontPixelSizeChanged: {
-        for (var monitor of [cpuMonitor, ramMonitor, netMonitor]) {
-            monitor.firstLineInfoLabel.font.pixelSize = fontPixelSize
-            monitor.firstLineValueLabel.font.pixelSize = fontPixelSize
-            monitor.secondLineInfoLabel.font.pixelSize = fontPixelSize
-            monitor.secondLineValueLabel.font.pixelSize = fontPixelSize
-        }
-    }
-
-    // Graph data
-
-    PlasmaCore.DataSource {
-        id: dataSource
-        engine: "systemmonitor"
-
-        property string cpuSystem: "cpu/system/"
-        property string averageClock: cpuSystem + "AverageClock"
-        property string totalLoad: cpuSystem + "TotalLoad"
-        property string memPhysical: "mem/physical/"
-        property string memFree: memPhysical + "free"
-        property string memApplication: memPhysical + (memoryUseAllocated ? "allocated" : "application")
-        property string memUsed: memPhysical + "used"
-        property string swap: "mem/swap/"
-        property string swapUsed: swap + "used"
-        property string swapFree: swap + "free"
-        property string networkInterface: "network/interfaces/" + plasmoid.configuration.networkSensorInterface + "/"
-        property string downloadTotal: networkInterface + "receiver/data"
-        property string uploadTotal: networkInterface + "transmitter/data"
-
-        property double totalCpuLoad: .0
-        property int averageCpuClock: 0
-        property int ramUsedBytes: 0
-        property double ramUsedProportion: 0
-        property int swapUsedBytes: 0
-        property double swapUsedProportion: 0
-        property double downloadKBs: 0
-        property double uploadKBs: 0
-        property double downloadProportion: 0
-        property double uploadProportion: 0
-
-        connectedSources: [memFree, memUsed, memApplication, swapUsed, swapFree, averageClock, totalLoad, downloadTotal, uploadTotal ]
-
-        onNewData: {
-            if (data.value === undefined) {
-                return
-            }
-            if (sourceName == memApplication) {
-                ramUsedBytes = parseInt(data.value)
-                ramUsedProportion = fitMemoryUsage(data.value)
-            }
-            else if (sourceName == swapUsed) {
-                swapUsedBytes = parseInt(data.value)
-                swapUsedProportion = fitSwapUsage(data.value)
-            }
-            else if (sourceName == totalLoad) {
-                totalCpuLoad = data.value / 100
-            }
-            else if (sourceName == averageClock) {
-                averageCpuClock = parseInt(data.value)
-                allUsageProportionChanged()
-            }
-            else if (sourceName == downloadTotal) {
-                downloadKBs = parseFloat(data.value)
-                downloadProportion = fitDownloadRate(data.value)
-            }
-            else if (sourceName == uploadTotal) {
-                uploadKBs = parseFloat(data.value)
-                uploadProportion = fitUploadRate(data.value)
-            }
-        }
-        interval: 1000 * plasmoid.configuration.updateInterval
-    }
-
-    function fitMemoryUsage(usage) {
-        var memFree = dataSource.data[dataSource.memFree]
-        var memUsed = dataSource.data[dataSource.memUsed]
-        if (!memFree || !memUsed) {
-            return 0
-        }
-        return (usage / (parseFloat(memFree.value) +
-                         parseFloat(memUsed.value)))
-    }
-
-    function fitSwapUsage(usage) {
-        var swapFree = dataSource.data[dataSource.swapFree]
-        if (!swapFree) {
-            return 0
-        }
-        return (usage / (parseFloat(usage) + parseFloat(swapFree.value)))
-    }
-
-    function fitDownloadRate(rate) {
-        if (!downloadMaxKBs) {
-            return 0
-        }
-        return (rate / downloadMaxKBs)
-    }
-
-    function fitUploadRate(rate) {
-        if (!uploadMaxKBs) {
-            return 0
-        }
-        return (rate / uploadMaxKBs)
-    }
-
-    ListModel {
-        id: cpuGraphModel
-    }
-
-    ListModel {
-        id: ramGraphModel
-    }
-
-    ListModel {
-        id: swapGraphModel
-    }
-
-    ListModel {
-        id: uploadGraphModel
-    }
-
-    ListModel {
-        id: downloadGraphModel
-    }
-
-    function allUsageProportionChanged() {
-        if (showCpuMonitor) {
-            var totalCpuProportion = dataSource.totalCpuLoad
-
-            cpuMonitor.firstLineValueLabel.text = Math.round(totalCpuProportion * 100) + '%'
-            cpuMonitor.firstLineValueLabel.color = totalCpuProportion > 0.9 ? warningColor : theme.textColor
-            cpuMonitor.secondLineValueLabel.text = Functions.getHumanReadableClock(dataSource.averageCpuClock)
-
-            Functions.addGraphData(cpuGraphModel, totalCpuProportion, graphGranularity)
-        }
-
-        if (showRamMonitor) {
-            var totalRamProportion = dataSource.ramUsedProportion
-            var totalSwapProportion = dataSource.swapUsedProportion
-
-            Functions.addGraphData(ramGraphModel, totalRamProportion, graphGranularity)
-            Functions.addGraphData(swapGraphModel, totalSwapProportion, graphGranularity)
-
-            ramMonitor.firstLineValueLabel.text = showMemoryInPercent ? Math.round(totalRamProportion * 100) + '%'
-                : Functions.getHumanReadableMemory(dataSource.ramUsedBytes)
-            ramMonitor.firstLineValueLabel.color = totalRamProportion > 0.9 ? warningColor : theme.textColor
-            ramMonitor.secondLineValueLabel.text = showMemoryInPercent ? Math.round(totalSwapProportion * 100) + '%'
-                : Functions.getHumanReadableMemory(dataSource.swapUsedBytes)
-            ramMonitor.secondLineValueLabel.color = totalSwapProportion > 0.9 ? warningColor : theme.textColor
-            ramMonitor.secondLineValueLabel.visible = ramMonitor.secondLineValueLabel.enabled =
-                !ramMonitor.secondLineInfoLabel.visible && totalSwapProportion > 0
-        }
-
-        if (showNetMonitor) {
-            var totalDownloadProportion = dataSource.downloadProportion
-            var totalUploadProportion = dataSource.uploadProportion
-
-            Functions.addGraphData(uploadGraphModel, totalUploadProportion, graphGranularity)
-            Functions.addGraphData(downloadGraphModel, totalDownloadProportion, graphGranularity)
-
-            netMonitor.firstLineValueLabel.text = Functions.getHumanReadableNetRate(dataSource.downloadKBs)
-            netMonitor.secondLineValueLabel.text = Functions.getHumanReadableNetRate(dataSource.uploadKBs)
+        for (var monitor of [cpuGraph, ramGraph, netGraph]) {
+            monitor.firstLineLabel.font.pixelSize = fontPixelSize
+            monitor.secondLineLabel.font.pixelSize = fontPixelSize
         }
     }
 
     onShowClockChanged: {
-        cpuMonitor.secondLineValueLabel.visible = showClock
+        if (!showClock) {
+            cpuGraph.secondLineLabel.visible = false
+        }
     }
 
     onShowMemoryInPercentChanged: {
-        allUsageProportionChanged()
+        if (ramGraph.maxMemory == 0) {
+            return
+        }
+
+        if (showMemoryInPercent) {
+            ramGraph.yRange.to = 100
+        } else {
+            ramGraph.yRange.to = ramGraph.maxMemory
+        }
+        ramGraph.updateSensors()
     }
 
-    // Components
-    GraphItem {
-        id: cpuMonitor
+    onShowSwapGraphChanged: {
+        if (ramGraph.maxMemory != 0) {
+            ramGraph.updateSensors()
+        }
+    }
+
+    // Graphs
+    RMComponents.SensorGraph {
+        id: cpuGraph
+        sensors: ["cpu/all/usage"]
+        colors: [cpuColor]
+
+        visible: showCpuMonitor
         width: itemWidth
         height: itemHeight
 
-        visible: showCpuMonitor
-        firstLineInfoText: 'CPU'
-        firstLineInfoTextColor: cpuColor
-        secondLineInfoText: showClock ? 'Clock' : ''
-        firstGraphModel: cpuGraphModel
-        firstGraphBarColor: cpuColor
+        label: "CPU"
+        labelColor: cpuColor
+        secondLabel: showClock ? i18n("⏲ Clock") : ""
+
+        yRange {
+            from: 0
+            to: 100
+        }
+
+        // Display first core frequency
+        onDataTick: {
+            if (canSeeValue(1)) {
+                secondLineLabel.text = cpuFrequencySensor.formattedValue
+                secondLineLabel.visible = true
+            }
+        }
+        Sensors.Sensor {
+            id: cpuFrequencySensor
+            enabled: showClock
+            sensorId: "cpu/cpu0/frequency"
+        }
+        onShowValueWhenMouseMove: {
+            secondLineLabel.text = cpuFrequencySensor.formattedValue
+            secondLineLabel.visible = true
+        }
+
+        function canSeeValue(column) {
+            if (column === 1 && !showClock) {
+                return false
+            }
+
+            return textContainer.valueVisible
+        }
     }
 
-    GraphItem {
-        id: ramMonitor
+    RMComponents.SensorGraph {
+        id: ramGraph
+        colors: [ramColor, swapColor]
+        secondLabelWhenZero: false
+        // TODO: stack the graph values for real fill percent ?
+
+        yRange {
+            from: 0
+            to: 100
+        }
+
+        visible: showRamMonitor
         width: itemWidth
         height: itemHeight
         anchors.left: parent.left
@@ -278,19 +173,62 @@ Item {
         anchors.top: parent.top
         anchors.topMargin: showCpuMonitor && verticalLayout ? itemWidth + itemMargin : 0
 
-        visible: showRamMonitor
-        firstLineInfoText: 'RAM'
-        firstLineInfoTextColor: ramColor
-        secondLineInfoText: 'Swap'
-        secondLineInfoTextColor: swapColor
-        firstGraphModel: ramGraphModel
-        firstGraphBarColor: ramColor
-        secondGraphModel: swapGraphModel
-        secondGraphBarColor: swapColor
+        label: "RAM"
+        labelColor: ramColor
+        secondLabel: showSwapGraph ? "Swap" : ""
+        secondLabelColor: swapColor
+
+        // Get max y of graph
+        property var maxMemory: 0
+        Sensors.SensorDataModel {
+            id: totalSensorsModel
+            sensors: ["memory/physical/total", "memory/swap/total"]
+            enabled: true
+
+            property var totalMemory: -1
+            property var totalSwap: -1
+            onDataChanged: {
+                if(topLeft.column === 0) {
+                    totalMemory = parseInt(data(topLeft, Sensors.SensorDataModel.Value))
+                }
+                else if (topLeft.column === 1) {
+                    totalSwap = parseInt(data(topLeft, Sensors.SensorDataModel.Value))
+                }
+
+                if ((!isNaN(totalMemory) && totalMemory !== -1) && (!isNaN(totalSwap) && totalSwap !== -1)) {
+                    enabled = false
+
+                    ramGraph.maxMemory = Math.max(totalMemory, totalSwap)
+                    if (!showMemoryInPercent) {
+                        ramGraph.yRange.to = ramGraph.maxMemory
+                    }
+                    ramGraph.updateSensors()
+                }
+            }
+        }
+
+        // Set the color of Swap
+        onShowValueWhenMouseMove: {
+            secondLineLabel.color = swapColor
+        }
+
+        function updateSensors() {
+            var suffix = showMemoryInPercent ? "Percent" : ""
+
+            if (showSwapGraph) {
+                sensors = ["memory/physical/used" + suffix, "memory/swap/used" + suffix]
+            } else {
+                sensors = ["memory/physical/used" + suffix]
+            }
+        }
     }
 
-    GraphItem {
-        id: netMonitor
+    RMComponents.NetworkGraph {
+        id: netGraph
+
+        colors: [netDownColor, netUpColor]
+
+        visible: showNetMonitor
         width: itemWidth
         height: itemHeight
         anchors.left: parent.left
@@ -298,15 +236,10 @@ Item {
         anchors.top: parent.top
         anchors.topMargin: (showCpuMonitor && verticalLayout ? itemWidth + itemMargin: 0) + (showRamMonitor && verticalLayout ? itemWidth + itemMargin : 0)
 
-        visible: showNetMonitor
-        firstLineInfoText: 'Down'
-        firstLineInfoTextColor: netDownColor
-        secondLineInfoText: 'Up'
-        secondLineInfoTextColor: netUpColor
-        firstGraphModel: downloadGraphModel
-        firstGraphBarColor: netDownColor
-        secondGraphModel: uploadGraphModel
-        secondGraphBarColor: netUpColor
+        label: i18n("⇘ Down")
+        labelColor: netDownColor
+        secondLabel: i18n("⇗ Up")
+        secondLabelColor: netUpColor
     }
 
     // Click action
@@ -314,8 +247,7 @@ Item {
         id: mouseArea
         anchors.fill: parent
         onClicked: {
-            kRun.openService("org.kde.ksysguard")
+            kRun.openService(actionService)
         }
     }
-
 }

@@ -1,8 +1,8 @@
-import QtQuick 2.5
-import QtQuick.Layouts 1.15
-import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.plasmoid 2.0
-import org.kde.kwindowsystem 1.0
+import QtQuick 2
+import QtQuick.Layouts 1
+import org.kde.plasma.core 2 as PlasmaCore
+import org.kde.plasma.plasmoid 2
+import org.kde.kwindowsystem 1
 
 Item {
     id: root
@@ -43,8 +43,8 @@ Item {
         readonly property int minSize: Math.min(width, height)
         PlasmaCore.SvgItem {
             id: svgItem
-            property var compOnIcon: plasmoid.file('', 'ui/comp-on.svg')
-            property var compOffIcon: plasmoid.file('', 'ui/comp-off.svg')
+            property var compOnIcon: plasmoid.configuration.defaultIcon ? plasmoid.file('', 'ui/comp-on.svg') : (plasmoid.configuration.whiteIcon ? plasmoid.file('', 'ui/comp-on-white.svg') : (plasmoid.configuration.blackIcon ? plasmoid.file('', 'ui/comp-on-black.svg') : (plasmoid.configuration.customCompOnIcon || plasmoid.file('', 'ui/comp-on.svg'))))
+            property var compOffIcon: plasmoid.configuration.defaultIcon ? plasmoid.file('', 'ui/comp-off.svg') : (plasmoid.configuration.whiteIcon ? plasmoid.file('', 'ui/comp-off-white.svg') : (plasmoid.configuration.blackIcon ? plasmoid.file('', 'ui/comp-off-black.svg') : (plasmoid.configuration.customCompOffIcon || plasmoid.file('', 'ui/comp-off.svg'))))
             //active: compactMouseArea.containsMouse
             //source: compActive ? "comp-on.svg" : "comp-off.svg"
             anchors.centerIn: parent
@@ -54,9 +54,11 @@ Item {
             width: panelItem.minSize * widthRatio
             height: panelItem.minSize * heightRatio
             smooth: true
-            svg: PlasmaCore.Svg {
+            PlasmaCore.IconItem {
                 id: svg
-                imagePath: (compActive ? svgItem.compOnIcon : svgItem.compOffIcon)
+                anchors.centerIn: parent
+                anchors.fill: parent
+                source: (compActive ? svgItem.compOnIcon : svgItem.compOffIcon)
             }
 
             MouseArea {

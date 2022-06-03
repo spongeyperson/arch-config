@@ -11,6 +11,11 @@ alias fishconfig="vim /home/tyler/.config/fish/config.fish"
 alias vi="vim"
 alias phone="scrcpy -t --bit-rate 15M --max-fps 60 --window-title 'Samsung Galaxy S9+'"
 alias grep="grep --color=always"
+alias mounts="cat /proc/mounts"
+# alias neofetch="neofetch --config /home/tyler/.config/neofetch/fedora.conf --ascii_distro Fedora"
+alias virsh="virsh --connect=qemu:///system"
+
+alias chaur="yay --config /etc/pacman-chaotic.conf"
 
 # File Management Tweaks
 alias mv="mv -v"
@@ -47,3 +52,14 @@ alias amdvlk="VK_ICD_FILENAMES='/usr/share/vulkan/icd.d/amd_icd64.json'"
 alias amdvlk64="VK_ICD_FILENAMES='/usr/share/vulkan/icd.d/amd_icd64.json'"
 alias amdvlk32="VK_ICD_FILENAMES='/usr/share/vulkan/icd.d/amd_icd32.json'"
 ##
+
+
+## Flatpak Fish Workaround
+set -l xdg_data_home $XDG_DATA_HOME ~/.local/share
+set -gx --path XDG_DATA_DIRS $xdg_data_home[1]/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
+
+for flatpakdir in ~/.local/share/flatpak/exports/bin /var/lib/flatpak/exports/bin
+    if test -d $flatpakdir
+        contains $flatpakdir $PATH; or set -a PATH $flatpakdir
+    end
+end
