@@ -13,6 +13,7 @@
     - [Satisfactory](#satisfactory)
     - [Sleeping Dogs: Definitive Edition](#sleeping-dogs-definitive-edition)
       - [Virtual Desktop & Multi-Monitor Fix](#how-to-fix-virtual-desktop--multi-mon-issues)
+    - [Final Fantasy XV]()
 
 ## Commonly Used Steam Launch Arguments:
 - ### Wine Specific
@@ -49,10 +50,10 @@
   * `-f`: create a full-screen window.
 
 
-## Red Dead Redemption 2
+## Red Dead Redemption 2:
 - #### Wine / Proton Info:
-  - Initial Test Version: `Proton-7.0rc3-GE-1`
-  - Last Known Working: `GE-Proton7-10`
+  - Initial Test Version: <span style="color:green">`Proton-7.0rc3-GE-1`</span>
+  - Last Known Working: <span style="color:green">`GE-Proton7-10`</span>
 
 - **Steam Launch Arguments**:
 ```
@@ -64,18 +65,18 @@ VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=ac
     - `-vulkan`: is required to get the game to display 
     - **Notice**: **Proton-7.0rc2-GE-1** has issues starting RGSC Launcher and will cause the game to never launch. Use **Standard Valve Proton** or **Proton-7.0rc3-GE-1** or newer. 
 
-## Grand Theft Auto IV: The Complete Edition
+## Grand Theft Auto IV: The Complete Edition:
 - #### Wine / Proton Info:
-  - Last Known Working: `Proton-6.21-GE-2`
+  - Last Known Working: <span style="color:green">`Proton-6.21-GE-2`</span>
   
 - **Steam Launch Arguments**:
 ```
 DXVK_HUD=compile gamemoderun mangohud %command%
 ```
 
-## Farming Simulator 22
+## Farming Simulator 22:
 - #### Wine / Proton Info:
-  - Last Known Working: `Proton-6.38`
+  - Last Known Working: <span style="color:green">`Proton 6.3-8`</span>
 
 - **Steam Launch Arguments**:
 ```
@@ -84,9 +85,9 @@ VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=ac
 - **Notes**: 
     - This game uses standard RADV ICD + ACO Recompiler, Gamemode Run, and Mangohud
 
-## Spyro Reignited Trilogy
+## Spyro Reignited Trilogy:
 - #### Wine / Proton Info:
-  - Last Known Working: `Proton-7.0rc2-GE-1`
+  - Last Known Working: <span style="color:green">`Proton-7.0rc2-GE-1`</span>
 
 - **Steam Launch Arguments**:
 ```
@@ -96,36 +97,35 @@ VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=ac
     - This game uses standard RADV ICD + ACO Recompiler, Gamemode Run, and Mangohud
     - Without `-nohmd` and `-DX11` flags, this game will either crash at random intervals, or instantly crash without any warning before the game launches.
 
-## Ghostrunner
+## Ghostrunner:
 - #### Wine / Proton Info:
-  - Last Known Working: `Proton-7.0rc6-GE-1`
+  - Last Known Working: <span style="color:green">`Proton-7.0rc6-GE-1`</span>
 
 - **Steam Launch Arguments**:
 ```
 VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=aco gamemoderun mangohud %command%
 ```
 
-## Satisfactory
+## Satisfactory:
 - #### Wine / Proton Info:
-  - Last Known Working: `GE-Proton7-10`
+  - Last Known Working: <span style="color:green">`GE-Proton7-10`</span>
 
 - **Steam Launch Arguments**:
 ```
 MESA_GL_VERSION_OVERRIDE=4.4COMPAT __GL_SHADER_DISK_CACHE=1 VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=aco gamemoderun mangohud %command% -opengl -SkipBuildPatchPrereq
 ```
 
-## Assassins Creed Origins
+## Assassins Creed Origins:
 - #### Wine / Proton Info:
-  - Last Known Working: `GE-Proton7-9`
+  - Last Known Working: <span style="color:green">`GE-Proton7-9`</span>
 - **Steam Launch Arguments:**
 ```
 DXVK_LOG_LEVEL=none PROTON_USE_D9VK=1 %command%
 ```
 
-## Sleeping Dogs: Definitive Edition
+## Sleeping Dogs: Definitive Edition:
 - #### Wine / Proton Info:
-  - Initial Test Version: `Proton 6.3-8`
-  - Last Known Working: `Proton 6.3-8`
+  - Last Known Working: <span style="color:green">`Proton 6.3-8`</span>
 
 - **Dependancies:**
     - `gamescope-git`<sup>[aur](https://aur.archlinux.org/packages/gamescope-git)</sup>
@@ -142,3 +142,14 @@ VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=ac
     4. Click `Run winecfg`
     5. In the "`Graphics`" tab of winecfg, uncheck: `Emulate a virtual desktop`
     6. add Steam Launch Arguments, and replace both instances of Width and Height (`-w` & `-h`) to your Monitor's Resolution.
+
+## Final Fantasy XV: "Windows" Edition:
+- #### Wine / Proton Info:
+  - Initial Test Version: <span style="color:red">`GE-Proton7-18`</span><sup>[Regression](https://github.com/ValveSoftware/Proton/issues/74#event-5256563749)</sup>
+    -  **<span style="color:red">Regression Info</span>**:
+       -  Every version past `Proton 7.0-2` is known to have a regression where a message pops up containing: ["Unable to create interface ISteamUser" error](https://user-images.githubusercontent.com/3923810/44459007-53c26c80-a608-11e8-9a79-734b6050b927.png), or the game starts with a Black Screen; along with various other issues with the game past this specific Proton version. Use with Caution.
+  - Last Known Working: <span style="color:green">`Proton 7.0-2`</span>
+- **Steam Launch Arguments:**
+```
+VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=aco gamemoderun mangohud %command%
+```
