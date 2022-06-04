@@ -23,14 +23,18 @@
 <img src="https://user-images.githubusercontent.com/28176188/142365376-270d160f-33c3-4012-a3d9-541ab65bfdb6.png" width="20" height="20"> Radeon Specific:
 
 - RAD-V ACO Recompiler (Recommended): [^1]
-```bash
-VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=aco suspend_compositing gamemoderun mangohud %command%
-```
+  ```bash
+  VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=aco suspend_compositing gamemoderun mangohud %command%
+  ```
 
 - AMDVLK: [^1]
-```bash
-VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/amd_icd64.json suspend_compositing gamemoderun mangohud %command%
-```
+  ```bash
+  VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/amd_icd64.json suspend_compositing gamemoderun mangohud %command%
+  ```
+
+- Additional Flags for Radeon dGPU Switchable Graphics (Using [`amdgpu`](https://wiki.archlinux.org/title/AMDGPU)'s native [`prime` GPU Offloading](https://wiki.archlinux.org/title/PRIME#PRIME_GPU_offloading=) functions):
+  - For Non-Steam Applications: `DRI_PRIME=1`
+  - or for Steam: `DRI_PRIME=1 %command%`
 
 <img src="https://user-images.githubusercontent.com/28176188/142362826-8090a147-94ee-4f67-a3ed-f87058a6797d.png" width="20" height="20"> Nvidia Specific:
 
