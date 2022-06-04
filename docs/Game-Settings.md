@@ -13,7 +13,8 @@
     - [Satisfactory](#satisfactory)
     - [Sleeping Dogs: Definitive Edition](#sleeping-dogs-definitive-edition)
       - [Virtual Desktop & Multi-Monitor Fix](#how-to-fix-virtual-desktop--multi-mon-issues)
-    - [Final Fantasy XV]()
+    - [Final Fantasy XV](#final-fantasy-xv-"windows"-edition)
+    - [Bioshock Remastered](#bioshock-remastered)
 
 ## Commonly Used Steam Launch Arguments:
 - ### Wine Specific
@@ -26,7 +27,7 @@
   - Show DXVK Shader Compilation using DXVK HUD
     - `DXVK_HUD=compile`
 - ### [Valve GAMESCOPE (Formerly steamcompmgr)](https://github.com/Plagman/gamescope)
-  ```sh
+  ```bash
   # Upscale a 720p game to 1440p with integer scaling
   gamescope -h 720 -H 1440 -n -- %command%
 
@@ -52,13 +53,13 @@
 
 ## Red Dead Redemption 2:
 - #### Wine / Proton Info:
-  - Initial Test Version: <span style="color:green">`Proton-7.0rc3-GE-1`</span>
-  - Last Known Working: <span style="color:green">`GE-Proton7-10`</span>
+  - Initial Test Version: `Proton-7.0rc3-GE-1`
+  - Last Known Working: `GE-Proton7-10`
 
 - **Steam Launch Arguments**:
-```
-VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=aco gamemoderun mangohud %command% -vulkan -ignorepipelinecache
-```
+  ```bash
+  VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=aco gamemoderun mangohud %command% -vulkan -ignorepipelinecache
+  ```
 - **Notes**: 
     - This game uses standard RADV ICD + ACO Recompiler, Gamemode Run, and Mangohud
     - `-ignorepipelinecache`: Use this flag for performance reasons.
@@ -67,48 +68,48 @@ VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=ac
 
 ## Grand Theft Auto IV: The Complete Edition:
 - #### Wine / Proton Info:
-  - Last Known Working: <span style="color:green">`Proton-6.21-GE-2`</span>
+  - Last Known Working: `Proton-6.21-GE-2`
   
 - **Steam Launch Arguments**:
-```
-DXVK_HUD=compile gamemoderun mangohud %command%
-```
+  ```bash
+  DXVK_HUD=compile gamemoderun mangohud %command%
+  ```
 
 ## Farming Simulator 22:
 - #### Wine / Proton Info:
-  - Last Known Working: <span style="color:green">`Proton 6.3-8`</span>
+  - Last Known Working: `Proton 6.3-8`
 
 - **Steam Launch Arguments**:
-```
-VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=aco gamemoderun mangohud %command%
-```
+  ```bash
+  VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=aco gamemoderun mangohud %command%
+  ```
 - **Notes**: 
     - This game uses standard RADV ICD + ACO Recompiler, Gamemode Run, and Mangohud
 
 ## Spyro Reignited Trilogy:
 - #### Wine / Proton Info:
-  - Last Known Working: <span style="color:green">`Proton-7.0rc2-GE-1`</span>
+  - Last Known Working: `Proton-7.0rc2-GE-1`
 
 - **Steam Launch Arguments**:
-```
-VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=aco gamemoderun mangohud %command% -nohmd -DX11
-```
+  ```bash
+  VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=aco gamemoderun mangohud %command% -nohmd -DX11
+  ```
 - **Notes**: 
     - This game uses standard RADV ICD + ACO Recompiler, Gamemode Run, and Mangohud
     - Without `-nohmd` and `-DX11` flags, this game will either crash at random intervals, or instantly crash without any warning before the game launches.
 
 ## Ghostrunner:
 - #### Wine / Proton Info:
-  - Last Known Working: <span style="color:green">`Proton-7.0rc6-GE-1`</span>
+  - Last Known Working: `Proton-7.0rc6-GE-1`
 
 - **Steam Launch Arguments**:
-```
-VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=aco gamemoderun mangohud %command%
-```
+  ```bash
+  VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=aco gamemoderun mangohud %command%
+  ```
 
 ## Satisfactory:
 - #### Wine / Proton Info:
-  - Last Known Working: <span style="color:green">`GE-Proton7-10`</span>
+  - Last Known Working: `GE-Proton7-10`
 
 - **Steam Launch Arguments**:
 ```
@@ -117,23 +118,23 @@ MESA_GL_VERSION_OVERRIDE=4.4COMPAT __GL_SHADER_DISK_CACHE=1 VK_ICD_FILENAMES=/us
 
 ## Assassins Creed Origins:
 - #### Wine / Proton Info:
-  - Last Known Working: <span style="color:green">`GE-Proton7-9`</span>
+  - Last Known Working: `GE-Proton7-9`
 - **Steam Launch Arguments:**
-```
-DXVK_LOG_LEVEL=none PROTON_USE_D9VK=1 %command%
-```
+  ```bash
+  DXVK_LOG_LEVEL=none PROTON_USE_D9VK=1 %command%
+  ```
 
 ## Sleeping Dogs: Definitive Edition:
 - #### Wine / Proton Info:
-  - Last Known Working: <span style="color:green">`Proton 6.3-8`</span>
+  - Last Known Working: `Proton 6.3-8`
 
 - **Dependancies:**
     - `gamescope-git`<sup>[aur](https://aur.archlinux.org/packages/gamescope-git)</sup>
       - Required due to [Sleeping Dogs White Screen issue](https://github.com/ValveSoftware/Proton/issues/872#issuecomment-468116035). Default Proton Fix includes using a Virtual Desktop, however, the gamescope approach works nicer with Multi-Mon Setups.
 - **Steam Launch Arguments:**
-```
-VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=aco gamemoderun gamescope -w 2560 -h 1440 -W 2560 -H 1440 -b -- mangohud %command%
-```
+  ```bash
+  VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=aco gamemoderun gamescope -w 2560 -h 1440 -W 2560 -H 1440 -b -- mangohud %command%
+  ```
 - ### Fixes:
   - #### How to fix Virtual Desktop / Multi-Mon Issues:
     1. Install Dependancies
@@ -145,11 +146,22 @@ VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=ac
 
 ## Final Fantasy XV: "Windows" Edition:
 - #### Wine / Proton Info:
-  - Initial Test Version: <span style="color:red">`GE-Proton7-18`</span><sup>[Regression](https://github.com/ValveSoftware/Proton/issues/74#event-5256563749)</sup>
-    -  **<span style="color:red">Regression Info</span>**:
+  - Initial Test Version: `GE-Proton7-18`<sup>[Regression](https://github.com/ValveSoftware/Proton/issues/74#event-5256563749)</sup>
+    -  **Regression Info**:
        -  Every version past `Proton 7.0-2` is known to have a regression where a message pops up containing: ["Unable to create interface ISteamUser" error](https://user-images.githubusercontent.com/3923810/44459007-53c26c80-a608-11e8-9a79-734b6050b927.png), or the game starts with a Black Screen; along with various other issues with the game past this specific Proton version. Use with Caution.
-  - Last Known Working: <span style="color:green">`Proton 7.0-2`</span>
+  - Last Known Working: `Proton 7.0-2`
 - **Steam Launch Arguments:**
-```
-VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=aco gamemoderun mangohud %command%
-```
+  ```bash
+  VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=aco gamemoderun mangohud %command%
+  ```
+## Bioshock Remastered:
+- #### Wine / Proton Info:
+  - Working Status: `Broken, Work In Progress`
+  - Initial Test Version: ~~`GE-Proton7-18`~~ <sup>Broken</sup>
+  - Last Known Working: `Proton Experimental` <sup>*Possibly* Also Broken, further testing needed.</sup>
+- Issues:
+  - Game is known to crash upon saving, loading the map (m key), or loading a new world. These issues are sporadic and random, and no discernable cause has been placed yet. More testing is needed.
+- **Steam Launch Arguments:**
+  ```bash
+  AMD_VULKAN_ICD=RADV gamemoderun mangohud %command% -nointro
+  ```
