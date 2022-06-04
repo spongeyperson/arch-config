@@ -42,5 +42,7 @@ VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/amd_icd64.json suspend_compositing game
 
 - Work In Progress
 
+###### <p align=center> Note: I do <ins>not</ins> pretend to own any content on this git repository. All contents are copyright of their respective owners. This repository is intented for recreating Linux installs only. Content on this repository is installed <ins>at your own risk</ins>. If you have any issue with the content on this repository, please make a github issue and i will create a submodule linking to your project instead.</p>
+
 [^Note]: Unused Directory 
 [^1]: "[mangohud](home/tyler/.config/MangoHud/MangoHud.conf)" and "[suspend_compositing](usr/local/bin/suspend_compositing)" commands refer to the following config files required to make them work.
