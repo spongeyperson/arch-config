@@ -26,7 +26,10 @@
   ```bash
   VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=aco suspend_compositing gamemoderun mangohud %command%
   ```
-
+  - Possible Alternatives:
+    ```bash
+    AMD_VULKAN_ICD=RADV RADV_PERFTEST=aco
+    ```
 - AMDVLK: [^1]
   ```bash
   VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/amd_icd64.json suspend_compositing gamemoderun mangohud %command%
