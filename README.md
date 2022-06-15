@@ -5,10 +5,10 @@
 #### <p align=center> Index:
   - **This Repo**:
     - Documentation:
-      - [Wine Game Settings](docs/Game-Settings.md)
-      - [Custom KDE Panels](home/tyler/.local/share/plasma/layout-templates)
-      - [Xorg Configuration](etc/X11/xorg.conf.d)
-      - [Unused Directory](home/tyler/arch-dotfiles/unused)
+      - [Wine game settings](docs/Game-Settings.md)
+      - [Custom KDE panels](home/tyler/.local/share/plasma/layout-templates)
+      - [Xorg configuration](etc/X11/xorg.conf.d)
+      - [Unused files directory](home/tyler/arch-dotfiles/unused)
   - Other Dotfiles:
     - **Proxmox**: [spongeyperson/proxmox-config](https://github.com/spongeyperson/proxmox-config/)
     - **Fedora**: [spongeyperson/fedora-dotfiles](https://github.com/spongeyperson/fedora-dotfiles/)

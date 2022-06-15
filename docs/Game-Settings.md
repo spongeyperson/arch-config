@@ -1,6 +1,5 @@
-# <center>Spongey's Personal Settings for Steam: </center>
-
-#### A compiled list of games that run under Linux with no issues, but may need minor tweaks.
+# <p align=center>Spongey's Personal Settings for Steam: </p>
+###### <p align=center> A compiled list of games that run under Linux with no issues, but may need minor tweaks. </p>
 
 # Table of Contents:
   - **Games**:
