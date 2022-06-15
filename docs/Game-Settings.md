@@ -156,12 +156,12 @@ MESA_GL_VERSION_OVERRIDE=4.4COMPAT __GL_SHADER_DISK_CACHE=1 VK_ICD_FILENAMES=/us
   ```
 ## Bioshock Remastered:
 - #### Wine / Proton Info:
-  - Working Status: `Broken, Work In Progress`
-  - Initial Test Version: ~~`GE-Proton7-18`~~ <sup>Broken</sup>
-  - Last Known Working: `Proton Experimental` <sup>*Possibly* Also Broken, further testing needed.</sup>
+  - Working Status: `Possibly Working, Work In Progress`
+  - Initial Test Version: `Proton Experimental`
+  - Last Known Working: `GE-Proton7-18` <sup>*Possibly* Also Broken, further testing needed.</sup>
 - Issues:
-  - Game is known to crash upon saving, loading the map (m key), or loading a new world. These issues are sporadic and random, and no discernable cause has been placed yet. More testing is needed.
+  - Game is known to crash upon saving, loading the map (m key), or loading a new world. These issues are sporadic and random, ~~and no discernable cause has been placed yet.~~ It's possible crashes are caused by DXVK trying to inject 64bit libraries into a 32bit game, as forcing Vulkan ICD as the `i686` variant seems to stop or limit crashing. More testing is needed.
 - **Steam Launch Arguments:**
   ```bash
-  AMD_VULKAN_ICD=RADV gamemoderun mangohud %command% -nointro
+  VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.i686.json RADV_PERFTEST=aco mangohud %command% -nointro
   ```
