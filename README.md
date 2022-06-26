@@ -20,7 +20,7 @@
 ## <img src="https://user-images.githubusercontent.com/28176188/142364090-9c9b1eaf-8e94-4402-b943-0d46895032f2.png" width="25" height="25"> Steam:
 ###### Various Launch Commands used for Steam:
 
-<img src="https://user-images.githubusercontent.com/28176188/142365376-270d160f-33c3-4012-a3d9-541ab65bfdb6.png" width="20" height="20"> Radeon Specific:
+#### <img src="https://user-images.githubusercontent.com/28176188/142365376-270d160f-33c3-4012-a3d9-541ab65bfdb6.png" width="15" height="15"> AMD / Radeon Specific:
 
 - RAD-V ACO Recompiler (Recommended): [^1]
   ```bash
@@ -39,7 +39,7 @@
   - For Non-Steam Applications: `DRI_PRIME=1`
   - or for Steam: `DRI_PRIME=1 %command%`
 
-<img src="https://user-images.githubusercontent.com/28176188/142362826-8090a147-94ee-4f67-a3ed-f87058a6797d.png" width="20" height="20"> Nvidia Specific:
+#### <img src="https://user-images.githubusercontent.com/28176188/142362826-8090a147-94ee-4f67-a3ed-f87058a6797d.png" width="15" height="15"> Nvidia Specific:
 
 - Work In Progress
 

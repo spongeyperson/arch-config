@@ -14,6 +14,7 @@
       - [Virtual Desktop & Multi-Monitor Fix](#how-to-fix-virtual-desktop--multi-mon-issues)
     - [Final Fantasy XV](#final-fantasy-xv-"windows"-edition)
     - [Bioshock Remastered](#bioshock-remastered)
+    - [Ghost of a Tale](#ghost-of-a-tale)
 
 ## Commonly Used Steam Launch Arguments:
 - ### Wine Specific
@@ -51,6 +52,7 @@
 
 
 ## Red Dead Redemption 2:
+
 - #### Wine / Proton Info:
   - Initial Test Version: `Proton-7.0rc3-GE-1`
   - Last Known Working: `GE-Proton7-10`
@@ -66,6 +68,7 @@
     - **Notice**: **Proton-7.0rc2-GE-1** has issues starting RGSC Launcher and will cause the game to never launch. Use **Standard Valve Proton** or **Proton-7.0rc3-GE-1** or newer. 
 
 ## Grand Theft Auto IV: The Complete Edition:
+
 - #### Wine / Proton Info:
   - Last Known Working: `Proton-6.21-GE-2`
   
@@ -75,6 +78,7 @@
   ```
 
 ## Farming Simulator 22:
+
 - #### Wine / Proton Info:
   - Last Known Working: `Proton 6.3-8`
 
@@ -86,6 +90,7 @@
     - This game uses standard RADV ICD + ACO Recompiler, Gamemode Run, and Mangohud
 
 ## Spyro Reignited Trilogy:
+
 - #### Wine / Proton Info:
   - Last Known Working: `Proton-7.0rc2-GE-1`
 
@@ -98,6 +103,7 @@
     - Without `-nohmd` and `-DX11` flags, this game will either crash at random intervals, or instantly crash without any warning before the game launches.
 
 ## Ghostrunner:
+
 - #### Wine / Proton Info:
   - Last Known Working: `Proton-7.0rc6-GE-1`
 
@@ -107,6 +113,7 @@
   ```
 
 ## Satisfactory:
+
 - #### Wine / Proton Info:
   - Last Known Working: `GE-Proton7-10`
 
@@ -116,6 +123,7 @@ MESA_GL_VERSION_OVERRIDE=4.4COMPAT __GL_SHADER_DISK_CACHE=1 VK_ICD_FILENAMES=/us
 ```
 
 ## Assassins Creed Origins:
+
 - #### Wine / Proton Info:
   - Last Known Working: `GE-Proton7-9`
 - **Steam Launch Arguments:**
@@ -124,6 +132,7 @@ MESA_GL_VERSION_OVERRIDE=4.4COMPAT __GL_SHADER_DISK_CACHE=1 VK_ICD_FILENAMES=/us
   ```
 
 ## Sleeping Dogs: Definitive Edition:
+
 - #### Wine / Proton Info:
   - Last Known Working: `Proton 6.3-8`
 
@@ -144,6 +153,7 @@ MESA_GL_VERSION_OVERRIDE=4.4COMPAT __GL_SHADER_DISK_CACHE=1 VK_ICD_FILENAMES=/us
     6. add Steam Launch Arguments, and replace both instances of Width and Height (`-w` & `-h`) to your Monitor's Resolution.
 
 ## Final Fantasy XV: "Windows" Edition:
+
 - #### Wine / Proton Info:
   - Initial Test Version: `GE-Proton7-18`<sup>[Regression](https://github.com/ValveSoftware/Proton/issues/74#event-5256563749)</sup>
     -  **Regression Info**:
@@ -154,13 +164,24 @@ MESA_GL_VERSION_OVERRIDE=4.4COMPAT __GL_SHADER_DISK_CACHE=1 VK_ICD_FILENAMES=/us
   VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=aco gamemoderun mangohud %command%
   ```
 ## Bioshock Remastered:
+
 - #### Wine / Proton Info:
-  - Working Status: `Possibly Working, Work In Progress`
+  - Working Status: `Working, occasional crashing. Unsure if caused by Proton.`
   - Initial Test Version: `Proton Experimental`
-  - Last Known Working: `GE-Proton7-18` <sup>*Possibly* Also Broken, further testing needed.</sup>
+  - Last Known Working: `GE-Proton7-18` <sup>*Possibly* also causing crashing, further testing / research needed.</sup>
 - Issues:
   - Game is known to crash upon saving, loading the map (m key), or loading a new world. These issues are sporadic and random, ~~and no discernable cause has been placed yet.~~ It's possible crashes are caused by DXVK trying to inject 64bit libraries into a 32bit game, as forcing Vulkan ICD as the `i686` variant seems to stop or limit crashing. More testing is needed.
 - **Steam Launch Arguments:**
   ```bash
   VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.i686.json RADV_PERFTEST=aco mangohud %command% -nointro
+  ```
+## Ghost of a Tale:
+
+- #### Wine / Proton Info:
+  - Working Status: `Seems to be Fully Working, More Testing Needed`
+  - Initial Test Version: `GE-Proton7-20` <sup>*Possibly* Also Broken, further testing needed.</sup>
+  - Last Known Working: `Proton 6.3-8`
+- **Steam Launch Arguments:**
+  ```bash
+  VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.i686.json RADV_PERFTEST=aco gamemoderun mangohud %command%
   ```
