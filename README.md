@@ -5,7 +5,9 @@
 #### <p align=center> Index:
   - **This Repo**:
     - Documentation:
-      - [Wine game settings](docs/Game-Settings.md)
+      - Wine Gaming Related:
+        - [Game settings](docs/Game-Settings.md)
+        - [Game troubleshooting](docs/Game-Troubleshooting.md)
       - [Custom KDE panels](home/tyler/.local/share/plasma/layout-templates)
       - [Xorg configuration](etc/X11/xorg.conf.d)
       - [Unused files directory](home/tyler/arch-dotfiles/unused)
