@@ -15,6 +15,10 @@
     - [Final Fantasy XV](#final-fantasy-xv-"windows"-edition)
     - [Bioshock Remastered](#bioshock-remastered)
     - [Ghost of a Tale](#ghost-of-a-tale)
+    - [Deep Rock Galactic](#deep-rock-galactic)
+    - [Tunic](#tunic)
+    - [Assassins Creed Origins](#assassins-creed-origins)
+    - [Sea of Thieves](#sea-of-thieves)
 
 ## Commonly Used Steam Launch Arguments:
 - ### Wine Specific
@@ -184,4 +188,48 @@ MESA_GL_VERSION_OVERRIDE=4.4COMPAT __GL_SHADER_DISK_CACHE=1 VK_ICD_FILENAMES=/us
 - **Steam Launch Arguments:**
   ```bash
   VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.i686.json RADV_PERFTEST=aco gamemoderun mangohud %command%
+  ```
+
+## Deep Rock Galactic:
+
+- #### Wine / Proton Info:
+  - Working Status: `Working`
+  - Initial Test Version: `GE-Proton7-17`
+  - Last Known Working: `GE-Proton7-17`
+- **Steam Launch Arguments:**
+  ```bash
+  VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=aco gamemoderun mangohud %command%
+  ```
+
+## Tunic:
+
+- #### Wine / Proton Info:
+  - Working Status: `Working`
+  - Initial Test Version: `GE-Proton7-17`
+  - Last Known Working: `GE-Proton7-18`
+- **Steam Launch Arguments:**
+  ```bash
+  VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=aco gamemoderun mangohud %command%
+  ```
+
+## Assassins Creed Origins:
+
+- #### Wine / Proton Info:
+  - Working Status: `Working`
+  - Initial Test Version: `GE-Proton7-17`
+  - Last Known Working: `GE-Proton7-17`
+- **Steam Launch Arguments:**
+  ```bash
+  DXVK_LOG_LEVEL=none PROTON_USE_D9VK=1 %command%
+  ```
+
+## Sea of Thieves:
+
+- #### Wine / Proton Info:
+  - Working Status: `Working`
+  - Initial Test Version: `GE-Proton7-17`
+  - Last Known Working: `GE-Proton7-17`
+- **Steam Launch Arguments:**
+  ```bash
+  VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=aco gamemoderun mangohud %command%
   ```
