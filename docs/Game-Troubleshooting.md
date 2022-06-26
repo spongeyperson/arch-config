@@ -17,6 +17,14 @@
 # <img src="https://user-images.githubusercontent.com/28176188/142364090-9c9b1eaf-8e94-4402-b943-0d46895032f2.png" width="25" height="25"> Games Under Steam:
 ## Getting Started; Troubleshooting & Good Practices:
   1. To start troubleshooting most games, it's best to start by closing your current instance of Steam, and re-launch it under the Commandline by just typing `steam` in the commandline. If you have another display, it'll help putting this commandline on that display, somewhere you can see it best during gameplay.
+  
+<p align=center>
+
+| ![About this Mac](https://user-images.githubusercontent.com/28176188/175799719-430d0abb-8e31-4423-8782-70fb246268b9.gif) |
+| :--: |
+| <sub> Steam Launching under Commandline </sub> |
+
+</p>
 
 ## Game insists it cannot find D3D / OGL / Vulkan Device.
 
@@ -41,7 +49,9 @@
           - >**Notice:** Performance ***will*** almost certainly be worse with `WineD3D` instead of `DXVK` / `VKD3D`. These flags should only be used if the game won't run otherwise, performance is *ok* enough to deal with `WineD3D` being the default renderer (some game engines and 2D games), or the game crashes constantly without it.
 
     2. If you see the following on Mangohud, and your game crashes on it's own after a certain amount of time; or on it's own without `PROTON_USE_WINED3D=1`, than it's a prime candidate to be a game that is **ONLY** looking for 32-Bit libraries in some capacity, and either Sigfaults due to buffer overflows trying to address 64-Bit drivers in a 32-Bit address space, or the game refuses to launch because it's unable to find the graphics driver as the game will only see 32-Bit drivers.
+    
     ![](https://user-images.githubusercontent.com/28176188/175798430-12fb8922-98ab-4fb1-af20-a1a2b1df3ec3.png)
+    
   ### Possible Solution(s):
 1. Force the game to use 32-Bit Vulkan ICDs
    - Add the following to your steam launch options:
