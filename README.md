@@ -1,8 +1,55 @@
 # <p align=center>- Spongey's Arch Linux KDE Dotfiles -
 ###### <p align=center> A Simple Git Repository to store various Arch Linux User Configs (Dotfiles).
 
+<p align="center">
+<table>
+  <thead>
+    <style>
+      table, td, th {
+        border: 1.5px solid black;
+        width 300px;
+      }
+    </style>
+    <tr>
+      <th align="center">Index:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th align="center">• This Repo:
+        <ul>
+          <li>Documentation:</li>
+            <ul>
+              <li>Wine Gaming Related:</li>
+                <ul>
+                  <li>Game settings</li>
+                  <li>Game troubleshooting</li>
+                </ul>
+            </ul>
+          <ul>
+            <li>Custom KDE Panels</li>
+            <li>Xorg configuration</li>
+            <li>Unused files directory</li>
+          </ul>
+          <li>Other Dotfiles:</li>
+            <ul>
+              <li>Proxmox: <a href="https://github.com/spongeyperson/proxmox-config/">spongeyperson/proxmox-config</li></a>
+              <li>Fedora: <a href="https://github.com/spongeyperson/fedora-dotfiles/">spongeyperson/fedora-dotfiles</li></a>
+            <ul>
+        </ul>
+      </th>
+    </tr>
+  </tbody>
+</table>   
+</p>
 
-#### <p align=center> Index:
+<p align=center>
+ <img src="https://user-images.githubusercontent.com/28176188/192079648-6024fec9-8099-4c44-934b-a72fa08ebcac.png">
+</p>
+
+
+<!--
+#### <p align=center> Index: </p>
   - **This Repo**:
     - Documentation:
       - Wine Gaming Related:
@@ -14,10 +61,9 @@
   - Other Dotfiles:
     - **Proxmox**: [spongeyperson/proxmox-config](https://github.com/spongeyperson/proxmox-config/)
     - **Fedora**: [spongeyperson/fedora-dotfiles](https://github.com/spongeyperson/fedora-dotfiles/)
+-->
 
-![I run Arch BTW](https://user-images.githubusercontent.com/28176188/146662437-bbd5fc0d-ae98-4f28-a2df-12b89f819534.png)
-
-# Gaming Tweaks:
+## <p align=center> Gaming Tweaks: </p>
 
 ## <img src="https://user-images.githubusercontent.com/28176188/142364090-9c9b1eaf-8e94-4402-b943-0d46895032f2.png" width="25" height="25"> Steam:
 ###### Various Launch Commands used for Steam:
