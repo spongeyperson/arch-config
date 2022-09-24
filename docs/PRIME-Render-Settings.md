@@ -1,5 +1,5 @@
 # <p align=center>(WIP) PRIME Render Offload Settings:
-###### <p align=center> The Following Page is currently <u>only Applicable to my current hardware</u>. This page is being used as Internal notes to write the proper Prime Offload Settings Page for General Purpose systems. In the meantime, this page will not be visible on the main [README.md](spongeyperson/arch-dotfiles/README.md).
+###### <p align=center> The Following Page is currently <u>only Applicable to my current hardware</u>. This page is being used as Internal notes to write the proper Prime Offload Settings Page for General Purpose systems. In the meantime, this page will not be visible on the main [README.md](https://github.com/spongeyperson/arch-dotfiles/README.md).
 
 
 ## <img src="https://user-images.githubusercontent.com/28176188/192112809-e2564eee-f9a6-4504-8d13-a56d58b268f3.svg" width="20" height="20"> Current Testing Hardware:
