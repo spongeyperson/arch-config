@@ -28,7 +28,9 @@
 
 - #### Prime Render Offload Standard Environment Variable:
   
-  ```DRI_PRIME=<dev-id>```
+  ```
+  DRI_PRIME=<dev-id>
+  ```
   - This Environment Variable allows you to toggle the use of PRIME. However, some applications may ignore this value (Particularly Vulkan Applications), but for sanity sake, i usually toggle it anyway.
     - By Default, the Following Device-IDs should be binded in this fashion:
       - <u>Device 0</u> = AMD RENOIR (VEGA 8) APU
@@ -40,8 +42,9 @@
         - <u>Device 0</u> = RX 6800M
         - <u>Device 1</u> = AMD RENOIR (VEGA 8) APU
           - Steam Launch Args Useage:
-            - ```ENABLE_DEVICE_CHOOSER_LAYER=<dev-id> VULKAN_DEVICE_INDEX=<dev-id> %command%```
----
+            ```
+            ENABLE_DEVICE_CHOOSER_LAYER=<dev-id> VULKAN_DEVICE_INDEX=<dev-id> %command%
+            ```
 
 - References:
     - https://github.com/aejsmith/vkdevicechooser
