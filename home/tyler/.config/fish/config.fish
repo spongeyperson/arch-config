@@ -12,8 +12,15 @@ alias vi="vim"
 alias phone="scrcpy -t --bit-rate 15M --max-fps 60 --window-title 'Samsung Galaxy S9+'"
 alias grep="grep --color=always"
 alias mounts="cat /proc/mounts"
+alias lsmounts="cat /proc/mounts"
 # alias neofetch="neofetch --config /home/tyler/.config/neofetch/fedora.conf --ascii_distro Fedora"
 alias virsh="virsh --connect=qemu:///system"
+alias update="yay -Syyu ; flatpak update"
+alias duf="duf -hide-fs squashfs"
+
+
+#FLATPAK VSCode
+#alias code="flatpak run com.visualstudio.code"
 
 alias chaur="yay --config /etc/pacman-chaotic.conf"
 
@@ -39,7 +46,16 @@ alias lockwidgets="echo -e '\033[0;31mWidgets Locked\033[0m' ; qdbus org.kde.pla
 alias unlockwidgets="echo -e '\033[0;32mWidgets Unlocked\033[0m' ; qdbus org.kde.plasmashell /PlasmaShell evaluateScript 'lockCorona(false)'"
 alias restartkwin="killall kwin_x11 ; nohup kstart5 kwin_x11 </dev/null &>/dev/null & ; echo -e '\033[0;32mKwin Restarted'"
 alias restartplasma="killall plasmashell ; nohup kstart5 plasmashell </dev/null &>/dev/null & ; echo -e '\033[0;32mPlasma Shell Restarted'"
+#alias rebootplasma="kquitapp5 plasmashell && kstart5 plasmashell > /dev/null 2>&1"
+alias rebootplasma="plasmashell --replace &"
 alias restartdock="killall latte-dock ; nohup kstart5 latte-dock </dev/null &>/dev/null & ; echo -e '\033[0;32mLatte Dock Restarted'"
+
+# Manipulate System
+alias restartpipewire="systemctl --user restart pipewire.{socket,service} ; systemctl --user restart pipewire-pulse.{socket,service} ; echo -e '\033[0;32mPipewire Restarted'"
+alias restartaudio="systemctl --user restart pipewire.{socket,service} ; systemctl --user restart pipewire-pulse.{socket,service} ; echo -e '\033[0;32mPipewire Restarted'"
+
+# Manipulate Hardware
+alias liquid="sudo liquidctl --match kraken set fan speed 20 30  30 40  35 45  40 55  42 58  43 75  44 80  45 90  46 92  50 100 && sudo liquidctl --match kraken set pump 100 && echo -e '\033[0;32mKraken Pump & Fan Speed Set!\033[0m'"
 
 # Dotfiles Sync
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=/'
@@ -52,6 +68,9 @@ alias amdvlk="VK_ICD_FILENAMES='/usr/share/vulkan/icd.d/amd_icd64.json'"
 alias amdvlk64="VK_ICD_FILENAMES='/usr/share/vulkan/icd.d/amd_icd64.json'"
 alias amdvlk32="VK_ICD_FILENAMES='/usr/share/vulkan/icd.d/amd_icd32.json'"
 ##
+
+# Autojump
+[ -f /usr/share/autojump/autojump.fish ]; and source /usr/share/autojump/autojump.fish
 
 
 ## Flatpak Fish Workaround

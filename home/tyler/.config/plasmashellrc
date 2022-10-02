@@ -1,8 +1,88 @@
+[FileDialogSize]
+DisplayPort-1 DisplayPort-0 HDMI-A-0 Height 2560x1440=600
+DisplayPort-1 DisplayPort-0 HDMI-A-0 Width 2560x1440=980
+
+[KFileDialog Settings]
+Recent Files[$e]=thumb-1920-234294.jpg,file:$HOME/Downloads/download (1).jpeg,file:$HOME/Downloads/download.jpeg,file:$HOME/Downloads/thumb-1920-234294.jpg
+Recent URLs[$e]=file:$HOME/Downloads/,file:$HOME/Pictures/,file:$HOME/Documents/,file:$HOME/
+detailViewIconSize=16
+
 [KPropertiesDialog]
-DisplayPort-1 DisplayPort-0 HDMI-A-0 Height 2560x1440=444
-DisplayPort-1 DisplayPort-0 HDMI-A-0 Width 2560x1440=439
-DisplayPort-1 HDMI-A-0 DisplayPort-0 Height 2560x1440=454
+DP-1 DP-2 HDMI-A-1 Height 2560x1440=453
+DP-1 DP-2 HDMI-A-1 Width 2560x1440=410
+DP-1 HDMI-A-1 DP-4 DP-6 Height 2560x1440=464
+DP-1 HDMI-A-1 DP-4 DP-6 Width 2560x1440=404
+DisplayPort-1 DisplayPort-0 HDMI-A-0 DisplayPort-2 Height 2560x1440=453
+DisplayPort-1 DisplayPort-0 HDMI-A-0 DisplayPort-2 Width 2560x1440=410
+DisplayPort-1 DisplayPort-0 HDMI-A-0 Height 2560x1440=453
+DisplayPort-1 DisplayPort-0 HDMI-A-0 Width 2560x1440=463
+DisplayPort-1 HDMI-A-0 DisplayPort-0 DisplayPort-2 Height 2560x1440=464
+DisplayPort-1 HDMI-A-0 DisplayPort-0 DisplayPort-2 Width 2560x1440=417
+DisplayPort-1 HDMI-A-0 DisplayPort-0 Height 2560x1440=458
 DisplayPort-1 HDMI-A-0 DisplayPort-0 Width 2560x1440=410
+DisplayPort-4 DisplayPort-3 HDMI-A-2 Height 2560x1440=454
+DisplayPort-4 DisplayPort-3 HDMI-A-2 Width 2560x1440=418
+HDMI-A-0 DisplayPort-0 DisplayPort-1 Height 2560x1440=453
+HDMI-A-0 DisplayPort-0 DisplayPort-1 Width 2560x1440=404
+HDMI-A-0 DisplayPort-0 DisplayPort-3 DisplayPort-5 Height 2560x1440=458
+HDMI-A-0 DisplayPort-0 DisplayPort-3 DisplayPort-5 Width 2560x1440=404
+HDMI-A-0 DisplayPort-1 DisplayPort-0 Height 2560x1440=464
+HDMI-A-0 DisplayPort-1 DisplayPort-0 Width 2560x1440=747
+HDMI-A-0 DisplayPort-1 DisplayPort-2 Height 1920x1080=453
+HDMI-A-0 DisplayPort-1 DisplayPort-2 Height 2560x1440=453
+HDMI-A-0 DisplayPort-1 DisplayPort-2 Width 1920x1080=404
+HDMI-A-0 DisplayPort-1 DisplayPort-2 Width 2560x1440=404
+HDMI-A-0 DisplayPort-1 DisplayPort-3 DisplayPort-5 Height 2560x1440=532
+HDMI-A-0 DisplayPort-1 DisplayPort-3 DisplayPort-5 Width 2560x1440=457
+HDMI-A-0 DisplayPort-2 DisplayPort-1 Height 2560x1440=464
+HDMI-A-0 DisplayPort-2 DisplayPort-1 Width 2560x1440=404
+HDMI-A-1 DisplayPort-3 DisplayPort-4 Height 2560x1440=464
+HDMI-A-1 DisplayPort-3 DisplayPort-4 Width 2560x1440=747
+
+[PlasmaViews][Panel 102][Defaults]
+thickness=34
+
+[PlasmaViews][Panel 102][Horizontal1920]
+thickness=34
+
+[PlasmaViews][Panel 102][Vertical1440]
+thickness=36
+
+[PlasmaViews][Panel 113][Defaults]
+thickness=34
+
+[PlasmaViews][Panel 113][Horizontal1920]
+thickness=34
+
+[PlasmaViews][Panel 113][Vertical1080]
+thickness=36
+
+[PlasmaViews][Panel 116]
+floating=0
+
+[PlasmaViews][Panel 116][Defaults]
+thickness=34
+
+[PlasmaViews][Panel 116][Horizontal1920]
+thickness=34
+
+[PlasmaViews][Panel 116][Horizontal2560]
+thickness=34
+
+[PlasmaViews][Panel 116][Vertical1440]
+thickness=36
+
+[PlasmaViews][Panel 119][Defaults]
+thickness=36
+
+[PlasmaViews][Panel 119][Horizontal1920]
+thickness=36
+
+[PlasmaViews][Panel 127][Defaults]
+thickness=36
+
+[PlasmaViews][Panel 127][Horizontal1920]
+thickness=36
 
 [PlasmaViews][Panel 132][Defaults]
 thickness=34
@@ -12,6 +92,33 @@ thickness=34
 
 [PlasmaViews][Panel 132][Horizontal3840]
 thickness=44
+
+[PlasmaViews][Panel 136][Defaults]
+thickness=34
+
+[PlasmaViews][Panel 136][Horizontal1920]
+thickness=34
+
+[PlasmaViews][Panel 136][Horizontal2560]
+thickness=34
+
+[PlasmaViews][Panel 150][Defaults]
+thickness=34
+
+[PlasmaViews][Panel 150][Horizontal1280]
+thickness=34
+
+[PlasmaViews][Panel 150][Horizontal1920]
+thickness=34
+
+[PlasmaViews][Panel 150][Horizontal2560]
+thickness=34
+
+[PlasmaViews][Panel 150][Horizontal640]
+thickness=34
+
+[PlasmaViews][Panel 2]
+floating=0
 
 [PlasmaViews][Panel 2][Defaults]
 thickness=34
@@ -31,10 +138,106 @@ thickness=34
 [PlasmaViews][Panel 2][Horizontal3840]
 thickness=34
 
+[PlasmaViews][Panel 2][Horizontal4480]
+thickness=34
+
 [PlasmaViews][Panel 20][Defaults]
 thickness=34
 
 [PlasmaViews][Panel 20][Horizontal1920]
+thickness=34
+
+[PlasmaViews][Panel 201][Defaults]
+thickness=34
+
+[PlasmaViews][Panel 201][Horizontal1920]
+thickness=34
+
+[PlasmaViews][Panel 201][Horizontal2560]
+thickness=34
+
+[PlasmaViews][Panel 221][Defaults]
+thickness=34
+
+[PlasmaViews][Panel 221][Horizontal1024]
+thickness=34
+
+[PlasmaViews][Panel 221][Horizontal1280]
+thickness=34
+
+[PlasmaViews][Panel 221][Horizontal1920]
+thickness=34
+
+[PlasmaViews][Panel 221][Horizontal2560]
+thickness=34
+
+[PlasmaViews][Panel 237]
+floating=0
+
+[PlasmaViews][Panel 237][Defaults]
+thickness=34
+
+[PlasmaViews][Panel 237][Horizontal1280]
+thickness=34
+
+[PlasmaViews][Panel 237][Horizontal1920]
+thickness=34
+
+[PlasmaViews][Panel 237][Horizontal2560]
+thickness=34
+
+[PlasmaViews][Panel 237][Horizontal640]
+thickness=34
+
+[PlasmaViews][Panel 266][Defaults]
+thickness=34
+
+[PlasmaViews][Panel 266][Horizontal1280]
+thickness=34
+
+[PlasmaViews][Panel 266][Horizontal1920]
+thickness=34
+
+[PlasmaViews][Panel 266][Horizontal2560]
+thickness=34
+
+[PlasmaViews][Panel 295][Defaults]
+thickness=34
+
+[PlasmaViews][Panel 295][Horizontal1280]
+thickness=34
+
+[PlasmaViews][Panel 311][Defaults]
+thickness=34
+
+[PlasmaViews][Panel 311][Horizontal1280]
+thickness=34
+
+[PlasmaViews][Panel 325][Defaults]
+thickness=32
+
+[PlasmaViews][Panel 325][Horizontal1280]
+thickness=32
+
+[PlasmaViews][Panel 325][Horizontal1920]
+thickness=32
+
+[PlasmaViews][Panel 341][Defaults]
+thickness=32
+
+[PlasmaViews][Panel 341][Horizontal1280]
+thickness=32
+
+[PlasmaViews][Panel 357][Defaults]
+thickness=34
+
+[PlasmaViews][Panel 357][Horizontal1920]
+thickness=34
+
+[PlasmaViews][Panel 371][Defaults]
+thickness=34
+
+[PlasmaViews][Panel 371][Horizontal1920]
 thickness=34
 
 [PlasmaViews][Panel 38][Defaults]
@@ -46,6 +249,99 @@ thickness=34
 [PlasmaViews][Panel 38][Horizontal2560]
 thickness=34
 
+[PlasmaViews][Panel 386][Defaults]
+thickness=34
+
+[PlasmaViews][Panel 386][Horizontal1920]
+thickness=34
+
+[PlasmaViews][Panel 401][Defaults]
+thickness=32
+
+[PlasmaViews][Panel 401][Horizontal1280]
+thickness=32
+
+[PlasmaViews][Panel 417][Defaults]
+thickness=34
+
+[PlasmaViews][Panel 417][Horizontal1920]
+thickness=34
+
+[PlasmaViews][Panel 435][Defaults]
+thickness=36
+
+[PlasmaViews][Panel 435][Vertical1440]
+thickness=36
+
+[PlasmaViews][Panel 450][Defaults]
+thickness=32
+
+[PlasmaViews][Panel 450][Horizontal1280]
+thickness=32
+
+[PlasmaViews][Panel 465][Defaults]
+thickness=32
+
+[PlasmaViews][Panel 465][Horizontal1280]
+thickness=32
+
+[PlasmaViews][Panel 465][Vertical1024]
+thickness=36
+
+[PlasmaViews][Panel 47][Defaults]
+thickness=36
+
+[PlasmaViews][Panel 47][Horizontal1920]
+thickness=36
+
+[PlasmaViews][Panel 48][Defaults]
+thickness=36
+
+[PlasmaViews][Panel 48][Horizontal1920]
+thickness=36
+
+[PlasmaViews][Panel 482][Defaults]
+thickness=32
+
+[PlasmaViews][Panel 482][Horizontal1280]
+thickness=32
+
+[PlasmaViews][Panel 482][Vertical1024]
+thickness=36
+
+[PlasmaViews][Panel 501][Defaults]
+thickness=34
+
+[PlasmaViews][Panel 501][Horizontal1920]
+thickness=34
+
+[PlasmaViews][Panel 516][Defaults]
+thickness=30
+
+[PlasmaViews][Panel 516][Horizontal1280]
+thickness=30
+
+[PlasmaViews][Panel 71][Defaults]
+thickness=36
+
+[PlasmaViews][Panel 71][Horizontal1920]
+thickness=36
+
+[PlasmaViews][Panel 74][Defaults]
+thickness=34
+
+[PlasmaViews][Panel 74][Horizontal1920]
+thickness=34
+
+[PlasmaViews][Panel 74][Vertical1440]
+thickness=36
+
+[PlasmaViews][Panel 81][Defaults]
+thickness=36
+
+[PlasmaViews][Panel 81][Horizontal1920]
+thickness=36
+
 [PlasmaViews][Panel 86][Defaults]
 thickness=34
 
@@ -55,13 +351,51 @@ thickness=34
 [PlasmaViews][Panel 86][Horizontal2560]
 thickness=34
 
+[PlasmaViews][Panel 88][Defaults]
+thickness=36
+
+[PlasmaViews][Panel 88][Horizontal1920]
+thickness=36
+
+[PlasmaViews][Panel 88][Vertical1440]
+thickness=36
+
+[PlasmaViews][Panel 89][Defaults]
+thickness=36
+
+[PlasmaViews][Panel 89][Horizontal1920]
+thickness=36
+
+[PlasmaViews][Panel 95][Defaults]
+thickness=36
+
+[PlasmaViews][Panel 95][Horizontal1920]
+thickness=36
+
+[PlasmaViews][Panel 99][Defaults]
+thickness=36
+
+[PlasmaViews][Panel 99][Horizontal1920]
+thickness=36
+
 [ScreenConnectors]
-0=DisplayPort-1
-1=DisplayPort-0
-2=HDMI-A-0
-3=:0.0
-5=DP-2
+0=HDMI-A-1
+1=DisplayPort-5
+10=DisplayPort-11
+11=DisplayPort-8
+12=DP-6
+13=DisplayPort-6
+14=DisplayPort-2
+15=DisplayPort-4
+16=DisplayPort-7
+2=:0.0
+3=DisplayPort-1
+4=DisplayPort-0
+5=DP-4
 6=DP-1
+7=HDMI-A-2
+8=DisplayPort-9
+9=DisplayPort-3
 
 [Updates]
-performed=/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/maintain_existing_desktop_icon_sizes.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/digitalclock_rename_timezonedisplay_key.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/systemloadviewer_systemmonitor.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/klipper_clear_config.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/move_desktop_layout_config.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/unlock_widgets.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/obsolete_kickoffrc.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/containmentactions_middlebutton.js
+performed=/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/maintain_existing_desktop_icon_sizes.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/digitalclock_rename_timezonedisplay_key.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/systemloadviewer_systemmonitor.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/klipper_clear_config.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/move_desktop_layout_config.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/unlock_widgets.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/obsolete_kickoffrc.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/containmentactions_middlebutton.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/no_middle_click_paste_on_panels.js

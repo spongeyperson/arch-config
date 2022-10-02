@@ -217,11 +217,16 @@ MESA_GL_VERSION_OVERRIDE=4.4COMPAT __GL_SHADER_DISK_CACHE=1 VK_ICD_FILENAMES=/us
 - #### Wine / Proton Info:
   - Working Status: `Working`
   - Initial Test Version: `GE-Proton7-17`
-  - Last Known Working: `GE-Proton7-17`
-- **Steam Launch Arguments:**
-  ```bash
-  DXVK_LOG_LEVEL=none PROTON_USE_D9VK=1 %command%
-  ```
+  - Last Known Working: `GE-Proton7-35`
+- #### Steam Launch Arguments:
+  - `GE-Proton7-25` and Above (currently untested):
+    ```bash
+    DXVK_ASYNC=1 %command%
+    ```
+  - Previous Launch Arguments
+    ```bash
+    DXVK_LOG_LEVEL=none PROTON_USE_D9VK=1 %command%
+    ```
 
 ## Sea of Thieves:
 

@@ -1,3 +1,6 @@
+[Applications][Mailspring]
+Seen=true
+
 [Applications][balena-etcher-electron]
 Seen=true
 
@@ -5,10 +8,34 @@ Seen=true
 Seen=true
 ShowPopups=false
 
+[Applications][com.discordapp.Discord]
+Seen=true
+
+[Applications][com.getmailspring.Mailspring]
+Seen=true
+
+[Applications][com.mastermindzh.tidal-hifi]
+Seen=true
+
 [Applications][com.uploadedlobster.peek]
 Seen=true
 
 [Applications][discord]
+Seen=true
+
+[Applications][electron]
+Seen=true
+
+[Applications][fr.handbrake.ghb]
+Seen=true
+
+[Applications][google-chrome]
+Seen=true
+
+[Applications][heroic]
+Seen=true
+
+[Applications][io.github.spacingbat3.webcord]
 Seen=true
 
 [Applications][mailspring]
@@ -17,7 +44,19 @@ Seen=true
 [Applications][microsoft-edge]
 Seen=true
 
+[Applications][net.lutris.Lutris]
+Seen=true
+
+[Applications][org.gnome.DejaDup]
+Seen=true
+
+[Applications][org.qbittorrent.qBittorrent]
+Seen=true
+
 [Applications][org.qbittorrent.qbittorrent]
+Seen=true
+
+[Applications][org.telegram.desktop]
 Seen=true
 
 [Applications][solaar]
@@ -28,6 +67,15 @@ Seen=true
 
 [Applications][telegramdesktop]
 Seen=true
+
+[Applications][thunderbird]
+Seen=true
+
+[Applications][vivaldi-stable]
+Seen=true
+
+[DoNotDisturb]
+WhenScreensMirrored=false
 
 [Services][lattedock]
 ShowInHistory=false
