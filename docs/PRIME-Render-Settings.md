@@ -7,11 +7,15 @@
 ## <img src="https://user-images.githubusercontent.com/28176188/142365376-270d160f-33c3-4012-a3d9-541ab65bfdb6.png" width="20" height="20"> **AMD**:
 
 - Enable Prime Render Offload in OpenGL / OpenCL Applications:
-  - ```DRI_PRIME=<dev-id>```
+  - ```sh
+    DRI_PRIME=<dev-id>
+    ```
 
 - ### Vulkan Specific:
   - Steam Device Chooser:
-    - ```ENABLE_DEVICE_CHOOSER_LAYER=<dev-id> VULKAN_DEVICE_INDEX=<dev-id> %command%```
+    - ```sh
+      ENABLE_DEVICE_CHOOSER_LAYER=<dev-id> VULKAN_DEVICE_INDEX=<dev-id> %command%
+      ```
   - Requirements:
     - [VKDEVICECHOOSER](https://github.com/aejsmith/vkdevicechooser)<sup><sup>[aur](https://aur.archlinux.org/packages/vkdevicechooser)</sup></sup>
 

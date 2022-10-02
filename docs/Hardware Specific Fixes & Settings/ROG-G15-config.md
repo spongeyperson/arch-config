@@ -17,7 +17,7 @@
 
 
 - ### Linux Specific:
-  -->
+-->
 
 ## <img src="https://user-images.githubusercontent.com/28176188/142365376-270d160f-33c3-4012-a3d9-541ab65bfdb6.png" width="20" height="20"> **AMD PRIME Render Offload**:
 
@@ -28,35 +28,53 @@
 
 - #### Prime Render Offload Standard Environment Variable:
   
-  ```
+  ```sh
   DRI_PRIME=<dev-id>
   ```
   - This Environment Variable allows you to toggle the use of PRIME. However, some applications may ignore this value (Particularly Vulkan Applications), but for sanity sake, i usually toggle it anyway.
     - By Default, the Following Device-IDs should be binded in this fashion:
       - <u>Device 0</u> = AMD RENOIR (VEGA 8) APU
       - <u>Device 1</u> = RX 6800M
+    - If your device id's vary from this, run the following in the terminal, it should give device info for the ids given.
+      ```sh
+      DRI_PRIME=<dev-id> glxinfo | grep "OpenGL renderer"
+      ```
+      <img src=https://user-images.githubusercontent.com/28176188/193439375-f8cebf6e-53e6-408b-b601-d25423d6c47c.png width="600">
+      
 
 - #### Vulkan Specific:
-  <img src="https://user-images.githubusercontent.com/28176188/142364090-9c9b1eaf-8e94-4402-b943-0d46895032f2.png" width="15" height="15"> Steam `Launch Options`:
-  ```
-  ENABLE_DEVICE_CHOOSER_LAYER=<dev-id> VULKAN_DEVICE_INDEX=<dev-id> %command%
-  ```
-  <img src="" width="15" height="15"> Regular Launch Options:
   - For Vulkan Specific applications, Vulkan **will ignore** your options set in the Prime Render Offload Environment Variable as Vulkan has it's own device management. In order to overcome this, there's a nice third-party tool we can use to manipulate Vulkan to our whims. [`VKDEVICECHOOSER`](https://github.com/aejsmith/vkdevicechooser)<sup><sup>[aur](https://aur.archlinux.org/packages/vkdevicechooser)</sup></sup> lets us do exactly this.
     - **Vulkan Default Device Binding**:
-        - <u>Device 0</u> = RX 6800M
-        - <u>Device 1</u> = AMD RENOIR (VEGA 8) APU
-          - Steam Launch Args Useage:
+      - <u>Device 0</u> = RX 6800M
+      - <u>Device 1</u> = AMD RENOIR (VEGA 8) APU
+    - If your device id's vary from this, run the following in the terminal, it should give device info for the ids given.
+      ```sh
+      ENABLE_DEVICE_CHOOSER_LAYER=1 VULKAN_DEVICE_INDEX=<dev-id> vulkaninfo | grep "GPU id"
+      ```
+      <img src="https://user-images.githubusercontent.com/28176188/193439555-aa84f5b6-33c0-4c3a-8096-514658cd1fbf.png" width="600">
 
-## <img src="" width="20" height="20"> **Hardware Control**:
+  - **Terminal Launch Options:**
+    ```sh
+    ENABLE_DEVICE_CHOOSER_LAYER=1 VULKAN_DEVICE_INDEX=<dev-id>
+    ```
 
-  - ROG Control Center (`rog-control-center`<sup><sup>aur</sup></sup>)
+  - <img src="https://user-images.githubusercontent.com/28176188/142364090-9c9b1eaf-8e94-4402-b943-0d46895032f2.png" width="15" height="15"> **Steam Launch Options**:
+    ```sh
+    ENABLE_DEVICE_CHOOSER_LAYER=1 VULKAN_DEVICE_INDEX=<dev-id> %command%
+    ```
+    - Replace `<dev-id>` with the desired device in the `Vulkan Default Device Binding` listing above.  
+
+
+
+## <img src="https://user-images.githubusercontent.com/28176188/193438035-0f795697-0e92-4597-9104-672b00dc46ce.svg" width="20" height="20"> **Hardware Control**:
+
+  - **ROG Control Center** (`rog-control-center`<sup><sup>[aur](https://aur.archlinux.org/packages/rog-control-center)</sup></sup>)
     - Opensource ROG Control Center used for Controlling Keyboard & Lightbar RGB, Fan Curves, Profiles and so much more. Uses `asusctl` in the background to set these settings.
       - <u>**Installation Instructions**</u>:
         1. Install `rustup`<sup><sup>community</sup></sup> package (overwrite rust dependancy if needed)
         2. run `rustup install stable`
         3. run `rustup default stable`
-        4. Install `rog-control-center`<sup><sup>aur</sup></sup>
+        4. Install `rog-control-center`<sup><sup>[aur](https://aur.archlinux.org/packages/rog-control-center)</sup></sup>
         5. Enable & Start `asusd` service (`sudo systemctl enable --now asusd`)
         6. Start Program
 
