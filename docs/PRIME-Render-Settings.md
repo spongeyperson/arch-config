@@ -21,6 +21,9 @@
 
 ## <img src="https://user-images.githubusercontent.com/28176188/142362826-8090a147-94ee-4f67-a3ed-f87058a6797d.png" width="20" height="20"> Nvidia:
   - **Work In Progress**
+  - ```sh
+    __NV_PRIME_RENDER_OFFLOAD=1
+    ```
 
 ---
 
