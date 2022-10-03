@@ -1,0 +1,2 @@
+# limit cache of removable drives to improve umount time
+ACTION=="add|change", KERNEL=="sd[a-z]", ATTR{removable}=="1", ATTR{bdi/max_ratio}="5"
