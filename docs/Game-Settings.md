@@ -19,7 +19,8 @@
     - [Tunic](#tunic)
     - [Assassins Creed Origins](#assassins-creed-origins)
     - [Sea of Thieves](#sea-of-thieves)
-    - [Cult of the Lamb]()
+    - [Cult of the Lamb](#cult-of-the-lamb)
+    - [Dinkum](#dinkum)
 
 ## Commonly Used Steam Launch Arguments:
 
