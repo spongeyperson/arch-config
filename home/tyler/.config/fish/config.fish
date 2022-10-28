@@ -9,7 +9,7 @@ alias clbin="curl -F 'clbin=<-' https://clbin.com"
 alias aliases="vim /home/tyler/.config/fish/config.fish"
 alias fishconfig="vim /home/tyler/.config/fish/config.fish"
 alias vi="vim"
-alias phone="scrcpy -t --bit-rate 15M --max-fps 60 --window-title 'Samsung Galaxy S9+'"
+alias phone="scrcpy -t --bit-rate 15M --max-fps 60"
 alias grep="grep --color=always"
 alias mounts="cat /proc/mounts"
 alias lsmounts="cat /proc/mounts"
@@ -17,6 +17,7 @@ alias lsmounts="cat /proc/mounts"
 alias virsh="virsh --connect=qemu:///system"
 alias update="yay -Syyu ; flatpak update"
 alias duf="duf -hide-fs squashfs"
+alias CLEAR="clear"
 
 
 #FLATPAK VSCode

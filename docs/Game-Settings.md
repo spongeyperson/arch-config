@@ -19,18 +19,68 @@
     - [Tunic](#tunic)
     - [Assassins Creed Origins](#assassins-creed-origins)
     - [Sea of Thieves](#sea-of-thieves)
+    - [Cult of the Lamb]()
 
 ## Commonly Used Steam Launch Arguments:
+
+- ### Specify your Vulkan Driver (ICD):
+  >This is usually helpful when you either have multiple GPUs, a game is expecting only a 32-Bit library to exist, and fails to initialize because it only sees the default 64-Bit library, or when you want to specify a specific driver for a specific game (e.g. A game performs better on a specific driver) 
+  ### <img src="https://user-images.githubusercontent.com/28176188/142365376-270d160f-33c3-4012-a3d9-541ab65bfdb6.png" width="17" height="17"> AMD:
+  - **Mesa RADV:**
+    - 32-Bit:
+      ```
+      VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.i686.json
+      ```
+    - 64-Bit:
+      ```
+      VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json
+      ```
+  - **AMD AMDVLK (Usually Slower):**
+    - 32-Bit:
+      ```
+      VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/amd_icd64.json
+      ```
+    - 64-Bit:
+      ```
+      VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/amd_icd64.json
+      ```
+  ### <img src="https://user-images.githubusercontent.com/28176188/142362826-8090a147-94ee-4f67-a3ed-f87058a6797d.png" width="17" height="17"> Nvidia:
+    - Package(s): [`nvidia-utils`](https://archlinux.org/packages/extra/x86_64/nvidia-utils/) & [`lib32-nvidia-utils`](https://archlinux.org/packages/multilib/x86_64/lib32-nvidia-utils/)
+      - 64-Bit:
+        ```
+        VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/nvidia_icd.json
+        ```
 - ### Wine Specific
   - Enable Wine-Specific FSR (AMD Fidelity FX Super Resolution)
-    - `WINE_FULLSCREEN_FSR=1`
+    ```
+    WINE_FULLSCREEN_FSR=1
+    ```
+  - ### Force API:
+    - DXVK (DirectX 9/10/11 -> Vulkan)
+      ```
+      WINE_USE_DXVK=1
+      ```
+    - VKD3D (DirectX 12 -> Vulkan)
+      ```
+      WINE_USE_VKD3D=1
+      ```
+    - D9VK (DirectX 9 -> Vulkan)(Deprecated, Merged into DXVK)
+      > This option is listed here for legacy reasons, so if you need to use an older implementation of DirectX 9 -> Vulkan, it is here for future reference. Do not use this if using newer DXVK Versions than [v1.5](https://github.com/doitsujin/dxvk/releases/tag/v1.5)
+      ```
+      WINE_USE_D9VK=1
+      ```
 - ### AMD Specific
-  - Enable AMD ACO Recompiler:
-    - `VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=aco`
+  - Enable AMD ACO Recompiler (Requires RADV):
+    ```
+    RADV_PERFTEST=aco
+    ```
 - ### DXVK HUD
   - Show DXVK Shader Compilation using DXVK HUD
-    - `DXVK_HUD=compile`
-- ### [Valve GAMESCOPE (Formerly steamcompmgr)](https://github.com/Plagman/gamescope)
+    ```
+    DXVK_HUD=compile
+    ```
+
+- ### [Valve GAMESCOPE (Compositor, not DE) (Formerly steamcompmgr)](https://github.com/Plagman/gamescope)
   ```bash
   # Upscale a 720p game to 1440p with integer scaling
   gamescope -h 720 -H 1440 -n -- %command%
@@ -54,9 +104,7 @@
   * `-b`: create a border-less window.
   * `-f`: create a full-screen window.
 
-
 ## Red Dead Redemption 2:
-
 - #### Wine / Proton Info:
   - Initial Test Version: `Proton-7.0rc3-GE-1`
   - Last Known Working: `GE-Proton7-10`
@@ -72,7 +120,6 @@
     - **Notice**: **Proton-7.0rc2-GE-1** has issues starting RGSC Launcher and will cause the game to never launch. Use **Standard Valve Proton** or **Proton-7.0rc3-GE-1** or newer. 
 
 ## Grand Theft Auto IV: The Complete Edition:
-
 - #### Wine / Proton Info:
   - Last Known Working: `Proton-6.21-GE-2`
   
@@ -82,7 +129,6 @@
   ```
 
 ## Farming Simulator 22:
-
 - #### Wine / Proton Info:
   - Last Known Working: `Proton 6.3-8`
 
@@ -94,7 +140,6 @@
     - This game uses standard RADV ICD + ACO Recompiler, Gamemode Run, and Mangohud
 
 ## Spyro Reignited Trilogy:
-
 - #### Wine / Proton Info:
   - Last Known Working: `Proton-7.0rc2-GE-1`
 
@@ -107,7 +152,6 @@
     - Without `-nohmd` and `-DX11` flags, this game will either crash at random intervals, or instantly crash without any warning before the game launches.
 
 ## Ghostrunner:
-
 - #### Wine / Proton Info:
   - Last Known Working: `Proton-7.0rc6-GE-1`
 
@@ -117,7 +161,6 @@
   ```
 
 ## Satisfactory:
-
 - #### Wine / Proton Info:
   - Last Known Working: `GE-Proton7-10`
 
@@ -127,7 +170,6 @@ MESA_GL_VERSION_OVERRIDE=4.4COMPAT __GL_SHADER_DISK_CACHE=1 VK_ICD_FILENAMES=/us
 ```
 
 ## Assassins Creed Origins:
-
 - #### Wine / Proton Info:
   - Last Known Working: `GE-Proton7-9`
 - **Steam Launch Arguments:**
@@ -136,7 +178,6 @@ MESA_GL_VERSION_OVERRIDE=4.4COMPAT __GL_SHADER_DISK_CACHE=1 VK_ICD_FILENAMES=/us
   ```
 
 ## Sleeping Dogs: Definitive Edition:
-
 - #### Wine / Proton Info:
   - Last Known Working: `Proton 6.3-8`
 
@@ -157,7 +198,6 @@ MESA_GL_VERSION_OVERRIDE=4.4COMPAT __GL_SHADER_DISK_CACHE=1 VK_ICD_FILENAMES=/us
     6. add Steam Launch Arguments, and replace both instances of Width and Height (`-w` & `-h`) to your Monitor's Resolution.
 
 ## Final Fantasy XV: "Windows" Edition:
-
 - #### Wine / Proton Info:
   - Initial Test Version: `GE-Proton7-18`<sup>[Regression](https://github.com/ValveSoftware/Proton/issues/74#event-5256563749)</sup>
     -  **Regression Info**:
@@ -167,8 +207,8 @@ MESA_GL_VERSION_OVERRIDE=4.4COMPAT __GL_SHADER_DISK_CACHE=1 VK_ICD_FILENAMES=/us
   ```bash
   VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=aco gamemoderun mangohud %command%
   ```
-## Bioshock Remastered:
 
+## Bioshock Remastered:
 - #### Wine / Proton Info:
   - Working Status: `Working, occasional crashing. Unsure if caused by Proton.`
   - Initial Test Version: `Proton Experimental`
@@ -179,8 +219,8 @@ MESA_GL_VERSION_OVERRIDE=4.4COMPAT __GL_SHADER_DISK_CACHE=1 VK_ICD_FILENAMES=/us
   ```bash
   VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.i686.json RADV_PERFTEST=aco mangohud %command% -nointro
   ```
-## Ghost of a Tale:
 
+## Ghost of a Tale:
 - #### Wine / Proton Info:
   - Working Status: `Seems to be Fully Working, More Testing Needed`
   - Initial Test Version: `GE-Proton7-20` <sup>*Possibly* Also Broken, further testing needed.</sup>
@@ -191,7 +231,6 @@ MESA_GL_VERSION_OVERRIDE=4.4COMPAT __GL_SHADER_DISK_CACHE=1 VK_ICD_FILENAMES=/us
   ```
 
 ## Deep Rock Galactic:
-
 - #### Wine / Proton Info:
   - Working Status: `Working`
   - Initial Test Version: `GE-Proton7-17`
@@ -202,7 +241,6 @@ MESA_GL_VERSION_OVERRIDE=4.4COMPAT __GL_SHADER_DISK_CACHE=1 VK_ICD_FILENAMES=/us
   ```
 
 ## Tunic:
-
 - #### Wine / Proton Info:
   - Working Status: `Working`
   - Initial Test Version: `GE-Proton7-17`
@@ -213,7 +251,6 @@ MESA_GL_VERSION_OVERRIDE=4.4COMPAT __GL_SHADER_DISK_CACHE=1 VK_ICD_FILENAMES=/us
   ```
 
 ## Assassins Creed Origins:
-
 - #### Wine / Proton Info:
   - Working Status: `Working`
   - Initial Test Version: `GE-Proton7-17`
@@ -229,7 +266,6 @@ MESA_GL_VERSION_OVERRIDE=4.4COMPAT __GL_SHADER_DISK_CACHE=1 VK_ICD_FILENAMES=/us
     ```
 
 ## Sea of Thieves:
-
 - #### Wine / Proton Info:
   - Working Status: `Working`
   - Initial Test Version: `GE-Proton7-17`
@@ -238,3 +274,39 @@ MESA_GL_VERSION_OVERRIDE=4.4COMPAT __GL_SHADER_DISK_CACHE=1 VK_ICD_FILENAMES=/us
   ```bash
   VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=aco gamemoderun mangohud %command%
   ```
+
+## Cult of the Lamb:
+- #### Wine / Proton Info:
+  - Working Status: `Working`
+  - Initial Test Version: `Proton-7.0rc6-GE-1`
+  - Last Known Working: `GE-Proton7-38`
+- **Steam Launch Arguments:**
+  ```bash
+  VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=aco gamemoderun mangohud %command%
+  ```
+- ### Fixes:
+  - #### [Stuttering / Frame-Pacing Issues](https://www.reddit.com/r/SteamDeck/comments/x4cau0/cult_of_the_lamb_micro_stutter_fix/):
+     - Add the Following Lines to: `<installdir>/Cult of the Lamb/Cult Of The Lamb_Data/boot.config`
+      ```
+      gfx-enable-gfx-jobs=1
+      gfx-enable-native-gfx-jobs=1
+      gc-max-time-slice=1
+      ```
+
+## Dinkum:
+- #### Wine / Proton Info:
+  - Working Status: `Working`
+  - Initial Test Version: `GE-Proton7-27`
+  - Last Known Working: `GE-Proton7-38`
+- **Steam Launch Arguments:**
+  ```bash
+  VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json RADV_PERFTEST=aco gamemoderun mangohud %command%
+  ```
+- ### Fixes:
+  - #### Stuttering / Frame-Pacing Issues:
+     - Add the Following Lines to: `<installdir>/Dinkum/Dinkum_Data/boot.config`
+      ```
+      gfx-enable-gfx-jobs=1
+      gfx-enable-native-gfx-jobs=1
+      gc-max-time-slice=1
+      ```
