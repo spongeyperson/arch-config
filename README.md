@@ -2,18 +2,34 @@
 ###### <p align=center> A Simple Git Repository to store various Arch Linux User Configs (Dotfiles).
 
 
-#### <p align=center> Index:
-  - **This Repo**:
-    - Documentation:
-      - Wine Gaming Related:
-        - [Game settings](docs/Game-Settings.md)
-        - [Game troubleshooting](docs/Game-Troubleshooting.md)
-      - [Custom KDE panels](home/tyler/.local/share/plasma/layout-templates)
-      - [Xorg configuration](etc/X11/xorg.conf.d)
-      - [Unused files directory](home/tyler/arch-dotfiles/unused)
-  - Other Dotfiles:
-    - **Proxmox**: [spongeyperson/proxmox-config](https://github.com/spongeyperson/proxmox-config/)
-    - **Fedora**: [spongeyperson/fedora-dotfiles](https://github.com/spongeyperson/fedora-dotfiles/)
+<!--#### <p align=center> Index:
+-->
+<details>
+  <summary><b>Index</b></summary>
+  <ul>
+   <li><b>This Repo</b>:
+    <ul>
+      <li>Documentation:
+        <ul>
+          <li>Wine Gaming Related:
+            <ul>
+              <li><a href="https://github.com/spongeyperson/arch-dotfiles/blob/master/docs/Game-Settings.md">Game settings<a></li>
+              <li><a href="https://github.com/spongeyperson/arch-dotfiles/blob/master/docs/Game-Troubleshooting.md">Game troubleshooting<a></li>
+            </ul>
+        </ul>
+        <li><a href="https://github.com/spongeyperson/arch-dotfiles/tree/master/home/tyler/.local/share/plasma/layout-templates">Custom KDE panels</a></li>
+        <li><a href="https://github.com/spongeyperson/arch-dotfiles/tree/master/etc/X11/xorg.conf.d/">Xorg configuration</a></li>
+        <li><a href="https://github.com/spongeyperson/arch-dotfiles/tree/master/home/tyler/arch-dotfiles/unused">Unused files directory</a></li>
+      </ul>
+    </li>
+  </ul>
+  <li><b>Other Repos</b>:</li>
+    <ul>
+      <li><b>Proxmox</b>: <a href="https://github.com/spongeyperson/proxmox-config/">spongeyperson/proxmox-config</a></li>
+      <li><b>Fedora</b>: <a href="https://github.com/spongeyperson/fedora-dotfiles/">spongeyperson/fedora-dotfiles</a></li>
+    </ul>
+</details>
+
 
 ![I run Arch BTW](https://user-images.githubusercontent.com/28176188/146662437-bbd5fc0d-ae98-4f28-a2df-12b89f819534.png)
 
