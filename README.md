@@ -37,7 +37,7 @@
 </details>
 
 
-![I run Arch BTW](https://user-images.githubusercontent.com/28176188/146662437-bbd5fc0d-ae98-4f28-a2df-12b89f819534.png)
+![I run Arch BTW](https://user-images.githubusercontent.com/28176188/210040764-90bf0b89-1e4f-4f6f-aa42-35a006060849.png)
 
 # Gaming Tweaks:
 
