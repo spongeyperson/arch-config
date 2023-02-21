@@ -7,6 +7,7 @@ This directory contains a custom KDE Default Panel under the "Add Panel" menu; C
   <img src="https://user-images.githubusercontent.com/28176188/146104792-9fddbf92-5a96-45cc-b310-a26c7bd9333e.png" />
 </p>
 
+> Please Note: As of Feb 21st 2023, i highly recommend <u>against</u> using aur packages for widgets as they seem to often get out of date very quickly and abandoned with another random package name taking it's place for the same widget. This leaves lots of orphan packages and it's dependancies and is just a mess. [I am working on a revision to this](https://github.com/spongeyperson/arch-dotfiles/issues/1#issue-1593299110)   
 ## Spongey Panel:
 ###### Default Spongey Panel
 <sub>([`org.kde.plasma.desktop.SpongeyPanel/`](https://github.com/spongeyperson/arch-dotfiles/tree/master/home/tyler/.local/share/plasma/layout-templates/org.kde.plasma.desktop.SpongeyPanel/))</sub>
