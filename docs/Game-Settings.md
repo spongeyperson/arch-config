@@ -66,8 +66,9 @@
       WINE_USE_VKD3D=1
       ```
     - #### D9VK (DirectX 9 &rarr; Vulkan)
-      > <p align=center><b> :exclamation: Deprecated :exclamation: </b></p><br>
-      > <p align=center> <a href=https://github.com/doitsujin/dxvk/pull/1275>This seems to have been deprecated as this has been merged into DXVK</a> </p>
+      > <p align=center style="margin-bottom: 0;"><b><u> :exclamation: Deprecated :exclamation: </u></b></p>
+      > <p align=center><a href=https://github.com/doitsujin/dxvk/pull/1275>This seems to have been deprecated as this has been merged into DXVK</a></p>
+
 
       > This option is listed here for legacy reasons, so if you need to use an older implementation of DirectX 9 -> Vulkan, it is here for future reference. Do not use this if using newer DXVK Versions than [v1.5](https://github.com/doitsujin/dxvk/releases/tag/v1.5)
       ```
