@@ -66,8 +66,8 @@
       WINE_USE_VKD3D=1
       ```
     - #### D9VK (DirectX 9 &rarr; Vulkan)
-      > <center> :exclamation: Deprecated :exclamation: </center>
-      > <center> <a href=https://github.com/doitsujin/dxvk/pull/1275>This seems to have been deprecated as this has been merged into DXVK</a> </center>
+      > <p align=center><b> :exclamation: Deprecated :exclamation: </b></p><br>
+      > <p align=center> <a href=https://github.com/doitsujin/dxvk/pull/1275>This seems to have been deprecated as this has been merged into DXVK</a> </p>
 
       > This option is listed here for legacy reasons, so if you need to use an older implementation of DirectX 9 -> Vulkan, it is here for future reference. Do not use this if using newer DXVK Versions than [v1.5](https://github.com/doitsujin/dxvk/releases/tag/v1.5)
       ```
@@ -75,7 +75,7 @@
       ```
 - ### AMD Specific
   - #### Enable Valve's AMD ACO Recompiler (Requires RADV):
-    > <center> ⚠️ <u><b>More information may be needed on this Topic</u></b> ⚠️ </center>
+    > <p align=center> ⚠️ <u><b>More information may be needed on this Topic</u></b> ⚠️ </p>
 
     >A dynamic shader recompiler with the goal to replace standard LLVM shader compilation. <u>This can speed up shader compilation and reduce stuttering in most titles</u>, but (in my own testing) seems to help DXVK (or DirectX 11) titles more as DirectX 11 is not an Asynchronous aware API, and translating to Vulkan can add shader stuttering as result. This helps mitigate this.
     ```
@@ -114,7 +114,7 @@
   * `-f`: create a full-screen window.
 
 <!--
-# <center>Games:</center>
+# <p align=center>Games:</p>
 -->
 
 
