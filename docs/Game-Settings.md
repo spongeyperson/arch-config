@@ -2,8 +2,8 @@
 ###### <p align=center> A compiled list of games that run under Linux with no issues, but may need minor tweaks. </p>
 
 # Table of Contents:
+  - [Commonly Used Steam Launch Arguments](#commonly-used-steam-launch-arguments)
   - **Games**:
-    - [Commonly Used Steam Launch Arguments](#commonly-used-steam-launch-arguments)
     - [Red Dead Redemption 2](#red-dead-redemption-2)
     - [Grand Theft Auto IV: The Complete Edition](#grand-theft-auto-iv-the-complete-edition)
     - [Farming Simulator 22](#farming-simulator-22)
@@ -24,59 +24,67 @@
 
 ## Commonly Used Steam Launch Arguments:
 
-- ### Specify your Vulkan Driver (ICD):
+- ### Force a specific Vulkan Driver (ICD):
   >This is usually helpful when you either have multiple GPUs, a game is expecting only a 32-Bit library to exist, and fails to initialize because it only sees the default 64-Bit library, or when you want to specify a specific driver for a specific game (e.g. A game performs better on a specific driver) 
-  ### <img src="https://user-images.githubusercontent.com/28176188/142365376-270d160f-33c3-4012-a3d9-541ab65bfdb6.png" width="17" height="17"> AMD:
-  - **Mesa RADV:**
-    - 32-Bit:
-      ```
-      VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.i686.json
-      ```
-    - 64-Bit:
-      ```
-      VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json
-      ```
-  - **AMD AMDVLK (Usually Slower):**
-    - 32-Bit:
-      ```
-      VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/amd_icd64.json
-      ```
-    - 64-Bit:
-      ```
-      VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/amd_icd64.json
-      ```
-  ### <img src="https://user-images.githubusercontent.com/28176188/142362826-8090a147-94ee-4f67-a3ed-f87058a6797d.png" width="17" height="17"> Nvidia:
-    - Package(s): [`nvidia-utils`](https://archlinux.org/packages/extra/x86_64/nvidia-utils/) & [`lib32-nvidia-utils`](https://archlinux.org/packages/multilib/x86_64/lib32-nvidia-utils/)
+  - ### <img src="https://user-images.githubusercontent.com/28176188/142365376-270d160f-33c3-4012-a3d9-541ab65bfdb6.png" width="17" height="17"> AMD:
+    - #### Mesa RADV:
+      - 32-Bit:
+        ```
+        VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.i686.json
+        ```
       - 64-Bit:
         ```
-        VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/nvidia_icd.json
+        VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json
         ```
+    - #### AMD AMDVLK (Usually Slower):
+      - 32-Bit:
+        ```
+        VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/amd_icd64.json
+        ```
+      - 64-Bit:
+        ```
+        VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/amd_icd64.json
+        ```
+  - ### <img src="https://user-images.githubusercontent.com/28176188/142362826-8090a147-94ee-4f67-a3ed-f87058a6797d.png" width="17" height="17"> Nvidia:
+    > ##### :exclamation: Required Package(s): [`nvidia-utils`](https://archlinux.org/packages/extra/x86_64/nvidia-utils/) & [`lib32-nvidia-utils`](https://archlinux.org/packages/multilib/x86_64/lib32-nvidia-utils/) 
+    - 64-Bit:
+      ```
+      VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/nvidia_icd.json
+      ```
 - ### Wine Specific
-  - Enable Wine-Specific FSR (AMD Fidelity FX Super Resolution)
+  - #### Enable Wine-Specific FSR (AMD Fidelity FX&trade; Super Resolution)
     ```
     WINE_FULLSCREEN_FSR=1
     ```
-  - ### Force API:
-    - DXVK (DirectX 9/10/11 -> Vulkan)
+  - ### Force Specific Rendering APIs:
+    - #### DXVK (DirectX 9/10/11 -> Vulkan)
       ```
       WINE_USE_DXVK=1
       ```
-    - VKD3D (DirectX 12 -> Vulkan)
+    - #### VKD3D (DirectX 12 &rarr; Vulkan)
       ```
       WINE_USE_VKD3D=1
       ```
-    - D9VK (DirectX 9 -> Vulkan)(Deprecated, Merged into DXVK)
+    - #### D9VK (DirectX 9 &rarr; Vulkan)
+      > <center> :exclamation: Deprecated :exclamation: </center>
+      > <center> <a href=https://github.com/doitsujin/dxvk/pull/1275>This seems to have been deprecated as this has been merged into DXVK</a> </center>
+
       > This option is listed here for legacy reasons, so if you need to use an older implementation of DirectX 9 -> Vulkan, it is here for future reference. Do not use this if using newer DXVK Versions than [v1.5](https://github.com/doitsujin/dxvk/releases/tag/v1.5)
       ```
       WINE_USE_D9VK=1
       ```
 - ### AMD Specific
-  - Enable AMD ACO Recompiler (Requires RADV):
+  - #### Enable Valve's AMD ACO Recompiler (Requires RADV):
+    > <center> ⚠️ <u><b>More information may be needed on this Topic</u></b> ⚠️ </center>
+
+    >A dynamic shader recompiler with the goal to replace standard LLVM shader compilation. <u>This can speed up shader compilation and reduce stuttering in most titles</u>, but (in my own testing) seems to help DXVK (or DirectX 11) titles more as DirectX 11 is not an Asynchronous aware API, and translating to Vulkan can add shader stuttering as result. This helps mitigate this.
     ```
     RADV_PERFTEST=aco
     ```
+  - ####  (Proton-GE Only)
+
 - ### DXVK HUD
-  - Show DXVK Shader Compilation using DXVK HUD
+  - #### Show DXVK Shader Compilation using DXVK HUD
     ```
     DXVK_HUD=compile
     ```
@@ -104,6 +112,17 @@
   * `-n`: use integer scaling.
   * `-b`: create a border-less window.
   * `-f`: create a full-screen window.
+
+<!--
+# <center>Games:</center>
+-->
+
+
+<div id="user-content-toc">
+  <ul>
+    <summary align="center"><h1 style="display: inline-block; text-decoration: none;">Games:</h1></summary>
+  </ul>
+</div>
 
 ## Red Dead Redemption 2:
 - #### Wine / Proton Info:
