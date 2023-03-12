@@ -3,6 +3,11 @@
 
 # Table of Contents:
   - [Commonly Used Steam Launch Arguments](#commonly-used-steam-launch-arguments)
+    - [My Launch Arguments](#my-launch-arguments)
+    - [Wine Tweaks](#wine-tweaks)
+    - [AMD Tweaks](#amd-tweaks)
+    - [Nvidia Tweaks](#nvidia-tweaks)
+  - [Valve Gamescope (steamcompmgr)](#valve-gamescope-formerly-steamcompmgr)
   - **Games**:
     - [Red Dead Redemption 2](#red-dead-redemption-2)
     - [Grand Theft Auto IV: The Complete Edition](#grand-theft-auto-iv-the-complete-edition)
@@ -34,43 +39,22 @@
       RADV_PERFTEST=gpl,aco gamemoderun %command%
       ```
 
-- ### Force a specific Vulkan Driver (ICD):
-  >This is usually helpful when you either have multiple GPUs, a game is expecting only a 32-Bit library to exist, and fails to initialize because it only sees the default 64-Bit library, or when you want to specify a specific driver for a specific game (e.g. A game performs better on a specific driver) 
-  - ### <img src="https://user-images.githubusercontent.com/28176188/142365376-270d160f-33c3-4012-a3d9-541ab65bfdb6.png" width="17" height="17"> AMD:
-    - #### Mesa RADV:
-      - 32-Bit:
-        ```
-        VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.i686.json
-        ```
-      - 64-Bit:
-        ```
-        VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json
-        ```
-    - #### AMD AMDVLK (Usually Slower):
-      - 32-Bit:
-        ```
-        VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/amd_icd64.json
-        ```
-      - 64-Bit:
-        ```
-        VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/amd_icd64.json
-        ```
-  - ### <img src="https://user-images.githubusercontent.com/28176188/142362826-8090a147-94ee-4f67-a3ed-f87058a6797d.png" width="17" height="17"> Nvidia:
-    > ##### :exclamation: Required Package(s): [`nvidia-utils`](https://archlinux.org/packages/extra/x86_64/nvidia-utils/) & [`lib32-nvidia-utils`](https://archlinux.org/packages/multilib/x86_64/lib32-nvidia-utils/) 
-    - 64-Bit:
-      ```
-      VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/nvidia_icd.json
-      ```
-- ### Wine Specific
+- ## <img src="https://user-images.githubusercontent.com/28176188/224575749-b843d685-2e1e-43bc-8267-ee337fde8206.svg" width="19" height="19"> Wine Tweaks
   - #### Enable Wine-Specific FSR (AMD Fidelity FX&trade; Super Resolution)
+    > ❗ <b>Notice</b>: This <i>should</i> run under <u>any</u> GPU, including Nvidia GPUs as FSR is an open standard
     ```
     WINE_FULLSCREEN_FSR=1
     ```
-  - ### Force Specific Rendering APIs:
+  - ### Force Wine Rendering APIs:
     - #### DXVK (DirectX 9/10/11 &rarr; Vulkan)
       ```
       WINE_USE_DXVK=1
       ```
+      - #### <u>Additional Options</u>:
+        -  Show DXVK Shader Compilation using DXVK HUD
+            ```
+            DXVK_HUD=compile
+            ```
     - #### VKD3D (DirectX 12 &rarr; Vulkan)
       ```
       WINE_USE_VKD3D=1
@@ -84,7 +68,35 @@
       ```
       WINE_USE_D9VK=1
       ```
-- ### <img src="https://user-images.githubusercontent.com/28176188/142365376-270d160f-33c3-4012-a3d9-541ab65bfdb6.png" width="17" height="17"> AMD Specific
+
+- ## <img src="https://user-images.githubusercontent.com/28176188/142365376-270d160f-33c3-4012-a3d9-541ab65bfdb6.png" width="17" height="17"> AMD Tweaks:
+
+- ### Force a specific Vulkan Driver (ICD):
+  This is usually helpful when you either have multiple GPUs, a game is expecting only a 32-Bit library to exist, and fails to initialize because it only sees the default 64-Bit library, or when you want to specify a specific driver for a specific game (e.g. A game performs better on a specific driver) 
+  - #### Mesa RADV:
+    - 32-Bit:
+      ```
+      VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.i686.json
+      ```
+    - 64-Bit:
+      ```
+      VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json
+      ```
+  - #### AMD AMDVLK:
+    >❗ Usually Slower
+    - 32-Bit:
+      ```
+      VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/amd_icd64.json
+      ```
+    - 64-Bit:
+      ```
+      VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/amd_icd64.json
+      ```
+- ### RADV Performance Test Features:
+> 📝 <b><u>Note</u></b>: You can combine both of these into one command as follows:
+  ```
+  RADV_PERFTEST=gpl,aco
+  ```
   - #### Enable Valve's AMD ACO Recompiler (Requires RADV):
     > <p align=center> ⚠️ <u><b>More information may be needed on this Topic</u></b> ⚠️ </p>
 
@@ -92,15 +104,25 @@
     ```
     RADV_PERFTEST=aco
     ```
-  - ####  (Proton-GE Only)
-
-- ### DXVK HUD
-  - #### Show DXVK Shader Compilation using DXVK HUD
+  - #### Vulkan GraphicsPipelineLibrary (<a href="https://github.com/GloriousEggroll/proton-ge-custom">`Proton-GE`</a> Only)
+    > As of <a href=https://github.com/GloriousEggroll/proton-ge-custom/releases/tag/GE-Proton7-45>`GE-Proton7-45`</a>, `dxvk_async` was deprecated in favor of Graphics Pipeline Library (GPL) standard. It's job is to replace the functionality of `dxvk_async` and provide a Vulkan Extension to take it's place. This *should* be more cross platform with AMD, Nvidia, Intel, etc; but as of right now, more testing will be needed.
     ```
-    DXVK_HUD=compile
+    RADV_PERFTEST=gpl
     ```
 
-- ### [Valve GAMESCOPE (Compositor, not DE) (Formerly steamcompmgr)](https://github.com/Plagman/gamescope)
+- ## <img src="https://user-images.githubusercontent.com/28176188/142362826-8090a147-94ee-4f67-a3ed-f87058a6797d.png" width="17" height="17"> Nvidia Tweaks:
+
+  - ### Force a specific Vulkan Driver (ICD):
+    This is usually helpful when you either have multiple GPUs, a game is expecting only a 32-Bit library to exist, and fails to initialize because it only sees the default 64-Bit library, or when you want to specify a specific driver for a specific game (e.g. A game performs better on a specific driver) 
+
+      > ##### :exclamation: <u>Required Package(s)</u>: [`nvidia-utils`](https://archlinux.org/packages/extra/x86_64/nvidia-utils/) & [`lib32-nvidia-utils`](https://archlinux.org/packages/multilib/x86_64/lib32-nvidia-utils/) 
+      - 64-Bit Nvidia ICD:
+        ```
+        VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/nvidia_icd.json
+        ```
+
+- ## Valve GAMESCOPE (Formerly <a href=https://github.com/Plagman/gamescope>`steamcompmgr`</a>)
+  > ❗ <b><u>Notice</b></u>: This is for the Gamescope Compositor, not Desktop Environment
   ```bash
   # Upscale a 720p game to 1440p with integer scaling
   gamescope -h 720 -H 1440 -n -- %command%
@@ -124,9 +146,9 @@
   * `-b`: create a border-less window.
   * `-f`: create a full-screen window.
 
-<!--
-# <p align=center>Games:</p>
--->
+  <!--
+  # <p align=center>Games:</p>
+  -->
 
 
 <div id="user-content-toc">
