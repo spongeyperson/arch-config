@@ -24,6 +24,16 @@
 
 ## Commonly Used Steam Launch Arguments:
 
+- ### My Launch Arguments:
+  - #### Main PC:
+      ```
+      RADV_PERFTEST=gpl,aco gamemoderun mangohud %command%
+      ```
+  - #### Steam Deck:
+      ```
+      RADV_PERFTEST=gpl,aco gamemoderun %command%
+      ```
+
 - ### Force a specific Vulkan Driver (ICD):
   >This is usually helpful when you either have multiple GPUs, a game is expecting only a 32-Bit library to exist, and fails to initialize because it only sees the default 64-Bit library, or when you want to specify a specific driver for a specific game (e.g. A game performs better on a specific driver) 
   - ### <img src="https://user-images.githubusercontent.com/28176188/142365376-270d160f-33c3-4012-a3d9-541ab65bfdb6.png" width="17" height="17"> AMD:
@@ -57,7 +67,7 @@
     WINE_FULLSCREEN_FSR=1
     ```
   - ### Force Specific Rendering APIs:
-    - #### DXVK (DirectX 9/10/11 -> Vulkan)
+    - #### DXVK (DirectX 9/10/11 &rarr; Vulkan)
       ```
       WINE_USE_DXVK=1
       ```
@@ -70,11 +80,11 @@
       > <p align=center><a href=https://github.com/doitsujin/dxvk/pull/1275>This seems to have been deprecated as this has been merged into DXVK</a></p>
 
 
-      > This option is listed here for legacy reasons, so if you need to use an older implementation of DirectX 9 -> Vulkan, it is here for future reference. Do not use this if using newer DXVK Versions than [v1.5](https://github.com/doitsujin/dxvk/releases/tag/v1.5)
+      > This option is listed here for legacy reasons, so if you need to use an older implementation of DirectX 9 &rarr; Vulkan, it is here for future reference. Do not use this if using newer DXVK Versions than [v1.5](https://github.com/doitsujin/dxvk/releases/tag/v1.5)
       ```
       WINE_USE_D9VK=1
       ```
-- ### AMD Specific
+- ### <img src="https://user-images.githubusercontent.com/28176188/142365376-270d160f-33c3-4012-a3d9-541ab65bfdb6.png" width="17" height="17"> AMD Specific
   - #### Enable Valve's AMD ACO Recompiler (Requires RADV):
     > <p align=center> ⚠️ <u><b>More information may be needed on this Topic</u></b> ⚠️ </p>
 
