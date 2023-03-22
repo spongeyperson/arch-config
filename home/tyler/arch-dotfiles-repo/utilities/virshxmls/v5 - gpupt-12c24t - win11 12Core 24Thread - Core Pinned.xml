@@ -38,7 +38,7 @@
   </cputune>
   <os>
     <type arch="x86_64" machine="pc-q35-7.1">hvm</type>
-    <loader readonly="yes" type="pflash">/usr/share/edk2-ovmf/x64/OVMF_CODE.secboot.fd</loader>
+    <loader readonly="yes" type="pflash">/usr/share/edk2-ovmf/x64/OVMF_CODE.fd</loader>
     <nvram>/var/lib/libvirt/qemu/nvram/gpupt-12c24t_VARS.fd</nvram>
     <bootmenu enable="yes"/>
   </os>
@@ -75,24 +75,24 @@
   <devices>
     <emulator>/usr/bin/qemu-system-x86_64</emulator>
     <disk type="file" device="cdrom">
-      <driver name="qemu" type="raw" discard="unmap"/>
+      <driver name="qemu" type="raw" cache="writeback" discard="unmap"/>
       <target dev="sdb" bus="sata"/>
       <readonly/>
-      <boot order="1"/>
+      <boot order="2"/>
       <address type="drive" controller="0" bus="0" target="0" unit="1"/>
     </disk>
     <disk type="file" device="cdrom">
-      <driver name="qemu" type="raw"/>
-      <source file="/home/tyler/Virtual Machines/ISOs/virtio-win-0.1.173.iso"/>
+      <driver name="qemu" type="raw" cache="writeback" discard="unmap"/>
       <target dev="sdc" bus="sata"/>
       <readonly/>
+      <boot order="3"/>
       <address type="drive" controller="0" bus="0" target="0" unit="2"/>
     </disk>
     <disk type="file" device="cdrom">
       <driver name="qemu" type="raw" cache="writeback" discard="unmap"/>
+      <source file="/home/tyler/Virtual Machines/ISOs/virtio-win-0.1.229.iso"/>
       <target dev="sdd" bus="sata"/>
       <readonly/>
-      <boot order="3"/>
       <address type="drive" controller="0" bus="0" target="0" unit="3"/>
     </disk>
     <controller type="usb" index="0" model="qemu-xhci" ports="15">
@@ -200,8 +200,8 @@
       <source>
         <address domain="0x0000" bus="0x44" slot="0x00" function="0x0"/>
       </source>
-      <boot order="2"/>
-      <address type="pci" domain="0x0000" bus="0x09" slot="0x00" function="0x0"/>
+      <boot order="1"/>
+      <address type="pci" domain="0x0000" bus="0x05" slot="0x00" function="0x0"/>
     </hostdev>
     <hostdev mode="subsystem" type="usb" managed="yes">
       <source>
@@ -210,6 +210,7 @@
       </source>
       <address type="usb" bus="0" port="1"/>
     </hostdev>
+    <watchdog model="itco" action="reset"/>
     <memballoon model="virtio">
       <address type="pci" domain="0x0000" bus="0x04" slot="0x00" function="0x0"/>
     </memballoon>
