@@ -13,8 +13,8 @@
         <ul>
           <li>Wine Gaming Related:
             <ul>
-              <li><a href="https://github.com/spongeyperson/arch-dotfiles/blob/master/docs/Game-Settings.md">Game settings<a></li>
-              <li><a href="https://github.com/spongeyperson/arch-dotfiles/blob/master/docs/Game-Troubleshooting.md">Game troubleshooting<a></li>
+              <li><a href="https://github.com/spongeyperson/arch-dotfiles/blob/master/home/tyler/arch-dotfiles-repo/docs/Game-Settings.md">Game settings<a></li>
+              <li><a href="https://github.com/spongeyperson/arch-dotfiles/blob/master/home/tyler/arch-dotfiles-repo/docs/Game-Troubleshooting.md">Game troubleshooting<a></li>
             </ul>
         </ul>
         <li>VFIO / GPU Passthrough Related:
@@ -25,7 +25,7 @@
         <li><a href="https://github.com/spongeyperson/arch-dotfiles/tree/master/home/tyler/.local/share/plasma/layout-templates">Custom KDE panels</a></li>
         <li><a href="https://github.com/spongeyperson/arch-dotfiles/tree/master/etc/X11/xorg.conf.d/">Xorg configuration</a></li>
         <li><a href="https://github.com/spongeyperson/arch-dotfiles/tree/master/etc/systemd/system/">Systemd Services</a></li>
-        <li><a href="https://github.com/spongeyperson/arch-dotfiles/tree/master/home/tyler/arch-dotfiles/unused">Unused files directory</a></li>
+        <li><a href="https://github.com/spongeyperson/arch-dotfiles/tree/master/home/tyler/arch-dotfiles/home/tyler/arch-dotfiles-repo/utilities/unused">Unused files directory</a></li>
       </ul>
     </li>
   </ul>
