@@ -22,5 +22,8 @@ $RECYCLE.BIN/
 .dotfiles-sync-cfg
 .dotfiles
 
+# Ignore Nested Repos
+$HOME/Git\ Projects/
+
 # Ignore mnt
 /mnt
