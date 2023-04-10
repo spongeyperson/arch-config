@@ -5,7 +5,7 @@
    version="1.1"
    id="svg12"
    sodipodi:docname="TeamViewer.svg"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -13,7 +13,9 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:dc="http://purl.org/dc/elements/1.1/">
-  <style id="current-color-scheme" type="text/css">.ColorScheme-Text { color:#d6dbf1; }
+  <style
+     id="current-color-scheme"
+     type="text/css">.ColorScheme-Text { color:#d6dbf1; }
 </style>
   <g
      id="22-22-TeamViewer"
@@ -84,12 +86,12 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
-     inkscape:window-height="1015"
+     inkscape:window-height="1004"
      id="namedview14"
      showgrid="false"
-     inkscape:zoom="6.9384855"
-     inkscape:cx="32.57195"
-     inkscape:cy="21.258241"
+     inkscape:zoom="9.8125003"
+     inkscape:cx="29.757961"
+     inkscape:cy="21.605095"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -97,7 +99,8 @@
      inkscape:document-rotation="0"
      inkscape:showpageshadow="false"
      inkscape:pagecheckerboard="0"
-     inkscape:lockguides="false">
+     inkscape:lockguides="false"
+     inkscape:deskcolor="#d1d1d1">
     <inkscape:grid
        type="xygrid"
        id="grid864"

@@ -1,5 +1,5 @@
 [$Version]
-update_info=kwin.upd:overview-group-plugin-id,kwin.upd:animation-speed-cleanup
+update_info=kwin.upd:overview-group-plugin-id,kwin.upd:animation-speed-cleanup,kwin.upd:replace-cascaded-zerocornered
 
 [Compositing]
 HiddenPreviews=6
@@ -21,17 +21,41 @@ blurEnabled=true
 contrastEnabled=true
 exquisiteEnabled=false
 floatingtilesEnabled=false
-kdesnapassistEnabled=false
+kdesnapassistEnabled=true
 kwin4_effect_squashEnabled=false
 kzonesEnabled=false
 magiclampEnabled=true
-minimizeallEnabled=true
+minimizeallEnabled=false
 overviewEnabled=true
 sticky-window-snappingEnabled=true
+swapsidesEnabled=false
+switchAllWindowsScreenEnabled=false
 tilegapsEnabled=false
+
+[Script-kdesnapassist]
+backdropColor=#dc181b1d
+showOtherScreensWindows=true
 
 [TabBox]
 LayoutName=big_icons
+
+[Tiling]
+padding=4
+
+[Tiling][1ed5621a-7460-544d-9637-262dba1368a4]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][63c1cf99-d17d-59d8-8d8f-2b2231eef65e]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][7d95acd3-35e7-55a7-83ee-3dfab4bac360]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][8f6737da-797c-5871-8012-e396ea153737]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][bad91fae-5897-5c92-8375-81b16ed59759]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [org.kde.kdecoration2]
 BorderSize=Tiny

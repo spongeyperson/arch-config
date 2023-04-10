@@ -8,6 +8,9 @@ Seen=true
 Seen=true
 ShowPopups=false
 
+[Applications][com.brave.Browser]
+Seen=true
+
 [Applications][com.discordapp.Discord]
 Seen=true
 
@@ -17,6 +20,9 @@ Seen=true
 [Applications][com.mastermindzh.tidal-hifi]
 Seen=true
 
+[Applications][com.microsoft.Edge]
+Seen=true
+
 [Applications][com.uploadedlobster.peek]
 Seen=true
 
@@ -24,6 +30,9 @@ Seen=true
 Seen=true
 
 [Applications][electron]
+Seen=true
+
+[Applications][firefox]
 Seen=true
 
 [Applications][fr.handbrake.ghb]
@@ -75,6 +84,7 @@ Seen=true
 Seen=true
 
 [DoNotDisturb]
+Until=2023,3,9,6,51,0.378
 WhenScreensMirrored=false
 
 [Services][lattedock]

@@ -3,6 +3,6 @@ Type=Application
 Version=1.0
 Name=premid
 Comment=premidstartup script
-Exec=/opt/premid/premid --hidden --disable-gpu-sandbox
+Exec=/opt/premid/premid --hidden
 StartupNotify=false
 Terminal=false

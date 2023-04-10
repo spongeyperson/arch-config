@@ -108,12 +108,15 @@ panel.addWidget("org.kde.plasma.networkmanagement")
 
 //Config Weather Widget
 var weather = panel.addWidget("org.kde.weatherWidget")
+// weather.currentConfigGroup = ["General"]
+// weather.writeConfig("places","")
 weather.currentConfigGroup = ["Appearance"]
 weather.writeConfig("layoutType","2")
 weather.currentConfigGroup = ["Units"]
 weather.writeConfig("temperatureType","fahrenheit")
 weather.writeConfig("pressureType","inHg")
 weather.writeConfig("windSpeedType","1")
+weather.writeConfig("timezoneType","1")
 
 //Latte Seperator
 var separator = panel.addWidget("org.kde.latte.separator")
