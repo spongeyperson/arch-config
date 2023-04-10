@@ -20,6 +20,7 @@ $RECYCLE.BIN/
 # Ignore Nested Git Bare Repo
 .cfg
 .dotfiles-sync-cfg
+.dotfiles
 
 # Ignore mnt
 /mnt
