@@ -19,6 +19,7 @@ alias update="yay -Syyu ; flatpak update"
 alias duf="duf -hide-fs squashfs"
 alias CLEAR="clear"
 alias onedrive="rclone serve webdav OD_Chunk:/ --vfs-cache-mode writes -P --cache-db-purge"
+alias ports="sudo lsof -i -P -n | grep LISTEN"
 
 
 #FLATPAK VSCode
