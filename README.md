@@ -29,7 +29,7 @@
 
 <li><b>Other Repos</b>:</li>
   <ul>
-  <li><b>Extra Dotfiles, Belonging to this Repo:</b> <a href="https://github.com/spongeyperson/dotfiles-extras"><sup><code>../Extra-Dotfiles</code></sup></a></li>
+  <li><b>Extra Dotfiles, Belonging to this Repo:</b> <a href="https://github.com/spongeyperson/dotfiles-extras"><sup><code>../dotfiles-extras</code></sup></a></li>
     <ul>
       <li><b><u>Documentation:</u></b></li>
       <ul>
