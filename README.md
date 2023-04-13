@@ -56,7 +56,7 @@
 <ul>
   <li><b>Other Dotfiles</b>:</li>
     <ul>
-      <li><b>Arch</b>: <a href="https://github.com/spongeyperson/proxmox-config/">spongeyperson/proxmox-config</a></li>
+      <li><b>Fedora (ROG G15)</b>: <a href="https://github.com/spongeyperson/fedora-dotfiles-laptop/">spongeyperson/fedora-dotfiles-laptop</a></li>
       <li><b>Fedora</b>: <a href="https://github.com/spongeyperson/fedora-dotfiles/">spongeyperson/fedora-dotfiles</a></li>
       <li><b>Proxmox</b>: <a href="https://github.com/spongeyperson/proxmox-config/">spongeyperson/proxmox-config</a></li>
     </ul>
