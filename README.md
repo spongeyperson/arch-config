@@ -7,6 +7,7 @@
 <ul>
   <li><b>This Repo</b>:</li>
   <ul>
+    <li><a href="#cloning-this-repo">Cloning this Repo</a></li>
     <li><b><u>Branches:</u></b></li>
       <ul>
         <li><a href="https://github.com/spongeyperson/arch-dotfiles/tree/unused">Unused files Branch</a></li>
@@ -26,7 +27,6 @@
     </ul>
   </ul>
 </ul>
-
 <li><b>Other Repos</b>:</li>
   <ul>
   <li><b>Extra Dotfiles, Belonging to this Repo:</b> <a href="https://github.com/spongeyperson/dotfiles-extras"><sup><code>../dotfiles-extras</code></sup></a></li>
@@ -62,6 +62,60 @@
     </ul>
   </ul>
 </ul>
+
+## Cloning this Repo:
+> Please note, this information was taken from the following source and changed to fit the content of this repo.
+> https://www.atlassian.com/git/tutorials/dotfiles
+
+
+### From Scratch:
+
+  1) <b>Initialize the Repo:</b>
+      ```bash
+      git init --bare $HOME/.dotfiles
+      ```
+  2) <b>Set an Alias in your Shell's Config:</b>
+      > Fish Shell:
+      ```bash
+      echo "alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=/'" >> $HOME/.config/fish/config.fish
+      ```
+      > Bash Shell:
+      ```bash
+      echo "alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=/'" >> $HOME/.bashrc
+      ```
+  3) <b>Globally Untrack Files that aren't part of the Dotfiles</b>
+      ```bash
+      dotfiles config --local status.showUntrackedFiles no
+      ```
+
+### Migrate / Merge into System:
+
+  1) <b>Set an Alias in your Shell's Config:</b>
+      > Fish Shell:
+      ```bash
+      echo "alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=/'" >> $HOME/.config/fish/config.fish
+      ```
+      > Bash Shell:
+      ```bash
+      echo "alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=/'" >> $HOME/.bashrc
+      ```
+  2) <b>Globally Untrack Files that aren't part of the Dotfiles</b>
+      ```bash
+      dotfiles config --local status.showUntrackedFiles no
+      ```
+  3) <b>Set Dotfiles Repo Source as ignored:</b>
+      ```bash
+      echo ".dotfiles" >> .gitignore
+      ```
+  4) <b>Clone Bare Repo:</b>
+      ```bash
+      git clone --bare https://github.com/spongeyperson/arch-dotfiles.git $HOME/.dotfiles/
+      ```
+  5) <b>Checkout Content from Remote Repo:</b>
+      ```bash
+      dotfiles checkout
+      ```
+
 
 ---
 ###### <p align=center> Note: I do <ins>not</ins> pretend to own any content on this git repository. All contents are copyright of their respective owners. This repository is intented for recreating Linux installs only. Content on this repository is installed <ins>at your own risk</ins>. If you have any legal issue with the content on this repository, please make a github issue and i will create a submodule linking to your project instead.</p>
