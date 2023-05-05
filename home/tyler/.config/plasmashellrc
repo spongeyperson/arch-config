@@ -16,7 +16,7 @@ detailViewIconSize=16
 
 [KPropertiesDialog]
 4 screens: Height=529
-4 screens: Width=421
+4 screens: Width=410
 DP-1 DP-2 HDMI-A-1 Height 2560x1440=453
 DP-1 DP-2 HDMI-A-1 Width 2560x1440=410
 DP-1 HDMI-A-1 DP-4 DP-6 Height 2560x1440=464
