@@ -48,6 +48,8 @@ alias key="echo -e '\033[0;32mAuthorized SSH Devices:\033[0m' && ls /home/tyler/
 alias lockwidgets="echo -e '\033[0;31mWidgets Locked\033[0m' ; qdbus org.kde.plasmashell /PlasmaShell evaluateScript 'lockCorona(true)'"
 alias unlockwidgets="echo -e '\033[0;32mWidgets Unlocked\033[0m' ; qdbus org.kde.plasmashell /PlasmaShell evaluateScript 'lockCorona(false)'"
 alias restartkwin="killall kwin_x11 ; nohup kstart5 kwin_x11 </dev/null &>/dev/null & ; echo -e '\033[0;32mKwin Restarted'"
+alias restartkwin_x11="killall kwin_x11 ; nohup kstart5 kwin_x11 </dev/null &>/dev/null & ; echo -e '\033[0;32mKwin (X11) Restarted'"
+alias restartkwin_wayland="killall kwin_wayland ; nohup kstart5 kwin_wayland </dev/null &>/dev/null & ; echo -e '\033[0;32mKwin (Wayland) Restarted'"
 alias restartplasma="killall plasmashell ; nohup kstart5 plasmashell </dev/null &>/dev/null & ; echo -e '\033[0;32mPlasma Shell Restarted'"
 #alias rebootplasma="kquitapp5 plasmashell && kstart5 plasmashell > /dev/null 2>&1"
 alias rebootplasma="plasmashell --replace &"
@@ -57,8 +59,8 @@ alias restartdock="killall latte-dock ; nohup kstart5 latte-dock </dev/null &>/d
 alias restartpipewire="systemctl --user restart pipewire.{socket,service} ; systemctl --user restart pipewire-pulse.{socket,service} ; echo -e '\033[0;32mPipewire Restarted'"
 alias restartaudio="systemctl --user restart pipewire.{socket,service} ; systemctl --user restart pipewire-pulse.{socket,service} ; echo -e '\033[0;32mPipewire Restarted'"
 
-# Manipulate Hardware
-alias liquid="sudo liquidctl --match kraken set fan speed 20 30  30 40  35 45  40 55  42 58  43 75  44 80  45 90  46 92  50 100 && sudo liquidctl --match kraken set pump 100 && echo -e '\033[0;32mKraken Pump & Fan Speed Set!\033[0m'"
+# Manipulate Kraken X62 Hardware (No longer installed)
+#alias liquid="sudo liquidctl --match kraken set fan speed 20 30  30 40  35 45  40 55  42 58  43 75  44 80  45 90  46 92  50 100 && sudo liquidctl --match kraken set pump 100 && echo -e '\033[0;32mKraken Pump & Fan Speed Set!\033[0m'"
 
 # Dotfiles Sync
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=/'
@@ -71,6 +73,8 @@ alias radv32="VK_ICD_FILENAMES='/usr/share/vulkan/icd.d/radeon_icd.i686.json'"
 alias amdvlk="VK_ICD_FILENAMES='/usr/share/vulkan/icd.d/amd_icd64.json'"
 alias amdvlk64="VK_ICD_FILENAMES='/usr/share/vulkan/icd.d/amd_icd64.json'"
 alias amdvlk32="VK_ICD_FILENAMES='/usr/share/vulkan/icd.d/amd_icd32.json'"
+alias vulkanicd="ls /usr/share/vulkan/icd.d/*.json"
+alias icd="ls /usr/share/vulkan/icd.d/*.json"
 ##
 
 # Autojump
@@ -78,6 +82,7 @@ alias amdvlk32="VK_ICD_FILENAMES='/usr/share/vulkan/icd.d/amd_icd32.json'"
 
 
 ## Flatpak Fish Workaround
+#This *may* not be required anymore, just here for legacy reasons
 set -l xdg_data_home $XDG_DATA_HOME ~/.local/share
 set -gx --path XDG_DATA_DIRS $xdg_data_home[1]/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
 
