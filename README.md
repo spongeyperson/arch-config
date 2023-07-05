@@ -29,26 +29,26 @@
 </ul>
 <li><b>Other Repos</b>:</li>
   <ul>
-  <li><b>Extra Dotfiles, Belonging to this Repo:</b> <a href="../../dotfiles-extras"><sup><code>../dotfiles-extras</code></sup></a></li>
+  <li><b>Extra Dotfiles, Belonging to this Repo:</b> <a href="../../../dotfiles-extras"><sup><code>../dotfiles-extras</code></sup></a></li>
     <ul>
       <li><b><u>Documentation:</u></b></li>
       <ul>
-        <li><a href="../../dotfiles-extras/docs/PRIME-Render-Settings.md">(WIP) Prime Render Offload Settings:</a></li>
+        <li><a href="../../../dotfiles-extras/docs/PRIME-Render-Settings.md">(WIP) Prime Render Offload Settings:</a></li>
         <li><img src="https://user-images.githubusercontent.com/28176188/224575749-b843d685-2e1e-43bc-8267-ee337fde8206.svg" width="14" height="14"><b> <u>Wine Related:</b></u></li>
         <ul>
-          <li><a href="../../dotfiles-extras/docs/Game-Settings.md">Game settings<a></li>
-          <li><a href="../../dotfiles-extras/docs/Game-Troubleshooting.md">Game troubleshooting<a></li>
+          <li><a href="../../../dotfiles-extras/docs/Game-Settings.md">Game settings<a></li>
+          <li><a href="../../../dotfiles-extras/docs/Game-Troubleshooting.md">Game troubleshooting<a></li>
         </ul>
         <li><b><u>Hardware Specific Fixes & Settings:</u></b></li>
           <ul>
-            <li><a href="../../dotfiles-extras/docs/Hardware%20Specific%20Fixes%20%26%20Settings/Steam%20Deck%20Settings.md">Steam Deck</a></li>
-            <li><a href="../../dotfiles-extras/docs/Hardware%20Specific%20Fixes%20%26%20Settings/ROG-G15-config.md">ROG G15 AMD Advantage on Linux</a></li>
-            <li><a href="../../dotfiles-extras/docs/Hardware%20Specific%20Fixes%20%26%20Settings/ZENITH-II-Extreme-config.md">(WIP) TRX40 Zenith II Extreme on Linux</a></li>
+            <li><a href="../../../dotfiles-extras/docs/Hardware%20Specific%20Fixes%20%26%20Settings/Steam%20Deck%20Settings.md">Steam Deck</a></li>
+            <li><a href="../../../dotfiles-extras/docs/Hardware%20Specific%20Fixes%20%26%20Settings/ROG-G15-config.md">ROG G15 AMD Advantage on Linux</a></li>
+            <li><a href="../../../dotfiles-extras/docs/Hardware%20Specific%20Fixes%20%26%20Settings/ZENITH-II-Extreme-config.md">(WIP) TRX40 Zenith II Extreme on Linux</a></li>
           </ul>
       </ul>
       <li><b><u>Configurations</u></b>:</li>
         <ul>
-          <li><a href="../../dotfiles-extras/virshxml_examples">Virsh Config XML Examples</a></li>
+          <li><a href="../../../dotfiles-extras/virshxml_examples">Virsh Config XML Examples</a></li>
         </ul>
     </ul>
   </ul>
@@ -56,9 +56,9 @@
 <ul>
   <li><b>Other Dotfiles</b>:</li>
     <ul>
-      <li><b>Fedora (ROG G15)</b>: <a href="../../fedora-dotfiles-laptop/">spongeyperson/fedora-dotfiles-laptop</a></li>
-      <li><b>Fedora</b>: <a href="../../fedora-dotfiles/">spongeyperson/fedora-dotfiles</a></li>
-      <li><b>Proxmox</b>: <a href="../../proxmox-config/">spongeyperson/proxmox-config</a></li>
+      <li><b>Fedora (ROG G15)</b>: <a href="../../../fedora-dotfiles-laptop/">spongeyperson/fedora-dotfiles-laptop</a></li>
+      <li><b>Fedora</b>: <a href="../../../fedora-dotfiles/">spongeyperson/fedora-dotfiles</a></li>
+      <li><b>Proxmox</b>: <a href="../../../proxmox-config/">spongeyperson/proxmox-config</a></li>
     </ul>
   </ul>
 </ul>
