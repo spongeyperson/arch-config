@@ -6,65 +6,94 @@
     <kcfgfile name=""/>
     <group name="">
 
+        <!-- General -->
+        <entry name="enableZoneSelector" type="Bool">
+            <default>true</default>
+        </entry>
+
+        <entry name="zoneSelectorTriggerDistance" type="Int">
+            <default>1</default>
+        </entry>
+
+        <entry name="enableZoneOverlay" type="Bool">
+            <default>true</default>
+        </entry>
+
+        <entry name="zoneOverlayShowWhen" type="Int">
+            <default>0</default>
+        </entry>
+
+        <entry name="zoneOverlayHighlightTarget" type="Int">
+            <default>0</default>
+        </entry>
+
         <entry name="rememberWindowGeometries" type="Bool">
             <default>true</default>
         </entry>
 
+        <!-- Layouts -->
+
         <entry name="layoutsJson" type="String">
-            <default>[
+            <default>
+                [
     {
-        &quot;name&quot;: &quot;Layout 1&quot;,
+        &quot;name&quot;: &quot;Priority Grid&quot;,
         &quot;padding&quot;: 0,
         &quot;zones&quot;: [
             {
-                &quot;name&quot;: &quot;1&quot;,
                 &quot;x&quot;: 0,
                 &quot;y&quot;: 0,
                 &quot;height&quot;: 100,
                 &quot;width&quot;: 25
             },
             {
-                &quot;name&quot;: &quot;2&quot;,
                 &quot;x&quot;: 25,
                 &quot;y&quot;: 0,
                 &quot;height&quot;: 100,
                 &quot;width&quot;: 50
             },
             {
-                &quot;name&quot;: &quot;3&quot;,
                 &quot;x&quot;: 75,
                 &quot;y&quot;: 0,
                 &quot;height&quot;: 100,
                 &quot;width&quot;: 25
             }
         ]
+    },
+    {
+        &quot;name&quot;: &quot;Quadrant Grid&quot;,
+        &quot;zones&quot;: [
+            {
+                &quot;x&quot;: 0,
+                &quot;y&quot;: 0,
+                &quot;height&quot;: 50,
+                &quot;width&quot;: 50
+            },
+            {
+                &quot;x&quot;: 0,
+                &quot;y&quot;: 50,
+                &quot;height&quot;: 50,
+                &quot;width&quot;: 50
+            },
+            {
+                &quot;x&quot;: 50,
+                &quot;y&quot;: 50,
+                &quot;height&quot;: 50,
+                &quot;width&quot;: 50
+            },
+            {
+                &quot;x&quot;: 50,
+                &quot;y&quot;: 0,
+                &quot;height&quot;: 50,
+                &quot;width&quot;: 50
+            }
+        ]
     }
-]</default>
+]
+            </default>
         </entry>
 
-        <entry name="pollingRate" type="Int">
-            <default>100</default>
-        </entry>
-
-        <entry name="targetMethod" type="String">
-            <default>0</default>
-        </entry>
-
-        <entry name="handleUnitPercent" type="Bool">
-            <default>true</default>
-        </entry>
-
-        <entry name="handleUnitPixels" type="Bool">
-            <default>false</default>
-        </entry>
-
-        <entry name="handleSize" type="Int">
-            <default>100</default>
-        </entry>
-
-        <entry name="enableDebugMode" type="Bool">
-            <default>false</default>
-        </entry>
+        <!-- Filters -->
 
         <entry name="filterMode" type="Int">
             <default>0</default>
@@ -74,27 +103,13 @@
             <default></default>
         </entry>
 
-        <entry name="zoneTarget" type="Int">
-            <default></default>
+        <!-- Advanced -->
+
+        <entry name="pollingRate" type="Int">
+            <default>100</default>
         </entry>
 
-        <entry name="fadeDuration" type="Int">
-            <default></default>
-        </entry>
-
-        <entry name="osdTimeout" type="Int">
-            <default></default>
-        </entry>
-
-        <entry name="alwaysShowLayoutName" type="Bool">
-            <default>false</default>
-        </entry>
-
-        <entry name="alternateIndicatorStyle" type="Bool">
-            <default>false</default>
-        </entry>
-
-        <entry name="invertedMode" type="Bool">
+        <entry name="enableDebugMode" type="Bool">
             <default>false</default>
         </entry>
 

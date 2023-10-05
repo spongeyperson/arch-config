@@ -40,9 +40,15 @@ showOtherScreensWindows=true
 LayoutName=big_icons
 
 [Tiling]
-padding=4
+padding=0
+
+[Tiling][0c22eb34-3cf5-5f6a-9875-998d19b22afd]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Tiling][1ed5621a-7460-544d-9637-262dba1368a4]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][37de5b30-d807-5967-a448-b1ac8d008045]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Tiling][63c1cf99-d17d-59d8-8d8f-2b2231eef65e]
@@ -54,8 +60,17 @@ tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"wi
 [Tiling][8f6737da-797c-5871-8012-e396ea153737]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
+[Tiling][b3a23bd1-0c81-53a6-bc7b-7c4f87a680eb]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.28837209302325584},{"width":0.7116279069767437}]}
+
 [Tiling][bad91fae-5897-5c92-8375-81b16ed59759]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][fe15e600-742b-5c0f-b416-229295e7b79e]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Xwayland]
+Scale=1
 
 [org.kde.kdecoration2]
 BorderSize=Tiny

@@ -18,8 +18,10 @@ alias virsh="virsh --connect=qemu:///system"
 alias update="yay -Syyu ; flatpak update"
 alias duf="duf -hide-fs squashfs"
 alias CLEAR="clear"
-alias onedrive="rclone serve webdav OD_Chunk:/ --vfs-cache-mode writes -P --cache-db-purge"
+alias od_webdav="rclone serve webdav OD_Chunk:/ --vfs-cache-mode writes -P --cache-db-purge"
 alias ports="sudo lsof -i -P -n | grep LISTEN"
+alias x11apps="viddy -n1 xlsclients"
+alias xapps="viddy -n1 xlsclients"
 
 
 #FLATPAK VSCode
@@ -63,8 +65,8 @@ alias restartaudio="systemctl --user restart pipewire.{socket,service} ; systemc
 #alias liquid="sudo liquidctl --match kraken set fan speed 20 30  30 40  35 45  40 55  42 58  43 75  44 80  45 90  46 92  50 100 && sudo liquidctl --match kraken set pump 100 && echo -e '\033[0;32mKraken Pump & Fan Speed Set!\033[0m'"
 
 # Dotfiles Sync
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=/'
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=/'
+alias config='/usr/bin/git --git-dir=/home/tyler/.dotfiles/ --work-tree=/'
+alias dotfiles='/usr/bin/git --git-dir=/home/tyler/.dotfiles/ --work-tree=/'
 
 # Radeon Vulkan Settings
 alias radv="VK_ICD_FILENAMES='/usr/share/vulkan/icd.d/radeon_icd.x86_64.json'"
