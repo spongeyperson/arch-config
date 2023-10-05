@@ -9,32 +9,18 @@ UUID=4a4ef5a9-6a05-4d3f-b9be-12031ee1a6ea	/var/log  	btrfs     	defaults,rw,rela
 UUID=4a4ef5a9-6a05-4d3f-b9be-12031ee1a6ea	/var/cache	btrfs     	defaults,rw,relatime,ssd,space_cache=v2,subvol=/@cache,compress=zstd		0 0
 UUID=4a4ef5a9-6a05-4d3f-b9be-12031ee1a6ea	/var/tmp  	btrfs     	defaults,rw,relatime,ssd,space_cache=v2,subvol=/@tmp,compress=zstd		0 0
 
+#Swap
+#/swapfile	none	swap	defaults	0 0
+
 # Samba Network Shares
-//192.168.0.99/8TB	/mnt/smb-8TB		cifs 	_netdev,nofail,noauto,rw,users,uid=tyler,iocharset=utf8,file_mode=0777,dir_mode=0777,credentials=/home/tyler/.smbpasswd 	0 0
-//192.168.0.4/D		/mnt/smb-MacPro		cifs	_netdev,nofail,noauto,rw,users,uid=tyler,iocharset=utf8,file_mode=0777,dir_mode=0777,credentials=/home/tyler/.smbpasswd 	0 0
-//192.168.0.5/G		/mnt/smb-temp		cifs	_netdev,nofail,noauto,rw,users,uid=tyler,iocharset=utf8,file_mode=0777,dir_mode=0777,credentials=/home/tyler/.smbpasswd 	0 0
+#//192.168.0.99/8TB	/mnt/smb-8TB		cifs 	_netdev,nofail,noauto,rw,users,uid=tyler,iocharset=utf8,file_mode=0777,dir_mode=0777,credentials=/home/tyler/.smbpasswd 	0 0
+#//192.168.0.4/D		/mnt/smb-MacPro		cifs	_netdev,nofail,noauto,rw,users,uid=tyler,iocharset=utf8,file_mode=0777,dir_mode=0777,credentials=/home/tyler/.smbpasswd 	0 0
+#//192.168.0.5/G		/mnt/smb-temp		cifs	_netdev,nofail,noauto,rw,users,uid=tyler,iocharset=utf8,file_mode=0777,dir_mode=0777,credentials=/home/tyler/.smbpasswd 	0 0
 
-# WD 1TB NVME - nvme2
-UUID=2D68DA130A20AF61 /mnt/GamesNVME ntfs defaults,auto,rw,user,exec,uid=1000,gid=1000,umask=000,nosuid,nodev,nofail,remove_hiberfile,hide_hid_files,x-gvfs-show 0 0
-
-# Samsung 2TB NVME - nvme1
-UUID=3E57AD9D4322C3F7 /mnt/2TB\040Games ntfs defaults,auto,rw,user,exec,uid=1000,gid=1000,umask=000,nosuid,nodev,nofail,remove_hiberfile,hide_hid_files,x-gvfs-show 0 0
-
-# (Potentially Dead) WD 1TB HDD
-#UUID=3f372d32-96b8-4569-894b-b54177cbbf3b /mnt/1TB-HDD ext4 defaults,auto,nosuid,nodev,nofail,x-gvfs-show 0 0
-
-# Windows 10 / 11 On VFIO Drive - nvme2
-UUID=307C899D7C895E8A /mnt/Windows\04010 ntfs defaults,noauto,rw,user,exec,uid=1000,gid=1000,umask=000,nosuid,nodev,nofail,remove_hiberfile,x-gvfs-show 0 0
-UUID=D4C2A174C09C94A7 /mnt/Windows\04011 ntfs defaults,noauto,rw,user,exec,uid=1000,gid=1000,umask=000,nosuid,nodev,nofail,remove_hiberfile,x-gvfs-show 0 0
-
-# WD 1TB NVME - VFIO Drive - nvme2
-UUID=4A31C0BED45DEB5F /mnt/Extra\040Storage ntfs defaults,noauto,rw,user,exec,uid=1000,gid=1000,umask=000,nosuid,nodev,nofail,remove_hiberfile,hide_hid_files,x-gvfs-show 0 0
-
-
-####! LVM !####
-#LVM RAID
-#UUID=7cc6fc4d-1f71-4ba5-96e4-511d86f71b78 /mnt/LVM-RAID ext4 defaults,auto,nosuid,nodev,nofail,x-gvfs-show 0 0
-###############
+# NTFS Mounts
+UUID=01D9848E81913560 /mnt/Old\040970\040Evo ntfs3 defaults,acl,rw,user,exec,windows_names,uid=1000,gid=100,umask=000  0 0
+UUID=2D68DA130A20AF61 /mnt/New\040970\040Evo ntfs3 defaults,acl,rw,user,exec,windows_names,uid=1000,gid=100,umask=000  0 0
+UUID=4A31C0BED45DEB5F /mnt/SN750\040Extra\040Storage ntfs3 defaults,acl,rw,user,exec,windows_names,uid=1000,gid=100,umask=000  0 0
 
 #BinderFS for Anbox
 #none                         /dev/binderfs binder   nofail  0      0
