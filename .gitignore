@@ -27,3 +27,7 @@ $HOME/Git\ Projects/
 
 # Ignore mnt
 /mnt
+
+# Ignore Secrets
+$HOME/.smbpasswd
+$HOME/.secrets
